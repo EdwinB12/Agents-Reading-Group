@@ -11,4 +11,5 @@ The group meets every 2 week on Tuesday Afternoon at 3-4:30pm. Contact Edwin if 
 |------|-------|------|
 |   17/02/2026   |    [OpenCode](https://opencode.ai/)      |   Edwin   |
 |   03/03/2026   |   Agent Presentation Practice Walkthrough    |   Shaun and Edwin    |
+|   31/03/2026   |   [Multi-Agent Coordination: Protocols, Observability & Human-in-the-Loop](docs/multi-agent-coordination.md)   |   TBC   |
 
