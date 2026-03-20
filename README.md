@@ -13,3 +13,4 @@ The group meets every 2 week on Tuesday Afternoon at 3-4:30pm. Contact Edwin if 
 |   09/03/2026   |   Agent Presentation Practice Walkthrough    |   Shaun and Edwin    |
 | 17/03/2026 | [Agents of Chaos](https://arxiv.org/pdf/2602.20021) | Farhad |
 | 31/03/2026 | [NVIDIA NemoClaw & OpenShell](./sessions/2026-03-31-nemoclaw-openshell.md) — Secure runtimes for autonomous agents | Joe |
+| 14/04/2026 | [Harmonic Aristotle](./sessions/2026-04-14-harmonic-aristotle.md) — Automated theorem proving with formal verification in Lean 4 | TBD |
