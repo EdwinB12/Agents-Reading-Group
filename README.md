@@ -13,3 +13,9 @@ The group meets every 2 week on Tuesday Afternoon at 3-4:30pm. Contact Edwin if 
 |   09/03/2026   |   Agent Presentation Practice Walkthrough    |   Shaun and Edwin    |
 | 17/03/2026 | [Agents of Chaos](https://arxiv.org/pdf/2602.20021) | Farhad |
 | 31/03/2026 | [NVIDIA NemoClaw & OpenShell](./sessions/2026-03-31-nemoclaw-openshell.md) — Secure runtimes for autonomous agents | Joe |
+
+## Ideas & Suggestions
+
+Have a paper, tool, or topic you'd like the group to explore? Drop it in the [`ideas/`](./ideas/) folder — no need for a full plan, just a title and a sentence or two. See [`ideas/README.md`](./ideas/README.md) for the template and naming convention.
+
+Want to propose a session or contribute? See [CONTRIBUTING.md](./CONTRIBUTING.md).
