@@ -19,9 +19,11 @@ ideas/      — lightweight topic proposals
 
 ## ideas/ conventions
 
-- File naming: `YYYY-MM-DD-short-slug.md` (use today's date when creating)
+- File naming: `short-slug.md` (no date prefix — e.g. `multi-agent-evals.md`)
 - Template is defined in `ideas/README.md`
-- Fields: title, proposed by, date added, suggested format, why interesting, links, notes
+- Fields: title, proposed by, suggested format, why interesting, links, notes
+- Ideas are lightweight proposals; they do not need a planned date
+- When an idea becomes a session, create the session file under `sessions/` and optionally delete the idea file in the same PR
 
 ## README.md schedule table
 

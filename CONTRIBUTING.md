@@ -37,10 +37,18 @@ Once your file is ready, update the Schedule table in `README.md` and open a PR.
 
 ## Submitting an idea
 
+Idea files live in `ideas/` and use a simple slug with no date prefix:
+
+```
+ideas/short-slug.md
+```
+
 1. Copy the template from [`ideas/README.md`](ideas/README.md).
-2. Create a new file: `ideas/YYYY-MM-DD-short-slug.md`.
-3. Fill in the title, suggested format, why it's interesting, and any relevant links.
+2. Create a new file: `ideas/short-slug.md` (e.g. `ideas/multi-agent-evals.md`).
+3. Fill in the title, proposed by, suggested format, why it's interesting, and any relevant links.
 4. Open a PR — ideas don't need to be complete or even have a date in mind.
+
+When an idea is ready to become a session, create a file under `sessions/` (following the session naming convention) and open a new PR. You can delete the idea file in the same PR or leave it for reference.
 
 ## Branch and PR conventions
 

@@ -12,13 +12,13 @@ This folder is for capturing informal ideas for future reading group topics — 
 
 ## Naming convention
 
-Use the same pattern as `sessions/`:
+Give a working title to the session idea:
 
 ```
-YYYY-MM-DD-short-slug.md
+short-slug.md
 ```
 
-Use today's date when you create the file. Example: `2026-04-10-multi-agent-evals.md`
+Example: `multi-agent-evals.md`
 
 ## Template
 
@@ -28,7 +28,6 @@ Copy this into your new idea file:
 # [Title of idea]
 
 **Proposed by:** [your name / GitHub handle]
-**Date added:** YYYY-MM-DD
 **Suggested format:** paper / demo / exercise / discussion (pick one or combine)
 
 ## Why interesting
