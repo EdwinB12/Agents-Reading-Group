@@ -24,3 +24,27 @@ Get Physics Done's design speaks directly to these failure modes: it runs a four
 A secondary discussion seed: "vibe physics" is contested terminology. Critics (Physics World, Big Think) use it pejoratively for fluent-but-unverified AI outputs — exactly the failure mode Schwartz documents. His supervised experiment is an implicit rebuttal, but the distinction between expert-supervised AI assistance and unsupervised "vibes" is not always drawn clearly in public coverage.
 
 Possible session arc: brief demo of Get Physics Done on a toy problem, then discussion grounded in the Schwartz experiment — comparing the tool's design assumptions against the failure modes he observed, and what "G2 level" AI means for scientific workflows more broadly.
+
+## Candidate toy problems
+
+Problems are ranked by suitability for a live demo: well-scoped, visually rewarding, and exercise GPD's derivation + verification loop.
+
+### Tier 1 — recommended (fits in 1–2 h, strong connection to session themes)
+
+| Problem | Domain | Why it fits |
+|---------|--------|-------------|
+| **Damped harmonic oscillator with forcing** | Classical mechanics | Analytical + numerical solutions to compare; resonance plot is intuitive for a mixed audience; easy to introduce a deliberate sign error and test whether GPD catches it — directly probes the self-verification failure mode |
+| **Two-body orbital mechanics (Kepler problem)** | Celestial mechanics | Classic RK4 integration; generates visually compelling orbital plots; conservation of energy and angular momentum provide natural verification checkpoints |
+| **Ballistic pendulum** | Collision physics | Two-phase problem (momentum conservation → energy conservation); clean symbolic chain that illustrates how GPD links derivation steps |
+
+### Tier 2 — good alternatives (require more setup or 1.5–2 h)
+
+| Problem | Domain | Notes |
+|---------|--------|-------|
+| Double pendulum chaos | Nonlinear dynamics | Demonstrates Lyapunov exponents and sensitive dependence; richer but may be ambitious for one hour |
+| 1D wave equation (finite difference) | PDEs / wave physics | Good for CFL stability analysis; needs 1.5–2 h |
+| 1D heat diffusion | PDEs / heat transfer | Simpler PDE; useful contrast to wave equation (parabolic vs. hyperbolic) |
+| Electrostatics: point charge field lines | Electromagnetism | Contour and vector field visualisation; purely superposition so symbolic path is clean |
+| Ideal gas statistical mechanics | Thermodynamics | Partition function derivation; less immediately visual but rich verification story |
+
+**Suggested primary demo:** damped harmonic oscillator — fits in ~30 min, clear verification moments, and the resonance plot lands well with non-specialists. Two-body orbital mechanics works well as an extended group exercise if time allows.
