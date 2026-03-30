@@ -135,6 +135,7 @@ Press releases and blogs
 
 Products and tools
 
-- [NVIDIA NemoClaw](https://www.nvidia.com/en-eu/ai/nemoclaw/)
+- [NVIDIA NemoClaw](https://docs.nvidia.com/nemoclaw/latest/)
 - [NVIDIA OpenShell](https://docs.nvidia.com/openshell/latest/)
 - [NVIDIA AI-Q Blueprint for intelligent agents](https://build.nvidia.com/nvidia/aiq)
+- [NVIDIA NeMo Agent Toolkit](https://docs.nvidia.com/nemo/agent-toolkit/latest/index.html)
