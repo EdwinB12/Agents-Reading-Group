@@ -113,6 +113,17 @@ Use these to structure the final 15 minutes. Aim to cover at least three.
 
 6. **Ecosystem position** — How does the NemoClaw stack compare to alternatives like LangGraph + Docker, E2B, or Modal for sandboxed agent execution?
 
+7. **Research and scholarship context** — NemoClaw and OpenShell are clearly aimed at enterprise deployments: corporate compliance, proprietary data, SLA-driven infrastructure. What assumptions embedded in these products *don't hold* in a university research setting?
+
+   Consider:
+   - **Reproducibility over reliability**: research requires that others can re-run an agent's exact workflow — how does a closed policy/sandbox model interact with open science norms?
+   - **Data governance complexity**: university research data often carries ethics board conditions, funder restrictions, or data-sharing agreements that aren't expressible as simple filesystem ACLs
+   - **Infrastructure reality**: most researchers work on shared HPC clusters or institutional VMs, not NVIDIA DGX cloud — does the tooling still apply?
+   - **Licensing and cost**: enterprise pricing and support models rarely fit research budgets or procurement timescales
+   - **Openness expectations**: researchers typically expect to inspect, modify, and publish about the tools they use — how far does that sit with NVIDIA's stack?
+
+   What would a version of this technology designed *for* research look like, and who would build it?
+
 ---
 
 # Links
