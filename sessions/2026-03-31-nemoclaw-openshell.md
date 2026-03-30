@@ -112,3 +112,11 @@ Use these to structure the final 15 minutes. Aim to cover at least three.
 5. **Adoption question** — Would you use this in your own work? What would need to change — technically, organisationally, or in terms of maturity?
 
 6. **Ecosystem position** — How does the NemoClaw stack compare to alternatives like LangGraph + Docker, E2B, or Modal for sandboxed agent execution?
+
+---
+
+# Links
+
+- [NVIDIA Announces NemoClaw for the OpenClaw Community](https://nvidianews.nvidia.com/news/nvidia-announces-nemoclaw)
+- [Run Autonomous, Self-Evolving Agents More Safely with NVIDIA OpenShell](https://developer.nvidia.com/blog/run-autonomous-self-evolving-agents-more-safely-with-nvidia-openshell/)
+- [NVIDIA NemoClaw](https://www.nvidia.com/en-eu/ai/nemoclaw/)
