@@ -1,7 +1,7 @@
 # Trust Architectures for the Agentic Web
 
 > Reference document for the reading group session on security measures for AI agents.
-> Based on [GitHub Issue #1](https://github.com/EdwinB12/Agents-Reading-Group/issues/1).
+> Based on [GitHub Issue #1](https://github.com/EdwinB12/Agents-Reading-Group/issues/1). Originally proposed by the community (2026-03-24); draft session plan from PR #2.
 
 ---
 
