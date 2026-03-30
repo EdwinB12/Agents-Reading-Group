@@ -117,6 +117,13 @@ Use these to structure the final 15 minutes. Aim to cover at least three.
 
 # Links
 
+Press releases and blogs
+
 - [NVIDIA Announces NemoClaw for the OpenClaw Community](https://nvidianews.nvidia.com/news/nvidia-announces-nemoclaw)
 - [Run Autonomous, Self-Evolving Agents More Safely with NVIDIA OpenShell](https://developer.nvidia.com/blog/run-autonomous-self-evolving-agents-more-safely-with-nvidia-openshell/)
+
+Products and tools
+
 - [NVIDIA NemoClaw](https://www.nvidia.com/en-eu/ai/nemoclaw/)
+- [NVIDIA OpenShell](https://docs.nvidia.com/openshell/latest/)
+- [NVIDIA AI-Q Blueprint for intelligent agents](https://build.nvidia.com/nvidia/aiq)
