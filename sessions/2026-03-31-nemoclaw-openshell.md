@@ -21,8 +21,7 @@ Work through these before the session — in order if time is short:
 2. **OpenShell GitHub repository** — source, README, and the policy schema
    <https://github.com/NVIDIA/OpenShell>
 
-3. **NVIDIA developer blog** — GTC 2026 announcement post with worked examples
-   *(link to be confirmed by session lead — check the NeMo blog at <https://developer.nvidia.com/blog/tag/nemo/>)*
+3. **NVIDIA developer blog** https://developer.nvidia.com/blog/run-autonomous-self-evolving-agents-more-safely-with-nvidia-openshell/ and https://nvidianews.nvidia.com/news/nvidia-announces-nemoclaw
 
 ---
 
