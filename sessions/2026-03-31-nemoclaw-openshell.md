@@ -1,7 +1,7 @@
 # NVIDIA NemoClaw & OpenShell — Secure Runtimes for Autonomous Agents
 
-**Session:** 31 March 2026 · 3:00–4:30 pm
-**Lead:** TBD
+**Session:** 30th March 2026
+**Lead:** Joe Heffer
 
 ---
 
