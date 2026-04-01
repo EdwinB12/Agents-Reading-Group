@@ -93,3 +93,7 @@ Use these to structure the final 15 minutes. Aim to cover at least three.
 5. **Trust in AI reasoning** — Formal verification provides a certificate of correctness. How does this compare to other approaches to trustworthy AI (RLHF, constitutional AI, interpretability)? Is verifiability the right frame?
 
 6. **Agentic integration** — How would you integrate a system like Aristotle into a broader AI agent pipeline? What would it mean for a research agent to be able to call out to a formal verifier mid-task?
+
+# Links
+
+- [Towards Autonomous Mathematics Research](https://arxiv.org/abs/2602.10177)
