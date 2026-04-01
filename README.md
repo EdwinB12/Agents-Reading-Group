@@ -11,7 +11,8 @@ The group meets every 2 week on Tuesday Afternoon at 3-4:30pm. Contact Edwin if 
 |------|-------|------|
 |   17/02/2026   |    [OpenCode](https://opencode.ai/)      |   Edwin   |
 |   09/03/2026   |   Agent Presentation Practice Walkthrough    |   Shaun and Edwin    |
-| 31/03/2026 | [NVIDIA NemoClaw & OpenShell](./sessions/2026-03-31-nemoclaw-openshell.md) — Secure runtimes for autonomous agents | Joe |
+| 31/03/2026 | [NVIDIA NemoClaw & OpenShell](./sessions/2026-03-30-nemoclaw-openshell.md) — Secure runtimes for autonomous agents | Joe |
+| 14/04/2026 | [Inter-Agent Communication Protocols](./sessions/2026-04-14-inter-agent-comms.md) — A2A and beyond | Chris Wild |
 
 ## Ideas & Suggestions
 
