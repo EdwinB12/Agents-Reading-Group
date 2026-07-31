@@ -14,6 +14,7 @@ Get Physics Done (by Physical Superintelligence PBC) is a domain-specific agent 
 - [Vibe Physics — Anthropic research blog](https://www.anthropic.com/research/vibe-physics)
 - [Published paper — arXiv:2601.02484](https://arxiv.org/abs/2601.02484) ("Resummation of the C-Parameter Sudakov Shoulder Using Effective Field Theory")
 - [Get Physics Done — GitHub](https://github.com/psi-oss/get-physics-done)
+- [LLMoxie: Exploring Agentic AI for Scientific Software Development](https://arxiv.org/pdf/2607.02703)
 
 ## Notes
 
