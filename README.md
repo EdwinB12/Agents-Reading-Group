@@ -17,6 +17,7 @@ The group meets every 2 week on Tuesday Afternoon at 3-4:30pm. Contact Edwin if 
 | 23/06/2026 | AI Coding Tips, Tricks and Experiences | Everyone | 
 | 07/07/2026 | Introduction to World Models | Edwin |
 | 05/08/2026 | Building Practical AI Agents Using Claw - Retrospective | Farhad & Shaun |
+| 18/08/2026 | The HuggingFace OpenAI incident | Everyone |
 
 ## Ideas & Suggestions
 
