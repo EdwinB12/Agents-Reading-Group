@@ -1,4 +1,5 @@
-# Agents-Reading-Group
+# 🤖 Agents Reading Group
+
 Research Software Engineers Agentic Reading Group
 
 ## Overview
