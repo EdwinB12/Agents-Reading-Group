@@ -1,0 +1,526 @@
+<!doctype html><html><head><!-- frame-runtime --><base href="/_f/1787827666-0d22/"><script>window.__FRAME_PREAMBLE={"v":1,"capabilities":{"artifact":"artifact.Cg566fpb.js","assets":"assets.8Gk803W0.js","comments":"comments.GLuHR3zP.js","db":"db.CRhVHzSt.js","downloads":"downloads.C3GSvEDP.js","embed":"embed.CxGAyc-v.js","mcp":"mcp.Bvma3qD7.js","network":"network.B5UA9Su4.js","permissions":"permissions.BNySkLV5.js","room":"room.BMMoe2BY.js","sample":"sample.BW2Uysoh.js","self":"artifact.Cg566fpb.js","user":"user.BpKav-Rf.js"},"transforms":"_transforms.CQm3TZ9K.js","comments":"_comments.PBVy184F.js","translate":"_translate.5HCW4BJh.js"}</script><script>(function(){"use strict";var J=["light","dark","system"],Q=/^[A-Za-z0-9_-]{1,64}$/,H=/^[a-zA-Z_:][a-zA-Z0-9_:.-]{0,127}$/,ee=new Set(["class","hidden","value","checked"]);function te(e){const t=e.toLowerCase();return t.startsWith("data-")||t.startsWith("aria-")||ee.has(t)}var Me="http://www.w3.org/1999/xhtml",re="http://www.w3.org/2000/svg",ne=new Set(["script","style","iframe","noscript","noframes","noembed","xmp","plaintext","template","title","textarea","object","embed"]),oe=new Set(["script","style"]);function se(e){const t=e.localName.toLowerCase();return e.namespaceURI==="http://www.w3.org/1999/xhtml"?!ne.has(t):e.namespaceURI===re?!oe.has(t):!1}var ae=new Set(["html","head","body","frameset"]);function ie(e){return e.namespaceURI==="http://www.w3.org/1999/xhtml"&&ae.has(e.localName)}function ce(e){if(e===null||typeof e!="object")return!1;const t=e;if(typeof t.target!="string"||!Q.test(t.target)||t.text!==void 0&&typeof t.text!="string")return!1;if(t.attrsSet!==void 0){if(t.attrsSet===null||typeof t.attrsSet!="object")return!1;for(const[r,n]of Object.entries(t.attrsSet))if(!H.test(r)||typeof n!="string")return!1}if(t.attrsRemoved!==void 0){if(!Array.isArray(t.attrsRemoved))return!1;for(const r of t.attrsRemoved)if(typeof r!="string"||!H.test(r))return!1}return!0}function le(e,t){if(e===null||typeof e!="object")return!1;const{seq:r,elements:n}=e;if(typeof r!="number"||!Number.isSafeInteger(r)||!Array.isArray(n)||n.length===0||n.length>64)return!1;for(let s=0;s<n.length;s++)if(!t(n[s]))return!1;return!0}function ue(e){return e===null||typeof e!="object"?!1:le(e.__frame_patch,ce)}function fe(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_init;return t!==null&&typeof t=="object"}function pe(e){return e!==null&&typeof e=="object"&&e.__frame_size_poke===!0}function de(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_theme;if(t===null||typeof t!="object")return!1;const r=t.theme;return typeof r=="string"&&J.includes(r)}var A=/^[\w.-]+\.js$/;function me(e,t,r){return r?"inert":typeof t=="string"&&A.test(t)?e?[t]:"inert":e?"inert":"framed"}function he(){return{post(e,t){parent.postMessage(e,t)},on(e){const t=r=>{r.source===parent&&e(r.data,r.origin)};return addEventListener("message",t),()=>removeEventListener("message",t)}}}function _e(){return{post:()=>{},on:()=>()=>{}}}var O="__frame_scroll",ve=150,ye=310,we=160,be=3e4;function Ee(){let e=0,t=!1,r=!1,n=!1,s=0,a=null;const l=i=>{try{sessionStorage.setItem(O,JSON.stringify({y:i}))}catch{}},d=()=>{if(clearTimeout(e),a===null)return;const i=a;a=null,l(i)},v=()=>{if(t){t=!1;return}r=!0,a=scrollY,clearTimeout(e),e=setTimeout(d,ve)};try{addEventListener("scroll",v,{passive:!0}),addEventListener("pagehide",d)}catch{}const y=()=>{let i;try{i=sessionStorage.getItem(O)}catch{return null}if(i===null)return null;let m;try{m=JSON.parse(i)}catch{m=null}const u=m?.y;if(!(typeof u=="number"&&Number.isFinite(u)&&u>=0)){try{sessionStorage.removeItem(O)}catch{}return null}return u};let S=!1;const h=i=>{try{const m=scrollY;scrollTo({top:i,left:0,behavior:"instant"}),s=i,n=!0,clearTimeout(e),a=null,l(i);const u=scrollY;u!==m&&(t=!0),u!==i&&!S&&(S=!0,addEventListener("load",()=>{try{if(scrollY===u){const k=y();h(k!==null?k:s)}}catch{}},{once:!0}))}catch{}},w=()=>{try{return!!location.hash}catch{return!0}};let o=!1;const f=()=>{try{if(o||innerWidth>ye||innerHeight>we)return;o=!0;const i=Date.now(),m=()=>{try{removeEventListener("resize",m)}catch{}if(Date.now()-i>be||r||w())return;const u=y();h(u!==null?u:s)};addEventListener("resize",m)}catch{}};let _=!1,b=!1;return{restore(){if(_||(_=!0,w()))return;const i=y();i!==null&&(h(i),f())},promoted(){if(b||(b=!0,w()))return;const i=y();i!==null?(h(i),f()):n&&h(s)}}}function ge(e,t,r,n){let s=null;try{s=window.trustedTypes?.createPolicy("frame-runtime",{createScriptURL:v=>v})??null}catch{}const a=window.Worker,l=a?.prototype,d=Object.freeze({Worker:a,workerOn:l?.addEventListener,workerPost:l?.postMessage,workerTerminate:l?.terminate,fetch:window.fetch.bind(window),preventDefault:Event.prototype.preventDefault,policy:s,origins:t});r(e).then(v=>v?.bootTopLevel?v.bootTopLevel(d,n):n.settle()).catch(()=>n.settle())}var Oe="modulepreload",Ce=function(e){return"/"+e},je={},Ae=function(t,r,n){let s=Promise.resolve();function a(l){const d=new Event("vite:preloadError",{cancelable:!0});if(d.payload=l,window.dispatchEvent(d),!d.defaultPrevented)throw l}return s.then(l=>{for(const d of l||[])d.status==="rejected"&&a(d.reason);return t().catch(a)})},Re=window===top,q=Object.getOwnPropertyDescriptor(window,"claude"),T=me(Re,window.__FRAME_PREAMBLE?.topLevel,q?.writable===!1),C=typeof T=="object"&&T[0],p=C?_e():he();(function(){const e=Object.defineProperty,t=globalThis,r=["RTCPeerConnection","webkitRTCPeerConnection","RTCDataChannel","RTCIceCandidate","RTCSessionDescription","RTCRtpSender","RTCRtpReceiver"];let n=0;for(let s=0;s<r.length;s++){const a=r[s];try{e(t,a,{value:void 0,writable:!1,configurable:!1})}catch{try{delete t[a]}catch{}try{e(t,a,{value:void 0,writable:!1,configurable:!0})}catch{}}typeof t[a]=="function"&&n++}if(n&&T==="framed")try{p.post({__frame_rtc_lockdown_failed:n},"*")}catch{}})();var Se=1e4,W=Object.freeze([...window.__FRAME_PREAMBLE?.origins??["https://claude.ai","https://preview.claude.ai"]]);function $(e){for(const t of W)if(t.endsWith(":*"))try{const r=new URL(e);if(`${r.protocol}//${r.hostname}:*`===t)return!0}catch{}else if(e===t)return!0;return!1}var L=Object.freeze({...window.__FRAME_PREAMBLE?.capabilities}),j=window.__FRAME_PREAMBLE?.transforms,N=window.__FRAME_PREAMBLE?.comments,I=window.__FRAME_PREAMBLE?.translate;function R(e){return Ae(()=>import("/_runtime/"+e),void 0)}function K(e,t){return{contract:e.contract,changes:new Set(e.changes??[]),flags:new Set(e.flags??[]),capabilities:e.capabilities??{},capBudgets:e.capBudgets??{},transforms:new Map,shellOrigin:t,mount:D,pipe:()=>({wrap:(r,n)=>(...s)=>{try{return n(...s)}catch(a){return Promise.reject(a)}}})}}var P=null,E=null;function Y(e,t,r){try{Object.defineProperty(e,t,{value:r,writable:!1,configurable:!1,enumerable:!0})}catch{try{Object.defineProperty(e,t,{value:r,writable:!1,configurable:!0,enumerable:!0})}catch{}}}var B=!1;function ke(e,t){const r=[];for(const n of e.elements){const s=document.querySelector(`[data-id="${n.target}"]`);if(!s){p.post({__frame_patch_miss:{seq:e.seq}},t);return}if([...Object.keys(n.attrsSet??{}),...n.attrsRemoved??[]].some(a=>!te(a))){p.post({__frame_patch_miss:{seq:e.seq}},t);return}if(n.text!==void 0&&(!se(s)||ie(s))){p.post({__frame_patch_miss:{seq:e.seq}},t);return}for(const[a,l]of Object.entries(n.attrsSet??{}))if(!G(s,a)){try{s.setAttribute(a,l)}catch{}X(s,a,l)}for(const a of n.attrsRemoved??[])G(s,a)||(s.removeAttribute(a),X(s,a,null));typeof n.text=="string"&&(s.textContent=n.text),r.push(n.target)}try{document.dispatchEvent(new CustomEvent("claude:edit",{detail:{seq:e.seq,targets:r}}))}catch{}}function X(e,t,r){if(!(e instanceof HTMLInputElement))return;const n=t.toLowerCase();n==="checked"?e.checked=r!==null:n==="value"&&e.type!=="file"&&(e.value=r??"")}function G(e,t){const r=t.toLowerCase(),n=e;return r==="data-id"||(r==="value"||r==="checked")&&(n.__artifactSecret===!0||/^(password|hidden|file)$/.test(n.type??"")||/(^|\s)(cc-|one-time-code|current-password|new-password)/i.test(`${e.getAttribute("autocomplete")??""} ${n.autocomplete??""}`))}function V(e){const t=document.documentElement;e==="light"||e==="dark"?(t.dataset.theme=e,t.style.colorScheme=e,B=!0):B&&(delete t.dataset.theme,t.style.colorScheme="",B=!1)}var M=new Map;function Te(){let e;const t={u:new Promise(r=>{e=r}),r:r=>{t.done=!0,e(r)},done:!1,nulled:!1};return t}function U(){for(const e of M.values())e.done||(e.nulled=!0,e.r(null))}var Le=Object.freeze(Object.assign(Object.create(null),{call:Function.prototype.call,apply:Function.prototype.apply,bind:Function.prototype.bind})),D=(e,t)=>{const r=M.get(e);if(!r||r.done){r?.nulled&&E&&p.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:e}},E);return}const n=typeof t=="function"?Object.setPrototypeOf(t,Le):Object.assign(Object.create(null),t);typeof n.then=="function"&&delete n.then,r.r(Object.freeze(n))};function Z(){const e=q?.value??{};Y(window,"claude",e);for(const t of Object.keys(L)){if(e[t]!==void 0){Y(e,t,e[t]);continue}M.set(t,Te())}if(e.use===void 0){const t=r=>{if(typeof r!="string"||!Object.hasOwn(L,r))return Promise.resolve(null);const n=M.get(r);return n?n.u:Promise.resolve(e[r]??null)};try{Object.defineProperty(e,"use",{value:t,writable:!0,configurable:!0,enumerable:!1})}catch{}}}if(T==="framed"){const e=j&&A.test(j)?R(j).catch(()=>{}):Promise.resolve(void 0),t=o=>{if(o.type==="auxclick"&&o.button!==1)return;const f=o.target,_=f&&f.closest?f.closest("a[href],area[href]"):null;if(!_)return;const b=_.getAttribute("href");if(!b)return;let i;try{i=new URL(b,document.baseURI)}catch{return}if((i.protocol==="http:"||i.protocol==="https:")&&i.origin!==location.origin){o.preventDefault();const m=(_.getAttribute("target")??"").toLowerCase(),u=o.type==="auxclick"||o.metaKey||o.ctrlKey||o.shiftKey||o.altKey||!["","_self","_top","_parent"].includes(m);p.post({__frame_nav:!0,url:i.href,newTab:u},"*")}};addEventListener("click",t,!0),addEventListener("auxclick",t,!0);const r={},n=o=>{o.isTrusted&&(r.pointer=!0)},s=o=>{o.isTrusted&&(r.click=!0)};addEventListener("pointermove",n,{capture:!0,passive:!0}),addEventListener("click",s,{capture:!0,passive:!0}),e.then(o=>{o?.wireNav&&(o.wireNav(),removeEventListener("click",t,!0),removeEventListener("auxclick",t,!0),removeEventListener("pointermove",n,!0),removeEventListener("click",s,!0),o.wireEngagement?.(r))});let a=null;try{a=Ee()}catch{}Z();let l=null,d=null,v=0;const y=p.on((o,f)=>{$(f)&&fe(o)&&(l=o.__frame_init,E=f,y(),clearTimeout(v),d?.())});p.post({__frame_connect:!0},"*");const S=new Promise(o=>{d=o,v=setTimeout(()=>{y(),o()},Se)}),h=document.readyState==="loading"?new Promise(o=>document.addEventListener("DOMContentLoaded",()=>o(),{once:!0})):Promise.resolve();h.then(()=>{try{a?.restore()}catch{}});const w={cb:null};p.on((o,f)=>{if($(f)&&pe(o)){try{a?.promoted()}catch{}w.cb?.()}}),S.then(async()=>{if(!l||!E){U();return}V(l.theme);const o=E;let f=!1,_=!1;p.on((c,x)=>{if(x!==o)return;de(c)&&V(c.__frame_theme.theme),ue(c)&&ke(c.__frame_patch,o);const g=c?.__fc_mode;g&&typeof g=="object"&&!f&&N&&A.test(N)&&(f=!0,R(N).then(z=>z.install?.(o,g.on===!0)).catch(()=>{}));const F=c?.__ft_cmd;F&&typeof F=="object"&&!_&&I&&A.test(I)&&(_=!0,R(I).then(z=>z.install?.(o,F)).catch(()=>{}))});const b=Object.keys(l.capabilities??{}).filter(c=>Object.hasOwn(L,c)).map(c=>[c,L[c]]).filter(c=>typeof c[1]=="string"&&A.test(c[1])),i=await Promise.allSettled(b.map(([,c])=>R(c))),m=await e,u=E;if(m?.buildBoot||p.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:"_transforms"}},u),m?.buildBoot)try{P=m.buildBoot(l,m.TRANSFORMS??{},{shellOrigin:u,mount:D},c=>p.post({__frame_cap_telemetry:c},u))}catch{p.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:"_transforms"}},u),P=K(l,u)}else P=K(l,u);const k=c=>p.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:c}},u),Pe=P;i.forEach((c,x)=>{const g=b[x][0];if(c.status!=="fulfilled"){k(g);return}try{c.value?.install?.(Pe)}catch{k(g)}}),U(),await h,p.post({__frame_ready:!0},E),e.then(c=>c?.installSizeReporter?.(u,w))})}else C&&(Z(),ge(C,W,R,{settle:U,mount:D}))})();</script><!-- /frame-runtime --><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}</style></head><body>
+<title>Machines Re-Reading the Record</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Libre+Franklin:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink: #121810;
+    --ink-2: #1C251C;
+    --ink-3: rgba(231,225,208,0.14);
+    --ink-3-strong: rgba(231,225,208,0.24);
+    --paper: #E7E1D0;
+    --paper-dim: #A6A290;
+    --brass: #CBA135;
+    --brass-dim: #8F7328;
+    --verdigris: #6FAFA0;
+
+    --serif: "Fraunces", "Iowan Old Style", "Palatino Linotype", serif;
+    --sans: "Libre Franklin", "Helvetica Neue", Arial, sans-serif;
+    --mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+
+    --fs-hero: clamp(2.6rem, 6vw, 5.4rem);
+    --fs-h1: clamp(1.9rem, 3.6vw, 3rem);
+    --fs-h2: clamp(1.4rem, 2.6vw, 2rem);
+    --fs-body: 1.05rem;
+    --fs-small: 0.86rem;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
+
+  body{
+    margin:0;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--sans);
+    background-image:
+      repeating-linear-gradient(
+        to bottom,
+        rgba(231,225,208,0.035) 0px,
+        rgba(231,225,208,0.035) 1px,
+        transparent 1px,
+        transparent 42px
+      );
+  }
+
+  h1,h2,h3{ font-family: var(--serif); text-wrap: balance; margin:0; }
+
+  .deck{
+    height:100vh;
+    overflow-y:auto;
+    scroll-snap-type: y mandatory;
+  }
+
+  .slide{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    scroll-snap-align:start;
+    position:relative;
+    padding: clamp(4rem,8vh,6rem) clamp(2rem,7vw,7rem) clamp(4rem,8vh,6rem) clamp(4.5rem,10vw,9rem);
+    border-top: 1px solid var(--ink-3);
+  }
+  .slide:first-child{ border-top:none; }
+
+  .running-head{
+    position:fixed;
+    top: 1.4rem;
+    left: 4.5rem;
+    right: 2rem;
+    display:flex;
+    justify-content:space-between;
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--paper-dim);
+    pointer-events:none;
+    z-index: 5;
+  }
+
+  .rail{
+    position:fixed;
+    top:0; left:0; bottom:0;
+    width: 3.6rem;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap: 0.55rem;
+    z-index: 10;
+  }
+  .rail-dot{
+    width: 7px; height:7px;
+    border-radius:50%;
+    background: transparent;
+    border: 1px solid var(--ink-3-strong);
+    cursor:pointer;
+    padding:0;
+    transition: background 0.25s, border-color 0.25s, transform 0.25s;
+  }
+  @media (prefers-reduced-motion: reduce){ .rail-dot{ transition:none; } }
+  .rail-dot.active{
+    background: var(--brass);
+    border-color: var(--brass);
+    transform: scale(1.35);
+  }
+
+  .counter{
+    position:fixed;
+    bottom: 1.4rem;
+    right: 2rem;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: var(--paper-dim);
+    z-index: 5;
+  }
+
+  .eyebrow{
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--verdigris);
+    margin-bottom: 1rem;
+  }
+
+  /* ---- Slide 1: title ---- */
+  .title-slide{ justify-content:center; position:relative; overflow:hidden; }
+  .watermark{
+    position:absolute;
+    right: -2vw;
+    bottom: -6vh;
+    font-family: var(--mono);
+    font-size: clamp(6rem, 22vw, 16rem);
+    font-weight:600;
+    color: rgba(231,225,208,0.035);
+    letter-spacing: -0.02em;
+    line-height:1;
+    z-index:0;
+    pointer-events:none;
+  }
+  .title-slide h1{
+    font-size: var(--fs-hero);
+    font-weight: 600;
+    font-style: italic;
+    max-width: 14ch;
+    position:relative;
+    z-index:1;
+  }
+  .title-sub{
+    font-size: 1.15rem;
+    color: var(--paper-dim);
+    max-width: 46ch;
+    margin-top: 1.6rem;
+    line-height:1.55;
+    position:relative;
+    z-index:1;
+  }
+  .title-foot{
+    margin-top: 3.5rem;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color: var(--brass-dim);
+    position:relative;
+    z-index:1;
+  }
+
+  /* ---- generic slide heading ---- */
+  .slide h2.heading{ font-size: var(--fs-h1); font-weight:500; font-style:italic; max-width: 20ch; margin-bottom: 1.2rem; }
+  .lede{ font-size: var(--fs-body); color: var(--paper-dim); max-width: 62ch; line-height:1.6; margin-bottom: 2.6rem; }
+
+  /* ---- Slide 2: four modes ---- */
+  .modes{
+    display:grid;
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--ink-3);
+    max-width: 62rem;
+    border: 1px solid var(--ink-3);
+  }
+  .mode{
+    background: var(--ink);
+    padding: 1.6rem 1.8rem;
+  }
+  .mode-tag{ font-family: var(--mono); font-size:0.78rem; color: var(--brass); letter-spacing:0.08em; }
+  .mode-name{ font-family: var(--serif); font-style:italic; font-weight:600; font-size:1.25rem; margin:0.35rem 0 0.5rem; }
+  .mode-def{ font-size: 0.92rem; color: var(--paper-dim); line-height:1.5; }
+  .footnote{ margin-top:2rem; font-size:0.92rem; color: var(--verdigris); max-width:52ch; font-style:italic; }
+
+  /* ---- Slide 3: timeline spine ---- */
+  .spine{
+    display:grid;
+    grid-template-columns: 6.2rem 2rem 1fr;
+    row-gap: clamp(1.1rem, 3vh, 1.9rem);
+    position:relative;
+    max-width: 56rem;
+  }
+  .spine::before{
+    content:'';
+    grid-column:2;
+    grid-row: 1 / span 6;
+    width:2px;
+    background: var(--ink-3-strong);
+    justify-self:center;
+  }
+  .spine-range{ font-family: var(--mono); font-size:0.82rem; color: var(--paper-dim); align-self:center; text-align:right; padding-right:0.4rem; }
+  .spine-dot{ align-self:center; justify-self:center; width:9px; height:9px; border-radius:50%; background: var(--brass); z-index:1; }
+  .spine-headline{ font-family: var(--serif); font-weight:600; font-size:1.15rem; align-self:center; }
+  .spine-headline small{ display:block; font-family: var(--sans); font-weight:400; color: var(--paper-dim); font-size:0.85rem; margin-top:0.2rem; }
+
+  /* ---- Era detail slides ---- */
+  .era-grid{
+    display:grid;
+    grid-template-columns: minmax(200px, 24rem) 1fr;
+    gap: clamp(2rem, 5vw, 4.5rem);
+    max-width: 76rem;
+    align-items:start;
+  }
+  .era-num{ font-family: var(--mono); color: var(--brass); font-size:0.85rem; letter-spacing:0.1em; }
+  .era-range{ font-family: var(--serif); font-weight:300; font-size: clamp(2.2rem, 5vw, 3.6rem); margin: 0.3rem 0 0.9rem; line-height:1; }
+  .era-headline{ font-family: var(--serif); font-style:italic; font-weight:500; font-size: 1.3rem; color: var(--verdigris); max-width:18ch; line-height:1.35; }
+
+  .events{ display:flex; flex-direction:column; }
+  .event{
+    display:grid;
+    grid-template-columns: 5.6rem 1fr;
+    gap: 1.1rem;
+    padding: 1rem 0;
+    border-top: 1px solid var(--ink-3);
+  }
+  .event:first-child{ border-top:none; padding-top:0; }
+  .event-date{ font-family: var(--mono); font-size:0.82rem; color: var(--paper-dim); padding-top:0.2rem; }
+  .event-body{ font-size: 0.98rem; line-height:1.55; color: var(--paper); }
+  .event-name{ font-weight:600; color: var(--paper); }
+  .event-body .dim{ color: var(--paper-dim); }
+
+  /* ---- Achievements slide ---- */
+  .achieve-list{ max-width:68rem; }
+
+  /* ---- Lessons slide (manifesto style) ---- */
+  .lessons{ display:flex; flex-direction:column; gap: clamp(1.6rem,3.5vh,2.4rem); max-width: 58rem; }
+  .lesson-tag{ font-family: var(--mono); font-size:0.74rem; color: var(--brass); letter-spacing:0.1em; }
+  .lesson-line{ font-family: var(--serif); font-style:italic; font-size: clamp(1.15rem,2.4vw,1.55rem); font-weight:500; margin: 0.35rem 0 0.4rem; line-height:1.3; }
+  .lesson-body{ font-size:0.95rem; color: var(--paper-dim); max-width:56ch; line-height:1.55; }
+
+  /* ---- Implications slide ---- */
+  .impl{ max-width:68rem; }
+
+  /* ---- Closing slide ---- */
+  .closing h2{ font-size: clamp(2rem,4.6vw,3.4rem); font-weight:500; font-style:italic; max-width:20ch; }
+  .closing-note{ margin-top:1.8rem; font-size:1.02rem; color: var(--paper-dim); max-width:48ch; line-height:1.6; }
+  .closing-stats{ margin-top:3rem; font-family: var(--mono); font-size:0.78rem; letter-spacing:0.08em; color: var(--brass-dim); text-transform:uppercase; }
+
+  @media (max-width: 760px){
+    .rail{ display:none; }
+    .running-head{ left:1.4rem; }
+    .slide{ padding-left:1.6rem; padding-right:1.6rem; }
+    .era-grid{ grid-template-columns: 1fr; }
+    .modes{ grid-template-columns: 1fr; }
+    .spine{ grid-template-columns: 4.6rem 1.6rem 1fr; }
+  }
+
+  a{ color: var(--verdigris); }
+  ::selection{ background: var(--brass); color: var(--ink); }
+</style>
+
+<div class="running-head">
+  <span>Machines Re-Reading the Record</span>
+  <span>RSE Reading Group · Aug 2026</span>
+</div>
+
+<nav class="rail" id="rail"></nav>
+<div class="counter" id="counter">01 / 13</div>
+
+<div class="deck" id="deck">
+
+  <section class="slide title-slide">
+    <div class="watermark">1965–2026</div>
+    <div class="eyebrow">A history, before the discussion starts</div>
+    <h1>Machines Re-Reading the Record</h1>
+    <p class="title-sub">Six decades of computational systems built not to collect new data, but to re-examine research that already exists — literature, archives, reference databases, prior claims.</p>
+    <div class="title-foot">Scroll or press ↓ to begin</div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Scope</div>
+    <h2 class="heading">Four ways to re-read a record</h2>
+    <p class="lede">This excludes AI applied to fresh data collection or de novo simulation — a different lineage entirely. What follows are systems that extract something new from research that already exists.</p>
+    <div class="modes">
+      <div class="mode"><div class="mode-tag">01</div><div class="mode-name">Recombination</div><div class="mode-def">Connecting findings published separately and never linked — Swanson's "undiscovered public knowledge."</div></div>
+      <div class="mode"><div class="mode-tag">02</div><div class="mode-name">Re-analysis</div><div class="mode-def">Applying better methods to old data that was under-exploited at the time.</div></div>
+      <div class="mode"><div class="mode-tag">03</div><div class="mode-name">Error detection</div><div class="mode-def">Finding mistakes, inconsistencies, and fabrication in the published record.</div></div>
+      <div class="mode"><div class="mode-tag">04</div><div class="mode-name">Retrieval</div><div class="mode-def">Locating results that already exist but have been effectively lost.</div></div>
+    </div>
+    <p class="footnote">Mode 4 is the least glamorous — and, on the evidence ahead, the most reliable.</p>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">The map</div>
+    <h2 class="heading">Six eras, sixty years</h2>
+    <div class="spine">
+      <div class="spine-range">1965–99</div><div class="spine-dot"></div>
+      <div class="spine-headline">Rule-based mining of the record<small>DENDRAL to Swanson to Arrowsmith</small></div>
+
+      <div class="spine-range">2000–15</div><div class="spine-dot"></div>
+      <div class="spine-headline">Closing the loop, turning scrutiny on the record<small>Robot scientists, KnIT, statcheck</small></div>
+
+      <div class="spine-range">2016–22</div><div class="spine-dot"></div>
+      <div class="spine-headline">Deep learning reads the archive<small>Kepler-90i, embeddings, integrity screening</small></div>
+
+      <div class="spine-range">2023–24</div><div class="spine-dot"></div>
+      <div class="spine-headline">LLM agents enter the loop<small>Coscientist, FunSearch, PaperQA2</small></div>
+
+      <div class="spine-range">2025</div><div class="spine-dot"></div>
+      <div class="spine-headline">The co-scientist year<small>AlphaEvolve, Kosmos, "Erdősgate"</small></div>
+
+      <div class="spine-range">2026</div><div class="spine-dot"></div>
+      <div class="spine-headline">Institutionalisation — and the first hard limits<small>Formal proofs, whole-literature reanalysis</small></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="era-grid">
+      <div>
+        <div class="era-num">Era 01</div>
+        <div class="era-range">1965–99</div>
+        <div class="era-headline">Rule-based mining of the record</div>
+      </div>
+      <div class="events">
+        <div class="event"><div class="event-date">1965–80</div><div class="event-body"><span class="event-name">DENDRAL / Meta-DENDRAL</span> — <span class="dim">first machine to generate publishable domain knowledge from an existing data corpus.</span></div></div>
+        <div class="event"><div class="event-date">1979–81</div><div class="event-body"><span class="event-name">BACON</span> — <span class="dim">rediscovered Kepler's, Ohm's and Boyle's laws from historical data — and the origin of a lasting critique: pre-cleaned data isn't discovery.</span></div></div>
+        <div class="event"><div class="event-date">1986</div><div class="event-body"><span class="event-name">Don Swanson</span> — <span class="dim">linked separate literatures on fish oil and blood rheology to predict a Raynaud's treatment. The founding moment.</span></div></div>
+        <div class="event"><div class="event-date">1997</div><div class="event-body"><span class="event-name">Arrowsmith</span> — <span class="dim">turned Swanson's method into a public tool, the direct ancestor of every modern hypothesis agent.</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="era-grid">
+      <div>
+        <div class="era-num">Era 02</div>
+        <div class="era-range">2000–15</div>
+        <div class="era-headline">Closing the loop, and turning scrutiny on the record</div>
+      </div>
+      <div class="events">
+        <div class="event"><div class="event-date">2004–09</div><div class="event-body"><span class="event-name">Robot Scientist "Adam"</span> — <span class="dim">hypothesis → automated experiment → revision, with complete provenance logging still unmatched by most 2026 agents.</span></div></div>
+        <div class="event"><div class="event-date">2014</div><div class="event-body"><span class="event-name">KnIT</span> — <span class="dim">set the gold-standard evaluation design: truncate the literature, predict what came next, check.</span></div></div>
+        <div class="event"><div class="event-date">2015</div><div class="event-body"><span class="event-name">Robot Scientist "Eve"</span> — <span class="dim">repurposed triclosan against malaria from existing compound libraries.</span></div></div>
+        <div class="event"><div class="event-date">2015–16</div><div class="event-body"><span class="event-name">statcheck</span> — <span class="dim">scanned decades of psychology papers; roughly half contained a p-value inconsistency.</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="era-grid">
+      <div>
+        <div class="era-num">Era 03</div>
+        <div class="era-range">2016–22</div>
+        <div class="era-headline">Deep learning reads the archive</div>
+      </div>
+      <div class="events">
+        <div class="event"><div class="event-date">2017</div><div class="event-body"><span class="event-name">Kepler-90i</span> — <span class="dim">a CNN found an eighth planet sitting in public data that human vetting had already passed over.</span></div></div>
+        <div class="event"><div class="event-date">2019</div><div class="event-body"><span class="event-name">Tshitoyan et al.</span> — <span class="dim">embeddings on 3.3M materials-science abstracts predicted thermoelectric materials years before their discovery.</span></div></div>
+        <div class="event"><div class="event-date">2020–22</div><div class="event-body"><span class="event-name">Integrity screening</span> — <span class="dim">image-duplication and "tortured phrase" detectors become routine publisher infrastructure.</span></div></div>
+        <div class="event"><div class="event-date">2021</div><div class="event-body"><span class="event-name">DeepMind × Oxford/Sydney</span> — <span class="dim">ML on existing mathematical data led human mathematicians to new theorems.</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="era-grid">
+      <div>
+        <div class="era-num">Era 04</div>
+        <div class="era-range">2023–24</div>
+        <div class="era-headline">LLM agents enter the loop</div>
+      </div>
+      <div class="events">
+        <div class="event"><div class="event-date">Dec 2023</div><div class="event-body"><span class="event-name">Coscientist / ChemCrow</span> — <span class="dim">GPT-4 agents read literature, planned syntheses, and drove automated laboratories.</span></div></div>
+        <div class="event"><div class="event-date">Dec 2023</div><div class="event-body"><span class="event-name">FunSearch</span> — <span class="dim">LLM-guided program search advanced the cap set problem in extremal combinatorics.</span></div></div>
+        <div class="event"><div class="event-date">Aug 2024</div><div class="event-body"><span class="event-name">The AI Scientist</span> — <span class="dim">end-to-end research pipeline; exposed literature grounding as the piece that consistently breaks.</span></div></div>
+        <div class="event"><div class="event-date">Sep 2024</div><div class="event-body"><span class="event-name">PaperQA2 / CORE-Bench</span> — <span class="dim">superhuman retrieval and contradiction-detection; reproduction reframed as an agentic task.</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="era-grid">
+      <div>
+        <div class="era-num">Era 05</div>
+        <div class="era-range">2025</div>
+        <div class="era-headline">The co-scientist year</div>
+      </div>
+      <div class="events">
+        <div class="event"><div class="event-date">Feb</div><div class="event-body"><span class="event-name">AI co-scientist</span> — <span class="dim">proposed in days a phage-tail mechanism a lab had spent a decade establishing. Most cited — and most contested.</span></div></div>
+        <div class="event"><div class="event-date">May</div><div class="event-body"><span class="event-name">AlphaEvolve</span> — <span class="dim">beat Strassen's 1969 matrix-multiplication bound for the first time in fifty-six years.</span></div></div>
+        <div class="event"><div class="event-date">Oct</div><div class="event-body"><span class="event-name">"Erdősgate"</span> — <span class="dim">GPT-5 "solved" ten Erdős problems; it had retrieved existing solutions, not found new ones. The framing failed, not the achievement.</span></div></div>
+        <div class="event"><div class="event-date">Nov</div><div class="event-body"><span class="event-name">Kosmos</span> — <span class="dim">79% of claims supported overall — but only 58% for the system's own cross-domain syntheses.</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="era-grid">
+      <div>
+        <div class="era-num">Era 06</div>
+        <div class="era-range">2026</div>
+        <div class="era-headline">Institutionalisation, and the first hard evidence of limits</div>
+      </div>
+      <div class="events">
+        <div class="event"><div class="event-date">Jan</div><div class="event-body"><span class="event-name">Erdős #728, #729, #397</span> — <span class="dim">original proofs, formally verified, accepted by Terence Tao as genuinely new.</span></div></div>
+        <div class="event"><div class="event-date">Jan</div><div class="event-body"><span class="event-name">Hubble anomaly search</span> — <span class="dim">~1,400 undocumented objects surfaced from 100M archival cutouts in two and a half days.</span></div></div>
+        <div class="event"><div class="event-date">Feb–Jun</div><div class="event-body"><span class="event-name">Xu &amp; Yang</span> — <span class="dim">full-paper reanalysis of 384 studies; a job that took 3–4 years now runs as a workflow.</span></div></div>
+        <div class="event"><div class="event-date">Jul</div><div class="event-body"><span class="event-name">The concentration finding</span> — <span class="dim">AI-generated research ideas cluster tighter around existing literature than human ideas do.</span></div></div>
+        <div class="event"><div class="event-date">Aug</div><div class="event-body"><span class="event-name">Nature, on errors</span> — <span class="dim">agents are now finding decades-old errors in the reference handbooks themselves.</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">Signal, not noise</div>
+    <h2 class="heading">Six results carry the weight</h2>
+    <div class="events achieve-list">
+      <div class="event"><div class="event-date">1986</div><div class="event-body"><span class="event-name">Swanson</span> — <span class="dim">the literature contains unstated implied knowledge. Everything since is engineering.</span></div></div>
+      <div class="event"><div class="event-date">2014</div><div class="event-body"><span class="event-name">KnIT</span> — <span class="dim">the correct evaluation design: truncate the corpus, predict what came next, check.</span></div></div>
+      <div class="event"><div class="event-date">2019</div><div class="event-body"><span class="event-name">Tshitoyan et al.</span> — <span class="dim">latent knowledge is recoverable statistically, without any explicit reasoning step.</span></div></div>
+      <div class="event"><div class="event-date">2025</div><div class="event-body"><span class="event-name">AlphaEvolve</span> — <span class="dim">search over the existing formal record can beat results that stood for half a century.</span></div></div>
+      <div class="event"><div class="event-date">2025</div><div class="event-body"><span class="event-name">Kosmos</span> — <span class="dim">established the current reliability frontier honestly, including the 58% figure for its own novel syntheses.</span></div></div>
+      <div class="event"><div class="event-date">2026</div><div class="event-body"><span class="event-name">Xu &amp; Yang</span> — <span class="dim">whole-literature reanalysis has moved from a multi-year project to a workflow.</span></div></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="eyebrow">What the record shows</div>
+    <h2 class="heading">Five things worth carrying into the room</h2>
+    <div class="lessons">
+      <div>
+        <div class="lesson-tag">01</div>
+        <div class="lesson-line">Retrieval is where the reliable value sits — and it's systematically undersold.</div>
+        <div class="lesson-body">Erdősgate was reported as a failure. Recovering forgotten solutions at superhuman recall is genuinely valuable; the failure was purely one of framing.</div>
+      </div>
+      <div>
+        <div class="lesson-tag">02</div>
+        <div class="lesson-line">Attribution is structural, not incidental.</div>
+        <div class="lesson-body">Novelty belongs to the pipeline — search process, verifier, human problem selection — not the language model alone. Governance that credits "the AI" will misdescribe what happened.</div>
+      </div>
+      <div>
+        <div class="lesson-tag">03</div>
+        <div class="lesson-line">Error detection scales faster than error adjudication.</div>
+        <div class="lesson-body">From statcheck to handbook boiling points, machine re-reading finds problems in volume at 80–85% precision. The bottleneck is human adjudication cost — design that pathway before switching detection on.</div>
+      </div>
+      <div>
+        <div class="lesson-tag">04</div>
+        <div class="lesson-line">Agents interpolate; they do not extrapolate.</div>
+        <div class="lesson-body">Re-examining the existing record is exactly where agents perform best — and generating directions the literature doesn't already imply is exactly where they perform worst.</div>
+      </div>
+      <div>
+        <div class="lesson-tag">05</div>
+        <div class="lesson-line">Verification asymmetry determines which fields move first.</div>
+        <div class="lesson-body">Maths moved fastest because Lean gives mechanical proof-checking. Fields without cheap verification will see the largest gap between claimed and real progress.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide closing">
+    <div class="eyebrow">Where this leaves us</div>
+    <h2>Sixty years of re-reading, and the record still keeps giving up more than we've extracted from it.</h2>
+    <p class="closing-note">The consistent pattern: agents excel at finding what's already there, and struggle to point beyond it. That asymmetry is the discussion.</p>
+    <div class="closing-stats">19 sources · 6 decades · 1 record</div>
+  </section>
+
+</div>
+
+<script>
+  (function(){
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+    var rail = document.getElementById('rail');
+    var counter = document.getElementById('counter');
+    var total = slides.length;
+    var dots = [];
+
+    slides.forEach(function(s, i){
+      var dot = document.createElement('button');
+      dot.className = 'rail-dot';
+      dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      dot.addEventListener('click', function(){ s.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+      rail.appendChild(dot);
+      dots.push(dot);
+    });
+
+    function pad(n){ return n < 10 ? '0' + n : '' + n; }
+
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting){
+          var idx = slides.indexOf(entry.target);
+          dots.forEach(function(d, i){ d.classList.toggle('active', i === idx); });
+          counter.textContent = pad(idx + 1) + ' / ' + pad(total);
+        }
+      });
+    }, { root: document.getElementById('deck'), threshold: 0.6 });
+
+    slides.forEach(function(s){ io.observe(s); });
+
+    document.getElementById('deck').addEventListener('keydown', function(e){
+      var idx = dots.findIndex(function(d){ return d.classList.contains('active'); });
+      if (e.key === 'ArrowDown' || e.key === 'PageDown'){
+        e.preventDefault();
+        if (idx < total - 1) slides[idx + 1].scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else if (e.key === 'ArrowUp' || e.key === 'PageUp'){
+        e.preventDefault();
+        if (idx > 0) slides[idx - 1].scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+    document.getElementById('deck').tabIndex = 0;
+    document.getElementById('deck').focus();
+  })();
+</script>
+
+</body></html>
