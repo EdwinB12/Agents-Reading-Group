@@ -1,0 +1,512 @@
+<!doctype html><html><head><!-- frame-runtime --><base href="/_f/1787829255-f5d4/"><script>window.__FRAME_PREAMBLE={"v":1,"capabilities":{"artifact":"artifact.Cg566fpb.js","assets":"assets.8Gk803W0.js","comments":"comments.GLuHR3zP.js","db":"db.CRhVHzSt.js","downloads":"downloads.C3GSvEDP.js","embed":"embed.CxGAyc-v.js","mcp":"mcp.Bvma3qD7.js","network":"network.B5UA9Su4.js","permissions":"permissions.BNySkLV5.js","room":"room.BMMoe2BY.js","sample":"sample.BW2Uysoh.js","self":"artifact.Cg566fpb.js","user":"user.BpKav-Rf.js"},"transforms":"_transforms.CQm3TZ9K.js","comments":"_comments.PBVy184F.js","translate":"_translate.5HCW4BJh.js"}</script><script>(function(){"use strict";var J=["light","dark","system"],Q=/^[A-Za-z0-9_-]{1,64}$/,H=/^[a-zA-Z_:][a-zA-Z0-9_:.-]{0,127}$/,ee=new Set(["class","hidden","value","checked"]);function te(e){const t=e.toLowerCase();return t.startsWith("data-")||t.startsWith("aria-")||ee.has(t)}var Me="http://www.w3.org/1999/xhtml",re="http://www.w3.org/2000/svg",ne=new Set(["script","style","iframe","noscript","noframes","noembed","xmp","plaintext","template","title","textarea","object","embed"]),oe=new Set(["script","style"]);function se(e){const t=e.localName.toLowerCase();return e.namespaceURI==="http://www.w3.org/1999/xhtml"?!ne.has(t):e.namespaceURI===re?!oe.has(t):!1}var ae=new Set(["html","head","body","frameset"]);function ie(e){return e.namespaceURI==="http://www.w3.org/1999/xhtml"&&ae.has(e.localName)}function ce(e){if(e===null||typeof e!="object")return!1;const t=e;if(typeof t.target!="string"||!Q.test(t.target)||t.text!==void 0&&typeof t.text!="string")return!1;if(t.attrsSet!==void 0){if(t.attrsSet===null||typeof t.attrsSet!="object")return!1;for(const[r,n]of Object.entries(t.attrsSet))if(!H.test(r)||typeof n!="string")return!1}if(t.attrsRemoved!==void 0){if(!Array.isArray(t.attrsRemoved))return!1;for(const r of t.attrsRemoved)if(typeof r!="string"||!H.test(r))return!1}return!0}function le(e,t){if(e===null||typeof e!="object")return!1;const{seq:r,elements:n}=e;if(typeof r!="number"||!Number.isSafeInteger(r)||!Array.isArray(n)||n.length===0||n.length>64)return!1;for(let s=0;s<n.length;s++)if(!t(n[s]))return!1;return!0}function ue(e){return e===null||typeof e!="object"?!1:le(e.__frame_patch,ce)}function fe(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_init;return t!==null&&typeof t=="object"}function pe(e){return e!==null&&typeof e=="object"&&e.__frame_size_poke===!0}function de(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_theme;if(t===null||typeof t!="object")return!1;const r=t.theme;return typeof r=="string"&&J.includes(r)}var A=/^[\w.-]+\.js$/;function me(e,t,r){return r?"inert":typeof t=="string"&&A.test(t)?e?[t]:"inert":e?"inert":"framed"}function he(){return{post(e,t){parent.postMessage(e,t)},on(e){const t=r=>{r.source===parent&&e(r.data,r.origin)};return addEventListener("message",t),()=>removeEventListener("message",t)}}}function _e(){return{post:()=>{},on:()=>()=>{}}}var O="__frame_scroll",ve=150,ye=310,we=160,be=3e4;function Ee(){let e=0,t=!1,r=!1,n=!1,s=0,a=null;const l=i=>{try{sessionStorage.setItem(O,JSON.stringify({y:i}))}catch{}},d=()=>{if(clearTimeout(e),a===null)return;const i=a;a=null,l(i)},v=()=>{if(t){t=!1;return}r=!0,a=scrollY,clearTimeout(e),e=setTimeout(d,ve)};try{addEventListener("scroll",v,{passive:!0}),addEventListener("pagehide",d)}catch{}const y=()=>{let i;try{i=sessionStorage.getItem(O)}catch{return null}if(i===null)return null;let m;try{m=JSON.parse(i)}catch{m=null}const u=m?.y;if(!(typeof u=="number"&&Number.isFinite(u)&&u>=0)){try{sessionStorage.removeItem(O)}catch{}return null}return u};let S=!1;const h=i=>{try{const m=scrollY;scrollTo({top:i,left:0,behavior:"instant"}),s=i,n=!0,clearTimeout(e),a=null,l(i);const u=scrollY;u!==m&&(t=!0),u!==i&&!S&&(S=!0,addEventListener("load",()=>{try{if(scrollY===u){const k=y();h(k!==null?k:s)}}catch{}},{once:!0}))}catch{}},w=()=>{try{return!!location.hash}catch{return!0}};let o=!1;const f=()=>{try{if(o||innerWidth>ye||innerHeight>we)return;o=!0;const i=Date.now(),m=()=>{try{removeEventListener("resize",m)}catch{}if(Date.now()-i>be||r||w())return;const u=y();h(u!==null?u:s)};addEventListener("resize",m)}catch{}};let _=!1,b=!1;return{restore(){if(_||(_=!0,w()))return;const i=y();i!==null&&(h(i),f())},promoted(){if(b||(b=!0,w()))return;const i=y();i!==null?(h(i),f()):n&&h(s)}}}function ge(e,t,r,n){let s=null;try{s=window.trustedTypes?.createPolicy("frame-runtime",{createScriptURL:v=>v})??null}catch{}const a=window.Worker,l=a?.prototype,d=Object.freeze({Worker:a,workerOn:l?.addEventListener,workerPost:l?.postMessage,workerTerminate:l?.terminate,fetch:window.fetch.bind(window),preventDefault:Event.prototype.preventDefault,policy:s,origins:t});r(e).then(v=>v?.bootTopLevel?v.bootTopLevel(d,n):n.settle()).catch(()=>n.settle())}var Oe="modulepreload",Ce=function(e){return"/"+e},je={},Ae=function(t,r,n){let s=Promise.resolve();function a(l){const d=new Event("vite:preloadError",{cancelable:!0});if(d.payload=l,window.dispatchEvent(d),!d.defaultPrevented)throw l}return s.then(l=>{for(const d of l||[])d.status==="rejected"&&a(d.reason);return t().catch(a)})},Re=window===top,q=Object.getOwnPropertyDescriptor(window,"claude"),T=me(Re,window.__FRAME_PREAMBLE?.topLevel,q?.writable===!1),C=typeof T=="object"&&T[0],p=C?_e():he();(function(){const e=Object.defineProperty,t=globalThis,r=["RTCPeerConnection","webkitRTCPeerConnection","RTCDataChannel","RTCIceCandidate","RTCSessionDescription","RTCRtpSender","RTCRtpReceiver"];let n=0;for(let s=0;s<r.length;s++){const a=r[s];try{e(t,a,{value:void 0,writable:!1,configurable:!1})}catch{try{delete t[a]}catch{}try{e(t,a,{value:void 0,writable:!1,configurable:!0})}catch{}}typeof t[a]=="function"&&n++}if(n&&T==="framed")try{p.post({__frame_rtc_lockdown_failed:n},"*")}catch{}})();var Se=1e4,W=Object.freeze([...window.__FRAME_PREAMBLE?.origins??["https://claude.ai","https://preview.claude.ai"]]);function $(e){for(const t of W)if(t.endsWith(":*"))try{const r=new URL(e);if(`${r.protocol}//${r.hostname}:*`===t)return!0}catch{}else if(e===t)return!0;return!1}var L=Object.freeze({...window.__FRAME_PREAMBLE?.capabilities}),j=window.__FRAME_PREAMBLE?.transforms,N=window.__FRAME_PREAMBLE?.comments,I=window.__FRAME_PREAMBLE?.translate;function R(e){return Ae(()=>import("/_runtime/"+e),void 0)}function K(e,t){return{contract:e.contract,changes:new Set(e.changes??[]),flags:new Set(e.flags??[]),capabilities:e.capabilities??{},capBudgets:e.capBudgets??{},transforms:new Map,shellOrigin:t,mount:D,pipe:()=>({wrap:(r,n)=>(...s)=>{try{return n(...s)}catch(a){return Promise.reject(a)}}})}}var P=null,E=null;function Y(e,t,r){try{Object.defineProperty(e,t,{value:r,writable:!1,configurable:!1,enumerable:!0})}catch{try{Object.defineProperty(e,t,{value:r,writable:!1,configurable:!0,enumerable:!0})}catch{}}}var B=!1;function ke(e,t){const r=[];for(const n of e.elements){const s=document.querySelector(`[data-id="${n.target}"]`);if(!s){p.post({__frame_patch_miss:{seq:e.seq}},t);return}if([...Object.keys(n.attrsSet??{}),...n.attrsRemoved??[]].some(a=>!te(a))){p.post({__frame_patch_miss:{seq:e.seq}},t);return}if(n.text!==void 0&&(!se(s)||ie(s))){p.post({__frame_patch_miss:{seq:e.seq}},t);return}for(const[a,l]of Object.entries(n.attrsSet??{}))if(!G(s,a)){try{s.setAttribute(a,l)}catch{}X(s,a,l)}for(const a of n.attrsRemoved??[])G(s,a)||(s.removeAttribute(a),X(s,a,null));typeof n.text=="string"&&(s.textContent=n.text),r.push(n.target)}try{document.dispatchEvent(new CustomEvent("claude:edit",{detail:{seq:e.seq,targets:r}}))}catch{}}function X(e,t,r){if(!(e instanceof HTMLInputElement))return;const n=t.toLowerCase();n==="checked"?e.checked=r!==null:n==="value"&&e.type!=="file"&&(e.value=r??"")}function G(e,t){const r=t.toLowerCase(),n=e;return r==="data-id"||(r==="value"||r==="checked")&&(n.__artifactSecret===!0||/^(password|hidden|file)$/.test(n.type??"")||/(^|\s)(cc-|one-time-code|current-password|new-password)/i.test(`${e.getAttribute("autocomplete")??""} ${n.autocomplete??""}`))}function V(e){const t=document.documentElement;e==="light"||e==="dark"?(t.dataset.theme=e,t.style.colorScheme=e,B=!0):B&&(delete t.dataset.theme,t.style.colorScheme="",B=!1)}var M=new Map;function Te(){let e;const t={u:new Promise(r=>{e=r}),r:r=>{t.done=!0,e(r)},done:!1,nulled:!1};return t}function U(){for(const e of M.values())e.done||(e.nulled=!0,e.r(null))}var Le=Object.freeze(Object.assign(Object.create(null),{call:Function.prototype.call,apply:Function.prototype.apply,bind:Function.prototype.bind})),D=(e,t)=>{const r=M.get(e);if(!r||r.done){r?.nulled&&E&&p.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:e}},E);return}const n=typeof t=="function"?Object.setPrototypeOf(t,Le):Object.assign(Object.create(null),t);typeof n.then=="function"&&delete n.then,r.r(Object.freeze(n))};function Z(){const e=q?.value??{};Y(window,"claude",e);for(const t of Object.keys(L)){if(e[t]!==void 0){Y(e,t,e[t]);continue}M.set(t,Te())}if(e.use===void 0){const t=r=>{if(typeof r!="string"||!Object.hasOwn(L,r))return Promise.resolve(null);const n=M.get(r);return n?n.u:Promise.resolve(e[r]??null)};try{Object.defineProperty(e,"use",{value:t,writable:!0,configurable:!0,enumerable:!1})}catch{}}}if(T==="framed"){const e=j&&A.test(j)?R(j).catch(()=>{}):Promise.resolve(void 0),t=o=>{if(o.type==="auxclick"&&o.button!==1)return;const f=o.target,_=f&&f.closest?f.closest("a[href],area[href]"):null;if(!_)return;const b=_.getAttribute("href");if(!b)return;let i;try{i=new URL(b,document.baseURI)}catch{return}if((i.protocol==="http:"||i.protocol==="https:")&&i.origin!==location.origin){o.preventDefault();const m=(_.getAttribute("target")??"").toLowerCase(),u=o.type==="auxclick"||o.metaKey||o.ctrlKey||o.shiftKey||o.altKey||!["","_self","_top","_parent"].includes(m);p.post({__frame_nav:!0,url:i.href,newTab:u},"*")}};addEventListener("click",t,!0),addEventListener("auxclick",t,!0);const r={},n=o=>{o.isTrusted&&(r.pointer=!0)},s=o=>{o.isTrusted&&(r.click=!0)};addEventListener("pointermove",n,{capture:!0,passive:!0}),addEventListener("click",s,{capture:!0,passive:!0}),e.then(o=>{o?.wireNav&&(o.wireNav(),removeEventListener("click",t,!0),removeEventListener("auxclick",t,!0),removeEventListener("pointermove",n,!0),removeEventListener("click",s,!0),o.wireEngagement?.(r))});let a=null;try{a=Ee()}catch{}Z();let l=null,d=null,v=0;const y=p.on((o,f)=>{$(f)&&fe(o)&&(l=o.__frame_init,E=f,y(),clearTimeout(v),d?.())});p.post({__frame_connect:!0},"*");const S=new Promise(o=>{d=o,v=setTimeout(()=>{y(),o()},Se)}),h=document.readyState==="loading"?new Promise(o=>document.addEventListener("DOMContentLoaded",()=>o(),{once:!0})):Promise.resolve();h.then(()=>{try{a?.restore()}catch{}});const w={cb:null};p.on((o,f)=>{if($(f)&&pe(o)){try{a?.promoted()}catch{}w.cb?.()}}),S.then(async()=>{if(!l||!E){U();return}V(l.theme);const o=E;let f=!1,_=!1;p.on((c,x)=>{if(x!==o)return;de(c)&&V(c.__frame_theme.theme),ue(c)&&ke(c.__frame_patch,o);const g=c?.__fc_mode;g&&typeof g=="object"&&!f&&N&&A.test(N)&&(f=!0,R(N).then(z=>z.install?.(o,g.on===!0)).catch(()=>{}));const F=c?.__ft_cmd;F&&typeof F=="object"&&!_&&I&&A.test(I)&&(_=!0,R(I).then(z=>z.install?.(o,F)).catch(()=>{}))});const b=Object.keys(l.capabilities??{}).filter(c=>Object.hasOwn(L,c)).map(c=>[c,L[c]]).filter(c=>typeof c[1]=="string"&&A.test(c[1])),i=await Promise.allSettled(b.map(([,c])=>R(c))),m=await e,u=E;if(m?.buildBoot||p.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:"_transforms"}},u),m?.buildBoot)try{P=m.buildBoot(l,m.TRANSFORMS??{},{shellOrigin:u,mount:D},c=>p.post({__frame_cap_telemetry:c},u))}catch{p.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:"_transforms"}},u),P=K(l,u)}else P=K(l,u);const k=c=>p.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:c}},u),Pe=P;i.forEach((c,x)=>{const g=b[x][0];if(c.status!=="fulfilled"){k(g);return}try{c.value?.install?.(Pe)}catch{k(g)}}),U(),await h,p.post({__frame_ready:!0},E),e.then(c=>c?.installSizeReporter?.(u,w))})}else C&&(Z(),ge(C,W,R,{settle:U,mount:D}))})();</script><!-- /frame-runtime --><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}</style></head><body>
+<title>Re-Reading the Record</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+  :root{
+    --paper:#eef1ea;
+    --raised:#ffffff;
+    --ink:#20241d;
+    --ink-soft:#5c6555;
+    --line:#c7cdb8;
+    --line-strong:#a9b195;
+    --audit:#15665b;
+    --audit-ink:#0e4a42;
+    --audit-soft:#dcece6;
+    --discovery:#9c6a1c;
+    --discovery-ink:#7a5215;
+    --discovery-soft:#f4e6cd;
+    --cross-bg:#e2e6d6;
+    --shadow: 0 1px 2px rgba(32,36,22,0.06), 0 6px 16px rgba(32,36,22,0.07);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#15170f;
+      --raised:#1d2117;
+      --ink:#e9e7d9;
+      --ink-soft:#a7ac97;
+      --line:#3b4030;
+      --line-strong:#4c5240;
+      --audit:#59bcaa;
+      --audit-ink:#a9ded1;
+      --audit-soft:#1c322c;
+      --discovery:#e0a851;
+      --discovery-ink:#f0c988;
+      --discovery-soft:#332815;
+      --cross-bg:#1e2216;
+      --shadow: 0 1px 2px rgba(0,0,0,0.35), 0 8px 20px rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#15170f;
+    --raised:#1d2117;
+    --ink:#e9e7d9;
+    --ink-soft:#a7ac97;
+    --line:#3b4030;
+    --line-strong:#4c5240;
+    --audit:#59bcaa;
+    --audit-ink:#a9ded1;
+    --audit-soft:#1c322c;
+    --discovery:#e0a851;
+    --discovery-ink:#f0c988;
+    --discovery-soft:#332815;
+    --cross-bg:#1e2216;
+    --shadow: 0 1px 2px rgba(0,0,0,0.35), 0 8px 20px rgba(0,0,0,0.35);
+  }
+
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{ transition:none !important; }
+  }
+
+  .page{
+    max-width:1180px;
+    margin:0 auto;
+    padding: clamp(1.5rem, 4vw, 3.5rem) clamp(1rem, 4vw, 2.5rem) 4rem;
+  }
+
+  /* ---------- header ---------- */
+  header{
+    max-width:56rem;
+    margin: 0 auto 2.75rem;
+    text-align:center;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin:0 0 0.9rem;
+  }
+  h1{
+    font-family:'Newsreader', Georgia, serif;
+    font-weight:600;
+    font-size:clamp(2.1rem, 5vw, 3.1rem);
+    line-height:1.08;
+    margin:0 0 0.7rem;
+    text-wrap:balance;
+    letter-spacing:-0.01em;
+  }
+  .subtitle{
+    font-family:'Newsreader', Georgia, serif;
+    font-style:italic;
+    font-weight:400;
+    font-size:clamp(1.05rem, 2vw, 1.3rem);
+    color:var(--ink-soft);
+    max-width:38rem;
+    margin:0 auto;
+    text-wrap:balance;
+  }
+
+  .thesis{
+    max-width:44rem;
+    margin: 2rem auto 0;
+    padding: 1.1rem 1.5rem;
+    border-top: 1.5px solid var(--audit);
+    border-bottom: 1.5px solid var(--discovery);
+    background:var(--raised);
+    box-shadow:var(--shadow);
+    font-family:'Newsreader', Georgia, serif;
+    font-size:1.05rem;
+    text-align:left;
+  }
+  .thesis strong{ font-weight:600; }
+
+  .legend{
+    display:flex;
+    justify-content:center;
+    gap:1.6rem;
+    flex-wrap:wrap;
+    margin-top:1.4rem;
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:0.75rem;
+    color:var(--ink-soft);
+  }
+  .legend span{ display:inline-flex; align-items:center; gap:0.45rem; }
+  .swatch{ width:0.7rem; height:0.7rem; border-radius:2px; display:inline-block; }
+  .swatch.audit{ background:var(--audit); }
+  .swatch.discovery{ background:var(--discovery); }
+  .swatch.bridge{ background:linear-gradient(135deg, var(--audit) 50%, var(--discovery) 50%); }
+
+  /* ---------- root + junction ---------- */
+  .root-wrap{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+  .root{
+    font-family:'Newsreader', Georgia, serif;
+    font-weight:600;
+    font-size:1.15rem;
+    background:var(--ink);
+    color:var(--paper);
+    padding:0.85rem 1.6rem;
+    border-radius:3px;
+    text-align:center;
+  }
+  .stem{ width:2px; height:22px; background:var(--line-strong); }
+
+  .junction{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    column-gap: clamp(1rem, 4vw, 2.5rem);
+    width:100%;
+    max-width:960px;
+    height:22px;
+    position:relative;
+  }
+  .junction::after{
+    content:'';
+    position:absolute;
+    left:25%; right:25%; top:0;
+    height:2px;
+    background:var(--line-strong);
+  }
+  .junction .drop{ display:flex; justify-content:center; }
+  .junction .drop span{ width:2px; height:22px; background:var(--line-strong); }
+
+  /* ---------- branches ---------- */
+  .branches{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    column-gap: clamp(1rem, 4vw, 2.5rem);
+    width:100%;
+    max-width:960px;
+    margin:0 auto;
+    align-items:start;
+  }
+  .branch-head{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:0.78rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    font-weight:500;
+    text-align:center;
+    padding:0.55rem 0;
+    margin-bottom:1.4rem;
+    border-radius:3px;
+  }
+  .branch-head.audit{ background:var(--audit); color:var(--paper); }
+  .branch-head.discovery{ background:var(--discovery); color:var(--paper); }
+  .branch-head small{
+    display:block;
+    font-family:'IBM Plex Sans', sans-serif;
+    text-transform:none;
+    letter-spacing:0;
+    font-weight:400;
+    font-size:0.72rem;
+    opacity:0.88;
+    margin-top:0.15rem;
+  }
+
+  .nodes{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    gap:1.1rem;
+    padding-left:1.4rem;
+  }
+  .nodes::before{
+    content:'';
+    position:absolute;
+    left:0.55rem; top:0; bottom:1.4rem;
+    width:2px;
+    background:var(--line);
+  }
+  .node{
+    position:relative;
+    background:var(--raised);
+    border-radius:4px;
+    box-shadow:var(--shadow);
+    padding:0.9rem 1.05rem 1rem;
+    border-left:4px solid var(--audit);
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .branch.discovery .node{ border-left-color:var(--discovery); }
+  .node.bridge{
+    border-left:none;
+    background:
+      linear-gradient(var(--raised), var(--raised)) padding-box,
+      linear-gradient(180deg, var(--audit), var(--discovery)) border-box;
+    border:4px solid transparent;
+    border-right:none; border-top:none; border-bottom:none;
+  }
+  .node::before{
+    content:'';
+    position:absolute;
+    left:-1.4rem; top:1.05rem;
+    width:1.4rem; height:2px;
+    background:var(--line);
+  }
+  .node:hover{ transform:translateY(-1px); box-shadow:0 2px 4px rgba(32,36,22,0.08), 0 10px 22px rgba(32,36,22,0.1); }
+
+  .node h3{
+    font-family:'Newsreader', Georgia, serif;
+    font-weight:600;
+    font-size:1.05rem;
+    margin:0 0 0.4rem;
+  }
+  .node .tag-bridge{
+    display:inline-block;
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:0.65rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    border:1px solid var(--line-strong);
+    border-radius:3px;
+    padding:0.1rem 0.4rem;
+    margin-bottom:0.5rem;
+  }
+  .chips{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.35rem;
+    margin-bottom:0.55rem;
+  }
+  .chip{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:0.7rem;
+    background:var(--audit-soft);
+    color:var(--audit-ink);
+    padding:0.15rem 0.45rem;
+    border-radius:3px;
+    white-space:nowrap;
+  }
+  .branch.discovery .chip{ background:var(--discovery-soft); color:var(--discovery-ink); }
+  .node.bridge .chip:nth-child(odd){ background:var(--audit-soft); color:var(--audit-ink); }
+
+  .node p{
+    margin:0;
+    font-size:0.88rem;
+    color:var(--ink-soft);
+    line-height:1.45;
+  }
+
+  /* ---------- cross-cutting ---------- */
+  .cross{
+    margin-top:2.6rem;
+    padding-top:1.8rem;
+    border-top:1px solid var(--line);
+  }
+  .cross-label{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    text-align:center;
+    margin:0 0 1.1rem;
+  }
+  .cross-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:1rem;
+  }
+  .cross-card{
+    background:var(--cross-bg);
+    border-radius:4px;
+    padding:0.9rem 1rem 1rem;
+  }
+  .cross-card h4{
+    font-family:'Newsreader', Georgia, serif;
+    font-size:0.95rem;
+    font-weight:600;
+    margin:0 0 0.35rem;
+  }
+  .cross-card p{
+    margin:0;
+    font-size:0.82rem;
+    color:var(--ink-soft);
+    line-height:1.45;
+  }
+
+  footer{
+    max-width:44rem;
+    margin:3rem auto 0;
+    text-align:center;
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:0.72rem;
+    color:var(--ink-soft);
+    line-height:1.7;
+  }
+
+  @media (max-width: 760px){
+    .junction{ display:none; }
+    .stem{ height:14px; }
+    .branches{ grid-template-columns:1fr; row-gap:2.2rem; }
+    .cross-grid{ grid-template-columns:1fr 1fr; }
+  }
+  @media (max-width: 460px){
+    .cross-grid{ grid-template-columns:1fr; }
+  }
+</style>
+
+<div class="page">
+
+  <header>
+    <p class="eyebrow">Agents Reading Group · 1 September 2026</p>
+    <h1>Re&#8209;Reading the Record</h1>
+    <p class="subtitle">What agents actually contribute when you point them backwards at research that already exists.</p>
+    <div class="thesis">
+      <strong>Maturity runs opposite to excitement.</strong> The most reliable systems do the narrowest, most deterministic things. The boldest claims about autonomous discovery from old work carry the thinnest evidence.
+    </div>
+    <div class="legend">
+      <span><i class="swatch audit"></i>Audit — verify against a knowable standard</span>
+      <span><i class="swatch discovery"></i>Discovery — extract unexploited value</span>
+      <span><i class="swatch bridge"></i>straddles both</span>
+    </div>
+  </header>
+
+  <div class="root-wrap">
+    <div class="root">Re&#8209;examining research that already exists</div>
+    <div class="stem"></div>
+    <div class="junction">
+      <div class="drop"><span></span></div>
+      <div class="drop"><span></span></div>
+    </div>
+  </div>
+
+  <div class="branches">
+
+    <!-- AUDIT -->
+    <div class="branch audit">
+      <div class="branch-head audit">Audit<small>ordered by how verifiable the check is</small></div>
+      <div class="nodes">
+
+        <div class="node">
+          <h3>Image &amp; data integrity <em>(side channel)</em></h3>
+          <div class="chips">
+            <span class="chip">Imagetwin</span><span class="chip">Proofig</span>
+            <span class="chip">Problematic Paper Screener</span><span class="chip">ASM pilot, 2023–</span>
+          </div>
+          <p>The counterexample to the rest of the tour: narrow task, dedicated (non&#8209;LLM) models, 160M+ figures indexed, 80–90% detection vs. PubPeer cases, already wired into editorial systems.</p>
+        </div>
+
+        <div class="node">
+          <h3>Deterministic checks <em>(Layer 0)</em></h3>
+          <div class="chips">
+            <span class="chip">statcheck, 2016</span><span class="chip">GRIM</span>
+            <span class="chip">SPRITE</span><span class="chip">metacheck</span>
+          </div>
+          <p>Rule-based, pre-LLM, narrow — and it works at scale. Roughly half of scanned psychology papers had an internally inconsistent p-value. The LLM adds parsing, not judgement.</p>
+        </div>
+
+        <div class="node">
+          <h3>Text-internal LLM checks <em>(Layer 1)</em></h3>
+          <div class="chips">
+            <span class="chip">Black Spatula, 2025</span><span class="chip">"To Err Is Human", 2025</span>
+          </div>
+          <p>Relatively precise, poor recall: 83% of flags confirmed by hand, but injected-error studies show most real mistakes still go undetected. What it flags is often real; what it misses tells you nothing.</p>
+        </div>
+
+        <div class="node">
+          <h3>Paper &#8596; code alignment <em>(Layer 2)</em></h3>
+          <div class="chips">
+            <span class="chip">SciCoQA, 2026</span><span class="chip">scicode-lint, 2026</span>
+          </div>
+          <p>Precision is worst exactly where the stakes are highest: 68–72% for routine bugs, only 24% for data leakage. Three-quarters of examined papers had at least one verified code defect.</p>
+        </div>
+
+        <div class="node">
+          <h3>Execution &amp; reproduction <em>(Layer 3)</em></h3>
+          <div class="chips">
+            <span class="chip">CORE-Bench, 2024</span><span class="chip">PaperBench</span>
+            <span class="chip">REPRO-Bench, 2025</span><span class="chip">Xu &amp; Yang, 2026</span>
+          </div>
+          <p>Clone it, rebuild it, run it, check the numbers. CORE-Bench's tiers show most of this is really "can anything rebuild the environment" — a decade-old RSE problem the agent inherits, not solves.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- DISCOVERY -->
+    <div class="branch discovery">
+      <div class="branch-head discovery">Discovery<small>ordered by strength of evidence</small></div>
+      <div class="nodes">
+
+        <div class="node bridge">
+          <span class="tag-bridge">audit ∩ discovery</span>
+          <h3>Evidence synthesis at scale</h3>
+          <div class="chips"><span class="chip">otto-SR, 2025</span></div>
+          <p>The strongest "discovery" result in the field, and really an audit result in discovery's clothing: twelve Cochrane reviews reproduced and updated in two days, screening beating dual human reviewers, two eligible studies found that the original authors missed.</p>
+        </div>
+
+        <div class="node">
+          <h3>Retrieval</h3>
+          <div class="chips">
+            <span class="chip">KnIT, 2014</span><span class="chip">Erdősgate, 2025</span>
+            <span class="chip">Erdős #728/729/397, 2026</span><span class="chip">PaperQA2</span>
+          </div>
+          <p>Locating results that already exist but are effectively lost. The most reliable value in the field and the most misleading headlines — "solved" routinely turns out to mean "found."</p>
+        </div>
+
+        <div class="node">
+          <h3>Re-analysis</h3>
+          <div class="chips">
+            <span class="chip">Kepler-90i, 2017</span><span class="chip">ExoMiner, 2021</span>
+            <span class="chip">Hubble anomaly search, 2026</span><span class="chip">Xu &amp; Yang, 2026</span>
+          </div>
+          <p>Better methods applied to old, under-exploited data from a single archive. Political-science reproducibility rose from 29.6% to 79.8% once data-availability mandates existed — the bottleneck was data, not agent capability.</p>
+        </div>
+
+        <div class="node">
+          <h3>Recombination <em>(literature-based discovery)</em></h3>
+          <div class="chips">
+            <span class="chip">Swanson, 1986</span><span class="chip">Arrowsmith</span>
+            <span class="chip">Tshitoyan et al., 2019</span><span class="chip">AI co-scientist, 2025</span>
+          </div>
+          <p>The ABC model: A relates to B somewhere, B relates to C elsewhere, so A and C may be related though no paper says so. Formalised by Swanson in 1986; still hard to evaluate — there's no consensus on what counts as a "discovery."</p>
+        </div>
+
+        <div class="node">
+          <h3>Hypothesis generation</h3>
+          <div class="chips">
+            <span class="chip">Robin, 2025</span><span class="chip">Virtual Lab, 2025</span>
+          </div>
+          <p>Weakest ground, most excitement. The July 2026 concentration finding is the sharpest statement of the limit: agents interpolate comfortably within the literature and rarely extrapolate beyond it.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cross">
+    <p class="cross-label">Cross-cutting, both branches</p>
+    <div class="cross-grid">
+      <div class="cross-card">
+        <h4>Verification bottleneck</h4>
+        <p>Not how many errors an agent finds — how many flags a human can adjudicate per hour. Security got here first: curl and Google both stopped accepting AI-generated reports in 2026.</p>
+      </div>
+      <div class="cross-card">
+        <h4>Attribution problem</h4>
+        <p>Credit belongs to the pipeline — search, verifier, human problem selection — not "the AI." True from Erdős #728 to the phage-tail mechanism.</p>
+      </div>
+      <div class="cross-card">
+        <h4>Data condition</h4>
+        <p>Kosmos's own reliability tracked input data quality. FAIR compliance isn't overhead alongside adoption — it's what determines whether any of this works.</p>
+      </div>
+      <div class="cross-card">
+        <h4>Provenance</h4>
+        <p>Solved in 2009 — Robot Scientist Adam logged every hypothesis and assay automatically — and largely forgotten since.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Sources: Stokel-Walker, <em>Nature</em> 656 (2026) · Bianchi et al., arXiv:2512.05925 · CORE-Bench, arXiv:2409.11363 · otto-SR, medRxiv 2025.06.13.25329541 · Swanson (1986) · full citations in references.bib
+  </footer>
+
+</div>
+
+</body></html>

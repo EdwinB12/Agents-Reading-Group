@@ -50,6 +50,30 @@ ideas/short-slug.md
 
 When an idea is ready to become a session, create a file under `sessions/` (following the session naming convention) and open a new PR. You can delete the idea file in the same PR or leave it for reference.
 
+## Previewing Marp slides locally
+
+Some sessions include a `slides.md` file written for [Marp](https://marp.app/). To preview slides locally with live reload, point `-s`/`--server` at the **session directory**, not the `slides.md` file itself:
+
+```
+npx @marp-team/marp-cli@latest -s sessions/YYYY-MM-DD-short-slug/
+```
+
+This starts a local server (default http://localhost:8080) and watches the directory for changes. If you point `-s` at the file directly you'll get an `"...slides.md" is not directory` error.
+
+To rebuild `slides.html` automatically on save instead of running a server, use watch mode against the file:
+
+```
+npx @marp-team/marp-cli@latest -w sessions/YYYY-MM-DD-short-slug/slides.md
+```
+
+To export static output instead (e.g. HTML or PDF):
+
+```
+npx @marp-team/marp-cli@latest sessions/YYYY-MM-DD-short-slug/slides.md -o slides.pdf
+```
+
+No local install is required — `npx` fetches the CLI on demand.
+
 ## Branch and PR conventions
 
 - Branch names: `add-<slug>` for new sessions/ideas, `fix-<slug>` for corrections.
