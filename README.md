@@ -20,6 +20,7 @@ The group meets every 2 week on Tuesday Afternoon at 3-4:30pm. Contact Edwin if 
 | 05/08/2026 | Building Practical AI Agents Using Claw - Retrospective | Farhad & Shaun |
 | 18/08/2026 | The HuggingFace OpenAI incident | Everyone |
 | 01/09/2026 | [Agents Reviewing Old Papers](https://github.com/EdwinB12/Agents-Reading-Group/blob/main/ideas/agents-reviewing-old-research.md) | Joe |
+| 13/10/2026 | [Reimagining research papers as interactive and reliable AI agents](https://www.nature.com/articles/s41586-026-11044-y) | Edwin |
 
 ## Ideas & Suggestions
 
