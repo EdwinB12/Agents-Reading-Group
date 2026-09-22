@@ -1,4 +1,4 @@
-# Research Certificates — Making Research Outputs Verifiable at Scale
+# Beyond Proof: Certificates for General Research Outputs
 
 - **Session:** 10th November 2026
 - **Lead:** [Joe Heffer](https://github.com/Joe-Heffer-Shef)
@@ -7,7 +7,7 @@
 
 ## Overview
 
-AI-assisted research is producing hypotheses, claims, and papers at a pace human peer review cannot match. If we can't scale trust alongside scale of output, the result is a flood of unverifiable — or quietly wrong — research. Formal methods communities have spent decades solving an analogous problem for software and mathematics: Lean 4 and similar proof assistants let a small, trusted kernel machine-check a claim, producing a "certificate" that can be verified independently of who (or what) produced it. This session asks whether a similar certificate model — something short of full formal proof, but stronger than "trust the author" — could apply to research outputs more broadly, and what would need to be true for that to work.
+AI-assisted research is producing hypotheses, claims, and papers at a pace human peer review cannot match. If we can't scale trust alongside scale of output, the result is a flood of unverifiable — or quietly wrong — research. Formal methods communities have spent decades solving an analogous problem for software and mathematics: Lean 4 and similar proof assistants let a small, trusted kernel machine-check a claim, producing a "certificate" that can be verified independently of who (or what) produced it. **This session is not about mathematics** — Lean 4 is the inspiration, not the target. The real question is whether a similar certificate model — something short of full formal proof, but stronger than "trust the author" — could apply to *general* research outputs (statistical findings, scientific software, literature claims, benchmark results, and more), and what would need to be true for that to work.
 
 ---
 
