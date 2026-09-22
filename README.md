@@ -21,7 +21,7 @@ The group meets every 2 week on Tuesday Afternoon at 3-4:30pm. Contact Edwin if 
 | 18/08/2026 | The HuggingFace OpenAI incident | Everyone |
 | 01/09/2026 | [Agents Reviewing Old Papers](https://github.com/EdwinB12/Agents-Reading-Group/blob/main/ideas/agents-reviewing-old-research.md) | Joe |
 | 13/10/2026 | [Reimagining research papers as interactive and reliable AI agents](https://www.nature.com/articles/s41586-026-11044-y) | Edwin |
-
+| 27/10/2026 | [Model Hardware Standard](https://www.anthropic.com/news/model-hardware-standard-research-preview) | Joe and Edwin |
 ## Ideas & Suggestions
 
 Have a paper, tool, or topic you'd like the group to explore? Drop it in the [`ideas/`](./ideas/) folder — no need for a full plan, just a title and a sentence or two. See [`ideas/README.md`](./ideas/README.md) for the template and naming convention.
