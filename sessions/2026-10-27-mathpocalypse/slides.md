@@ -10,14 +10,14 @@ paginate: true
 
 # Mathpocalypse
 
-_AI agents and the flood of machine-generated mathematics_
+_AI agents and the dawn of machine-generated mathematics_
 
 **Session:** 27th October 2026
 **Lead:** Joe Heffer
 
 ---
 
-## Agenda
+## Overview
 
 - What is the "Mathpocalypse"?
 - How we got here (2024–2026)
@@ -58,9 +58,9 @@ _Five weeks that changed mathematics_
 - **Opacity:** only 10 reasoning summaries released; experts call the 166-page proof hard to read
 - **Disruption:** priority disputes, a Fields Medallists' declaration, a new IAS advisory group
 
-> "The indiscriminate strip-mining of open problems for solutions may destroy the ecosystem." — Terence Tao
+> "Reaching these lighthouses prematurely by automated tools can … sterilize the surrounding field." — Terence Tao, "Math 2.0" (9 Oct 2026)
 
-<!-- Sarcastic name, serious question: is this a flourishing of a new kind of research, or something that hollows out the old kind? -->
+<!-- Sarcastic name, serious question: is this a flourishing of a new kind of research, or something that hollows out the old kind? The quote is verbatim from Tao's Math 2.0 slides; "lighthouses" = open problems as guides to the landscape around them. It replaces an unsourced "strip-mining of open problems" quote: secondary coverage reports a Tao thread making the same point, but we couldn't find that wording (checked 18 Oct). -->
 
 ---
 
@@ -174,6 +174,8 @@ _Two pipelines, one model_
 
 ---
 
+<!-- _class: small -->
+
 ## Why the swarm works: a cheap, trustworthy verifier
 
 - Agents write arguments in **Lean 4 + Mathlib**; the Lean kernel accepts or rejects each step
@@ -183,8 +185,9 @@ _Two pipelines, one model_
   - so scale up generation and let the checker filter
 - After the 88-hour run, **another model autoformalised** the final proof in ~17 hours
 - Same idea as AlphaProof and Aristotle, at roughly 10,000× the parallelism
+- **Why maths fell first** (Tao): proofs are *objectively verifiable*, *fully digital* (no lab, no real-world data) and backed by a *large, high-quality literature*
 
-<!-- Contrast with the 01/09 session: in most fields there is no Lean kernel, so verification is the expensive human step. -->
+<!-- Contrast with the 01/09 session: in most fields there is no Lean kernel, so verification is the expensive human step. Tao's three properties double as a checklist for the "Beyond maths" discussion prompt. -->
 
 ---
 
@@ -339,7 +342,27 @@ Independent, unpaid, hosted at IAS Princeton; recommendations published 29 Sep 2
 6. For bulk releases: say how many problems were **attempted and failed**, and how they were chosen
 7. Fund **human understanding** (schools, workshops, expository writing) and give equitable **model access**
 
-<!-- Reportedly the 6 Oct release fell short of several of these, including #1. Good input for Track B. -->
+<!-- Reportedly the 6 Oct release fell short of several of these, including #1. Good input for Track B. On #6, Tao's Math 2.0 talk makes the same point about reporting bias: press releases show the successes, not the unreported failed attempts, so most frontier problems are still unsolved. He points to First Proof (1stproof.org) as an attempt at honest assessment. -->
+
+---
+
+<!-- _class: small -->
+
+## A better future: "Math 2.0"
+
+Tao's Caltech lecture (9 Oct 2026): proofs used to be **scarce**, now they are **abundant**. Solving problems was only ever a *proxy* for progress, so optimising it blindly is "now actively harmful"
+
+|                          | Light AI use | Heavy AI use        |
+| ------------------------ | ------------ | ------------------- |
+| **Weak understanding**   | Pre-math     | Misaligned math     |
+| **Strong understanding** | Math 1.0     | **Math 2.0**        |
+
+- The danger is **heavy AI + weak human understanding**, not AI itself
+- **Use AI to deepen understanding:** "open exposition problems" (explain opaque proofs), ablation studies on known theorems, living networks of results, formal libraries, open maths models
+
+> "The primary bottleneck to achieving 'Math 2.0' is not technology, or even institutional culture. It is imagination."
+
+<!-- The optimistic payoff after the fallout section, from the same person quoted as a critic earlier. IAS rec #7 (fund human understanding) leads straight into this. Examples: Equational Theories Project (22M statements), SAIR/LMFDB Inverse Galois challenge, Caltech Mathathon, IEANTN. Full notes in docs/tao-math-2-0.md. -->
 
 ---
 
@@ -377,7 +400,7 @@ _What does it mean for research?_
 
 ## Discussion prompts (1/2)
 
-- **Proof vs understanding:** if a 166-page proof is correct but nobody understands it, has mathematics advanced?
+- **Is understanding the product?** Tao's thought experiment: an AI designs a cancer cocktail nobody understands. It has a Lean certificate and passes a phase 3 trial. Would you take it? Medicine says yes: penicillin and aspirin were used for decades before anyone knew how they worked. In *your* field, is understanding the output or a means to it?
 - **Who pays for verification?** 719 unreviewed manuscripts land at once: a gift, or a denial-of-service on peer review? (cf. 01/09: finding is cheap, adjudicating is expensive)
 - **Credit and priority:** how should credit work when the "closest humans" are outpaced by a swarm, possibly running on tools they also used?
 - **A two-tier science?** Unreleased proprietary model; the Navier–Stokes run alone cost millions of dollars. Is the IAS "stop testing on proprietary models" ask realistic? What does it mean for universities?
@@ -401,6 +424,7 @@ _What does it mean for research?_
 - OpenAI: [On the Navier–Stokes Millennium Prize Problem](https://openai.com/index/navier-stokes-solution/) · [Sharing AI progress in mathematics](https://openai.com/index/sharing-ai-progress-in-mathematics/)
 - Code: [openai/NavierStokesAndEuler](https://github.com/openai/NavierStokesAndEuler) · [openai/math](https://github.com/openai/math) · [leanprover/comparator](https://github.com/leanprover/comparator) · [Formal Conjectures](https://github.com/google-deepmind/formal-conjectures)
 - [Quanta explainer](https://www.quantamagazine.org/ai-has-solved-one-of-maths-1-million-millennium-prize-problems-20260908/) · [Tao's blog](https://terrytao.wordpress.com/2026/09/07/finite-time-blowup-with-smooth-forcing-term-for-the-incompressible-porous-medium-boussinesq-and-incompressible-euler-equations) · [Clay statement](https://www.claymath.org/news/navier-stokes-announcement)
+- Tao, "Math 2.0": [video](https://aimath.org/videos/terry-tao-pl/) · [slides](https://teorth.github.io/tao-web/slides/math-2-0-caltech-2026.pdf) · [blog & comments](https://terrytao.wordpress.com/2026/10/10/math-2-0/)
 - [Navier–Stokes lost in translation (arXiv:2610.08144)](https://arxiv.org/abs/2610.08144) · [Aletheia (arXiv:2602.10177)](https://arxiv.org/abs/2602.10177)
 - In this repo: [Harmonic Aristotle idea](../../ideas/mathematics-harmonic-aristotle.md) · [Agents Reviewing Old Papers](../2026-09-01-agents-reviewing-old-papers/README.md) · [Research certificates](../2026-11-10-research-certificates.md)
 - Full citations in `references.bib`
