@@ -44,6 +44,11 @@ _Five weeks that changed mathematics_
 
 ---
 
+<!-- _class: small -->
+<!-- _footer: "Blow-up vortex visualisation from OpenAI, \"On the Navier–Stokes Millennium Prize Problem\" (8 Sep 2026). © OpenAI" -->
+
+![bg right:30% fit](images/openai-navier-stokes-vortex.jpg)
+
 ## Two headline events
 
 **8 Sep 2026 — Navier–Stokes** (OpenAI)
