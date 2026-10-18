@@ -78,11 +78,11 @@ Optional:
 
 | Time | Activity | Who |
 |------|----------|-----|
-| 3:00–3:10 | Intro & framing — what is the "Mathpocalypse"? Show-of-hands: *is this good news?* | Joe |
+| 3:00–3:10 | Intro & framing — what is the "Mathpocalypse"? | Joe |
 | 3:10–3:35 | How it was done — lineage (2024–26), the two pipelines, the swarm, Lean 4 & Comparator | Joe |
 | 3:35–3:45 | What was actually proven — the forcing loophole, the translation gap, the cascading withdrawal | Joe |
 | 3:45–4:10 | Practical activity: *Read the certificate* (see below) | All, in pairs |
-| 4:10–4:30 | Discussion — what it means for research (see prompts below); repeat the show-of-hands | All |
+| 4:10–4:30 | Discussion — what it means for research (see prompts below) | All |
 
 Total: 90 minutes.
 

@@ -29,18 +29,6 @@ _AI agents and the flood of machine-generated mathematics_
 
 ---
 
-## Show of hands
-
-> **Is this good news for research?**
->
-> 👍 Yes 🤷 Not sure 👎 No
-
-We'll ask again at the end.
-
-<!-- Record the split; compare at 4:25. -->
-
----
-
 <!-- _class: lead -->
 
 # Introduction
@@ -403,8 +391,6 @@ _What does it mean for research?_
 - **Beyond maths:** maths has Lean, a cheap trustworthy verifier. What is the equivalent in physics, engineering, software? Where is there none? (→ research certificates, 10/11)
 - **A new kind of research?** Genuinely new, or the industrialisation of an old loop (search + check)? What stays human: choosing questions, explanation, "the art side"?
 - **Your rule:** on the IAS group, what one rule would you add for releasing AI-generated results in *your* field?
-
-**Show of hands again:** is this good news for research? 👍 🤷 👎
 
 ---
 
