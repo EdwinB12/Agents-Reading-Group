@@ -35,13 +35,17 @@ cheap; adjudicating them is not.*
 
 ## Building the slides
 
-Slides are [Marp](https://marp.app/) Markdown. Preview with the VS Code Marp extension, or
-export with the Marp CLI:
+Slides are [Marp](https://marp.app/) Markdown using the `uos` theme in `slides.css`. From this
+directory (no install needed):
 
 ```bash
-marp slides.md --theme slides.css -o slides.html   # HTML
-marp slides.md --theme slides.css --pdf            # PDF
+npx @marp-team/marp-cli@latest -s . --theme-set slides.css                       # live preview: http://localhost:8080/slides.md
+npx @marp-team/marp-cli@latest slides.md --theme-set slides.css -o slides.html   # HTML
+npx @marp-team/marp-cli@latest slides.md --theme-set slides.css --pdf            # PDF
 ```
+
+Without `--theme-set`, Marp falls back to its default theme. See
+[CONTRIBUTING.md](../../CONTRIBUTING.md#previewing-marp-slides-locally) for more options, including VS Code.
 
 ## Background reading
 
