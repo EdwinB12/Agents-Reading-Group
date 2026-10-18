@@ -25,7 +25,6 @@ _AI agents and the dawn of machine-generated mathematics_
 - What was *actually* proven
 - The human fallout
 - Practical activity: *Read the certificate*
-- Discussion: what does it mean for research?
 
 ---
 
@@ -60,7 +59,9 @@ _Five weeks that changed mathematics_
 
 > "Reaching these lighthouses prematurely by automated tools can … sterilize the surrounding field." — Terence Tao, "Math 2.0" (9 Oct 2026)
 
-<!-- Sarcastic name, serious question: is this a flourishing of a new kind of research, or something that hollows out the old kind? The quote is verbatim from Tao's Math 2.0 slides; "lighthouses" = open problems as guides to the landscape around them. It replaces an unsourced "strip-mining of open problems" quote: secondary coverage reports a Tao thread making the same point, but we couldn't find that wording (checked 18 Oct). -->
+<!-- Sarcastic name, serious question: is this a flourishing of a new kind of research, or something that hollows out the old kind? The quote is verbatim from Tao's Math 2.0 slides; "lighthouses" = open problems as guides to the landscape around them. It replaces an unsourced "strip-mining of open problems" quote: secondary coverage reports a Tao thread making the same point, but we couldn't find that wording (checked 18 Oct).
+
+Discussion: a new kind of research? Genuinely new, or the industrialisation of an old loop (search + check)? What stays human: choosing questions, explanation, "the art side"? -->
 
 ---
 
@@ -187,7 +188,9 @@ _Two pipelines, one model_
 - Same idea as AlphaProof and Aristotle, at roughly 10,000× the parallelism
 - **Why maths fell first** (Tao): proofs are *objectively verifiable*, *fully digital* (no lab, no real-world data) and backed by a *large, high-quality literature*
 
-<!-- Contrast with the 01/09 session: in most fields there is no Lean kernel, so verification is the expensive human step. Tao's three properties double as a checklist for the "Beyond maths" discussion prompt. -->
+<!-- Contrast with the 01/09 session: in most fields there is no Lean kernel, so verification is the expensive human step. Tao's three properties double as a checklist for the question below.
+
+Discussion: beyond maths. Maths has Lean, a cheap trustworthy verifier. What is the equivalent in physics, engineering, software? Where is there none? (→ research certificates, 10/11) -->
 
 ---
 
@@ -274,6 +277,8 @@ From the bulk release, within 24 hours:
 
 **Lesson for RSEs:** an unformalised AI result is a *dependency* with no tests. Errors propagate through the dependency graph, just as they do in software.
 
+<!-- Discussion: who pays for verification? 719 unreviewed manuscripts land at once: a gift, or a denial-of-service on peer review? (cf. 01/09: finding is cheap, adjudicating is expensive) -->
+
 ---
 
 <!-- _class: lead -->
@@ -295,7 +300,9 @@ _Credit, priority, and the ecosystem_
 - OpenAI says user Codex sessions **could not** have influenced the system; it "recognises the priority" of their work
 - Open question: what does "credit" mean when the closest humans used the same lab's tools?
 
-<!-- Keep this neutral; the facts are contested and sources differ. Point to Fortune / NYT / Buckmaster's statement for the detail. -->
+<!-- Keep this neutral; the facts are contested and sources differ. Point to Fortune / NYT / Buckmaster's statement for the detail.
+
+Discussion: how should credit work when the "closest humans" are outpaced by a swarm, possibly running on tools they also used? -->
 
 ---
 
@@ -342,7 +349,11 @@ Independent, unpaid, hosted at IAS Princeton; recommendations published 29 Sep 2
 6. For bulk releases: say how many problems were **attempted and failed**, and how they were chosen
 7. Fund **human understanding** (schools, workshops, expository writing) and give equitable **model access**
 
-<!-- Reportedly the 6 Oct release fell short of several of these, including #1. Good input for Track B. On #6, Tao's Math 2.0 talk makes the same point about reporting bias: press releases show the successes, not the unreported failed attempts, so most frontier problems are still unsolved. He points to First Proof (1stproof.org) as an attempt at honest assessment. -->
+<!-- Reportedly the 6 Oct release fell short of several of these, including #1. Good input for Track B. On #6, Tao's Math 2.0 talk makes the same point about reporting bias: press releases show the successes, not the unreported failed attempts, so most frontier problems are still unsolved. He points to First Proof (1stproof.org) as an attempt at honest assessment.
+
+Discussion: a two-tier science? Unreleased proprietary model; the Navier–Stokes run alone cost millions of dollars. Is #1 ("stop testing on proprietary models") realistic? What does it mean for universities?
+
+Discussion: your rule. What one rule would you add for releasing AI-generated results in *your* field? -->
 
 ---
 
@@ -362,7 +373,9 @@ Tao's Caltech lecture (9 Oct 2026): proofs used to be **scarce**, now they are *
 
 > "The primary bottleneck to achieving 'Math 2.0' is not technology, or even institutional culture. It is imagination."
 
-<!-- The optimistic payoff after the fallout section, from the same person quoted as a critic earlier. IAS rec #7 (fund human understanding) leads straight into this. Examples: Equational Theories Project (22M statements), SAIR/LMFDB Inverse Galois challenge, Caltech Mathathon, IEANTN. Full notes in docs/tao-math-2-0.md. -->
+<!-- The optimistic payoff after the fallout section, from the same person quoted as a critic earlier. IAS rec #7 (fund human understanding) leads straight into this. Examples: Equational Theories Project (22M statements), SAIR/LMFDB Inverse Galois challenge, Caltech Mathathon, IEANTN. Full notes in docs/tao-math-2-0.md.
+
+Discussion: is understanding the product? Tao's thought experiment: an AI designs a cancer cocktail nobody understands. It has a Lean certificate and passes a phase 3 trial. Would you take it? Medicine says yes: penicillin and aspirin were used for decades before anyone knew how they worked. In *your* field, is understanding the output or a means to it? -->
 
 ---
 
@@ -385,35 +398,6 @@ Pick **one** track (15 min), then report back (10 min).
 - **C: Build it** (needs elan). `lake exe cache get && lake build`, then `#print axioms` on the main theorem. What does `sorry_count: 0` certify, and what doesn't it?
 
 **Report back:** *in one sentence, what has actually been verified, and by whom?*
-
----
-
-<!-- _class: lead -->
-
-# Discussion
-
-_What does it mean for research?_
-
----
-
-<!-- _class: small -->
-
-## Discussion prompts (1/2)
-
-- **Is understanding the product?** Tao's thought experiment: an AI designs a cancer cocktail nobody understands. It has a Lean certificate and passes a phase 3 trial. Would you take it? Medicine says yes: penicillin and aspirin were used for decades before anyone knew how they worked. In *your* field, is understanding the output or a means to it?
-- **Who pays for verification?** 719 unreviewed manuscripts land at once: a gift, or a denial-of-service on peer review? (cf. 01/09: finding is cheap, adjudicating is expensive)
-- **Credit and priority:** how should credit work when the "closest humans" are outpaced by a swarm, possibly running on tools they also used?
-- **A two-tier science?** Unreleased proprietary model; the Navier–Stokes run alone cost millions of dollars. Is the IAS "stop testing on proprietary models" ask realistic? What does it mean for universities?
-
----
-
-<!-- _class: small -->
-
-## Discussion prompts (2/2)
-
-- **Beyond maths:** maths has Lean, a cheap trustworthy verifier. What is the equivalent in physics, engineering, software? Where is there none? (→ research certificates, 10/11)
-- **A new kind of research?** Genuinely new, or the industrialisation of an old loop (search + check)? What stays human: choosing questions, explanation, "the art side"?
-- **Your rule:** on the IAS group, what one rule would you add for releasing AI-generated results in *your* field?
 
 ---
 
