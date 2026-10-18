@@ -159,7 +159,12 @@ Aim to cover at least four.
 6. **A new kind of research?** — Is this a genuinely new mode of research, or the industrialisation
    of an old one (search + check)? What remains distinctively human — choosing the questions, the
    "art side", explanation?
-7. **What would we want?** — If you were on the IAS advisory group, what single rule would you add
+7. **The "six fingers" stage?** — A few years ago AI images gave themselves away with six-fingered
+   hands; now those flaws feel like ancient history. Are the forcing loopholes, translation gaps and
+   withdrawn manuscripts the "six fingers" of AI maths, early flaws that will be fixed if
+   capabilities keep improving at their current (roughly exponential) pace? What's the tell-tale
+   flaw in *your* field today, and is anything *not* going to be fixed by scale?
+8. **What would we want?** — If you were on the IAS advisory group, what single rule would you add
    for releasing AI-generated research results in *your* field?
 
 ## Related

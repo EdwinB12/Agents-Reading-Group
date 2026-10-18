@@ -412,6 +412,26 @@ Discussion: is understanding the product? Tao's thought experiment: an AI design
 
 ---
 
+<!-- _class: small -->
+
+## Summary: the "six fingers" stage
+
+A few years ago, AI images were easy to spot: **six fingers**, melted text, impossible hands. Today those flaws feel like ancient history
+
+AI maths research is at the same point now:
+
+- Forcing loopholes, translation gaps, withdrawn manuscripts, unread 166-page proofs
+- These are real problems, but they are **early-stage** problems
+- If capabilities keep improving as they have since 2022 (roughly exponentially, or faster), today's mistakes will look as quaint as six-fingered hands, in maths *and* in physics, biology and beyond
+
+**The question isn't *whether* the fingers get fixed. It's what we do once they are**
+
+<!-- The closing joke, and the session's optimistic stance in one image. Everything in "What was actually proven?" is a six-fingers problem: obvious once you look, embarrassing, and probably temporary. That doesn't make the critiques wrong today. It means they're the critiques of 2026, not of the field. Tao's "Math 2.0" is one answer to "what do we do once the fingers are fixed?"
+
+Discussion: what is the "six fingers" of AI research in *your* field: the tell-tale flaw that gives it away today? Will it still be there in three years? Is there anything that *won't* get fixed by scale (e.g. verification without a Lean, choosing good questions)? -->
+
+---
+
 <!-- _class: lead -->
 
 # Practical activity
