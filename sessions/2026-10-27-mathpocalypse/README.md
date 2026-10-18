@@ -31,6 +31,7 @@ cheap; adjudicating them is not.*
 | `slides.css` | `uos` Marp theme (University of Sheffield branding) |
 | `references.bib` | BibTeX for everything cited in the deck |
 | `images/` | Logo and slide assets |
+| `docs/` | Research notes gathered while preparing the session |
 
 ## Building the slides
 
