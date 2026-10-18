@@ -428,6 +428,8 @@ AI maths research is at the same point now:
 
 <!-- The closing joke, and the session's optimistic stance in one image. Everything in "What was actually proven?" is a six-fingers problem: obvious once you look, embarrassing, and probably temporary. That doesn't make the critiques wrong today. It means they're the critiques of 2026, not of the field. Tao's "Math 2.0" is one answer to "what do we do once the fingers are fixed?"
 
+Opacity is the clearest case. The 166-page proof is "not written for humans" (Gómez-Serrano, NPR), and Moshkovitz called the Unique Games proof "alien craziness". But humans published a readable version of the unit-distance disproof the same day (Alon, Gowers, Litt et al.), and Moshkovitz used an AI to understand the UGC proof. Thurston made the same point about the four-colour proof in 1994: the complaint was about understanding, not truth. Sources in docs/opacity-alien-proofs.md.
+
 Discussion: what is the "six fingers" of AI research in *your* field: the tell-tale flaw that gives it away today? Will it still be there in three years? Is there anything that *won't* get fixed by scale (e.g. verification without a Lean, choosing good questions)? -->
 
 ---
