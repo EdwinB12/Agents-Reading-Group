@@ -52,27 +52,47 @@ When an idea is ready to become a session, create a file under `sessions/` (foll
 
 ## Previewing Marp slides locally
 
-Some sessions include a `slides.md` file written for [Marp](https://marp.app/). To preview slides locally with live reload, point `-s`/`--server` at the **session directory**, not the `slides.md` file itself:
+Some sessions include a `slides.md` file written for [Marp](https://marp.app/). No local install is required — `npx` fetches the CLI on demand. Commands below run from the repo root.
+
+Sessions that ship a `slides.css` use a custom theme (e.g. `theme: uos` in the front matter). Pass it with `--theme-set` in every command, otherwise Marp silently falls back to its default theme. Put `--theme-set` **after** the input path: it accepts multiple files, so anything following it is read as another theme.
+
+### Live preview (hot reload)
+
+Point `-s`/`--server` at the **session directory**, not the `slides.md` file itself:
 
 ```
-npx @marp-team/marp-cli@latest -s sessions/YYYY-MM-DD-short-slug/
+npx @marp-team/marp-cli@latest -s sessions/YYYY-MM-DD-short-slug/ --theme-set sessions/YYYY-MM-DD-short-slug/slides.css
 ```
 
-This starts a local server (default http://localhost:8080) and watches the directory for changes. If you point `-s` at the file directly you'll get an `"...slides.md" is not directory` error.
+Then open http://localhost:8080/slides.md — the page reloads whenever you save `slides.md` or `slides.css`.
 
-To rebuild `slides.html` automatically on save instead of running a server, use watch mode against the file:
+- Pointing `-s` at the file gives a `"...slides.md" is not directory` error.
+- To change the port, set the `PORT` environment variable (e.g. `PORT=8081 npx ...`). `-p` means `--preview`, not port.
+- Only one Marp server can run at a time: the live-reload socket uses a fixed port, so a second server fails with `EADDRINUSE`.
+
+### Watch mode
+
+To rebuild `slides.html` automatically on save instead of running a server:
 
 ```
-npx @marp-team/marp-cli@latest -w sessions/YYYY-MM-DD-short-slug/slides.md
+npx @marp-team/marp-cli@latest -w sessions/YYYY-MM-DD-short-slug/slides.md --theme-set sessions/YYYY-MM-DD-short-slug/slides.css
 ```
 
-To export static output instead (e.g. HTML or PDF):
+### Export
+
+To export static HTML or PDF next to the slides (PDF export needs Chrome, Chromium or Edge installed):
 
 ```
-npx @marp-team/marp-cli@latest sessions/YYYY-MM-DD-short-slug/slides.md -o slides.pdf
+npx @marp-team/marp-cli@latest sessions/YYYY-MM-DD-short-slug/slides.md --theme-set sessions/YYYY-MM-DD-short-slug/slides.css -o sessions/YYYY-MM-DD-short-slug/slides.pdf
 ```
 
-No local install is required — `npx` fetches the CLI on demand.
+### VS Code
+
+With the [Marp for VS Code](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode) extension, register the theme in your workspace settings so the built-in Markdown preview (Ctrl+Shift+V) live-updates with it:
+
+```json
+"markdown.marp.themes": ["./sessions/YYYY-MM-DD-short-slug/slides.css"]
+```
 
 ## Branch and PR conventions
 
