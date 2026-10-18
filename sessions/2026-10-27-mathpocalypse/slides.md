@@ -323,6 +323,22 @@ _Credit, priority, and the ecosystem_
 
 <!-- _class: small -->
 
+## Rumour: results held in reserve?
+
+- **Reported:** during the Navier–Stokes dispute, comments from OpenAI staff led some mathematicians to believe the model "had produced additional results but that it was hesitating to publicize them" (_Scientific American_, 6 Oct)
+- **Then:** the 6 Oct release of 372 results, preceded by weeks of rumours that it was coming
+- **Rumoured motive (unsourced):** holding back to avoid upsetting, or swamping, professional mathematicians
+- **No public evidence** of a reserve or of that motive. OpenAI says it _can't_ slow down, because the problems are a test of capability
+- **Why it's plausible anyway:** no count of problems attempted or failed, no prompts, average compute only, and the model is unreleased
+
+**Ask:** if a reserve exists, is holding it back responsible stewardship, or gatekeeping?
+
+<!-- This slide is hearsay by design: present it as a rumour and don't let it harden into fact. The withholding belief is in SciAm (Howlett, 6 Oct 2026); the "sparing mathematicians" motive has no source we could find (searched 18 Oct). Leads into IAS rec #6 on the next slide. -->
+
+---
+
+<!-- _class: small -->
+
 ## IAS Advisory Group: responsible release
 
 Independent, unpaid, hosted at IAS Princeton; recommendations published 29 Sep 2026
