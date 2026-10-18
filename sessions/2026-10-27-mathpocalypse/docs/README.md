@@ -28,6 +28,7 @@ figures (see the research brief, §8).
 | Note | What it covers |
 | --- | --- |
 | [tao-math-2-0.md](tao-math-2-0.md) | Tao's "Math 2.0" Caltech lecture: using AI to strengthen the human community |
+| [szegedy-quo-vadis-mathematics.md](szegedy-quo-vadis-mathematics.md) | Szegedy's "Quo Vadis, Mathematics?": maths as a full-scale industry, lone climbers giving way to infrastructure |
 | [aaronson-mathocalypse.md](aaronson-mathocalypse.md) | Aaronson's "The Mathocalypse" blog post and its comment thread |
 | [aaronson-modern-cto-interview.md](aaronson-modern-cto-interview.md) | Aaronson's spoken version of the argument on the *Modern CTO* podcast |
 | [3blue1brown-better-time-for-math.md](3blue1brown-better-time-for-math.md) | 3Blue1Brown on why there's never been a better time to go into maths (from 20:46) |
