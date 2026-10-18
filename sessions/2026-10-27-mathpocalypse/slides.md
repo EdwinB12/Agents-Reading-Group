@@ -395,6 +395,14 @@ Discussion: your rule. What one rule would you add for releasing AI-generated re
 
 ---
 
+<!-- _class: lead -->
+
+# The future of AI-augmented mathematics research
+
+_A better future_
+
+---
+
 <!-- _class: small -->
 
 ## A better future: "Math 2.0"
