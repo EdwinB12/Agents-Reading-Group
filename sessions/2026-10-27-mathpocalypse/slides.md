@@ -378,7 +378,7 @@ _What does it mean for research?_
 ## Discussion prompts (1/2)
 
 - **Proof vs understanding:** if a 166-page proof is correct but nobody understands it, has mathematics advanced?
-- **Who pays for verification?** 719 unreviewed manuscripts land at once: a gift, or a denial-of-service on peer review? (cf. 01/09: finding is cheap, adjudicating is expensive)
+- **Who pays for verification?** 719 unreviewed manuscripts land at once: a gift, or a denial-of-service on peer review? No journal submission announced by any lab (as of 18 Oct). Should there be? (cf. 01/09: finding is cheap, adjudicating is expensive)
 - **Credit and priority:** how should credit work when the "closest humans" are outpaced by a swarm, possibly running on tools they also used?
 - **A two-tier science?** Unreleased proprietary model; the Navier–Stokes run alone cost millions of dollars. Is the IAS "stop testing on proprietary models" ask realistic? What does it mean for universities?
 

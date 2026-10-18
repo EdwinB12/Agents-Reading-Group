@@ -140,7 +140,9 @@ Aim to cover at least four.
    understands it, has mathematics advanced?
 2. **Who pays for verification?** — 719 unreviewed manuscripts land on the community at once. Is this
    a gift or a denial-of-service on peer review? What would a sustainable model look like? (cf. the
-   01/09 session: finding is cheap, adjudicating is expensive.)
+   01/09 session: finding is cheap, adjudicating is expensive.) Note that the labs have released
+   results via GitHub repos and blog posts, but (as of 18 Oct 2026) none has announced submitting any
+   to an academic journal. Should they, or is formal verification plus open review a better route?
 3. **Credit and priority** — Buckmaster and Alpöge were weeks from a related result using AI tools,
    including OpenAI's. How should credit work when a lab's model may have seen users' sessions, or
    when the "closest humans" are outpaced by a swarm?
