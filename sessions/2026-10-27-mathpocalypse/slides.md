@@ -5,9 +5,9 @@ paginate: true
 ---
 
 <!-- _class: lead -->
-<!-- _footer: "Albrecht Dürer, _The Four Horsemen_ (1498). National Gallery of Art, CC0" -->
+<!-- _footer: "Albrecht Dürer, _The Four Horsemen_ (1498). National Gallery of Art, CC0, with AI company logos added (trademarks of their owners)" -->
 
-![bg right:36%](images/durer-four-horsemen.jpg)
+![bg right:36%](images/durer-four-horsemen-ai.jpg)
 
 ![width:220px](images/UOSLogo_Primary_White_RGB.png)
 
