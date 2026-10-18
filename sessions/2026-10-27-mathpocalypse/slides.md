@@ -5,6 +5,9 @@ paginate: true
 ---
 
 <!-- _class: lead -->
+<!-- _footer: "Albrecht Dürer, _The Four Horsemen_ (1498). National Gallery of Art, CC0" -->
+
+![bg right:36%](images/durer-four-horsemen.jpg)
 
 ![width:220px](images/UOSLogo_Primary_White_RGB.png)
 
@@ -29,10 +32,15 @@ _AI agents and the dawn of machine-generated mathematics_
 ---
 
 <!-- _class: lead -->
+<!-- _footer: "Katsushika Hokusai, _The Great Wave off Kanagawa_ (c. 1830–32), cropped. Metropolitan Museum of Art, public domain" -->
+
+![bg right:45%](images/hokusai-great-wave.jpg)
 
 # Introduction
 
 _Five weeks that changed mathematics_
+
+<!-- The wave: 722 manuscripts landing at once. Hokusai's boatmen are still rowing. -->
 
 ---
 
@@ -66,10 +74,15 @@ Discussion: a new kind of research? Genuinely new, or the industrialisation of a
 ---
 
 <!-- _class: lead -->
+<!-- _footer: "Paul Erdős and Terence Tao, University of Adelaide, 1985 (cropped). Photo: Billy or Grace Tao, CC BY-SA 2.0" -->
+
+![bg right:50%](images/erdos-tao-1985.jpg)
 
 # How we got here
 
 _From competition problems to open problems_
+
+<!-- Erdős working through problems with a 10-year-old Tao. Both names recur: Erdős problems are the testbed for AI novelty claims, and Tao is quoted throughout. -->
 
 ---
 
@@ -156,21 +169,9 @@ _Two pipelines, one model_
 
 ## Anatomy of the swarm (as reported)
 
-```
-            coordinator  ·  Codex consolidates insights across groups
-                 │                  │                   │
-          ┌──────▼──────┐    ┌──────▼──────┐     ┌──────▼──────┐
-          │ agent group │    │ agent group │ ... │ agent group │
-          │ sub-problem │    │  variant    │     │  approach N │
-          └──────┬──────┘    └──────┬──────┘     └──────┬──────┘
-                 │   post / read / message / submit     │
-     ┌───────────▼──────────────────▼───────────────────▼───────────┐
-     │       bulletin board · DMs · library of VERIFIED lemmas      │
-     └──────────────────────────────────────────────────────────────┘
-         tools: cached internet · code execution · Lean 4 checker
-```
+![width:960px](diagrams/swarm.svg)
 
-- ~2.7–5 million messages; ~130 billion output tokens (figures vary by source)
+- Tools: cached internet, code execution, Lean 4 checker. ~2.7–5 million messages; ~130 billion output tokens (figures vary by source)
 - **Key design idea:** only *verified* results enter the shared library, so the checker acts as a quality gate
 
 ---
@@ -232,10 +233,23 @@ theorem navier_stokes_breakdown_R3 (nu : ℝ) (hnu : nu > 0) :
 ---
 
 <!-- _class: lead -->
+<!-- _footer: "Leonardo da Vinci, _Studies of water passing obstacles and falling_ (c. 1508), detail. Public domain" -->
+
+![bg right:45%](images/leonardo-studies-of-water.jpg)
 
 # What was actually proven?
 
 _Reading the small print_
+
+<!-- Leonardo was drawing turbulence 300 years before Navier and Stokes wrote down the equations. -->
+
+---
+
+## Clay's four ways to win
+
+![width:1100px](diagrams/clay-alternatives.svg)
+
+<!-- From Fefferman's official problem statement for the Clay Institute. (A) and (B) ask for global smooth solutions with zero force; (C) and (D) ask for a counterexample and let the prover pick a smooth, decaying force. That asymmetry is the loophole on the next slide. Source: Fefferman (2000), Clay problem statement. -->
 
 ---
 
@@ -266,7 +280,21 @@ _Reading the small print_
 
 ---
 
+## Where the trust gaps are
+
+![width:940px](diagrams/trust-gaps.svg)
+
+Lean closes **one** link, from formal statement to formal proof. The others still need people.
+
+<!-- Recap of the last three slides in one picture. Green is cheap and near-certain; amber is expert time; red is where the arguments are. Good warm-up for the practical: Track A is the amber link, Track C is the green one. -->
+
+---
+
+<!-- _class: small -->
+
 ## The cascading withdrawal
+
+![bg right:32% fit](diagrams/cascade.svg)
 
 From the bulk release, within 24 hours:
 
@@ -282,10 +310,15 @@ From the bulk release, within 24 hours:
 ---
 
 <!-- _class: lead -->
+<!-- _footer: "Albrecht Dürer, _Melencolia I_ (1514). Metropolitan Museum of Art, CC0" -->
+
+![bg right:40%](images/durer-melencolia-i.jpg)
 
 # The human fallout
 
 _Credit, priority, and the ecosystem_
+
+<!-- Dürer's brooding scholar: surrounded by geometry tools, a polyhedron and a magic square, and not getting any work done. Existential dread about maths is at least 500 years old. -->
 
 ---
 
@@ -412,3 +445,16 @@ Pick **one** track (15 min), then report back (10 min).
 - [Navier–Stokes lost in translation (arXiv:2610.08144)](https://arxiv.org/abs/2610.08144) · [Aletheia (arXiv:2602.10177)](https://arxiv.org/abs/2602.10177)
 - In this repo: [Harmonic Aristotle idea](../../ideas/mathematics-harmonic-aristotle.md) · [Agents Reviewing Old Papers](../2026-09-01-agents-reviewing-old-papers/README.md) · [Research certificates](../2026-11-10-research-certificates.md)
 - Full citations in `references.bib`
+
+---
+
+<!-- _class: small -->
+
+## Image credits
+
+- Albrecht Dürer, *The Four Horsemen* (1498), woodcut. National Gallery of Art, Washington. [CC0](https://creativecommons.org/publicdomain/zero/1.0/), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Albrecht_D%C3%BCrer,_The_Four_Horsemen,_1498,_NGA_142352.jpg)
+- Katsushika Hokusai, *The Great Wave off Kanagawa* (c. 1830–32), cropped. Metropolitan Museum of Art. Public domain, via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Tsunami_by_hokusai_19th_century.jpg)
+- *Paul Erdős with Terence Tao*, University of Adelaide (1985), cropped. Photo by Billy or Grace Tao. [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Paul_Erdos_with_Terence_Tao.jpg)
+- Leonardo da Vinci, *Studies of water passing obstacles and falling* (c. 1508), detail. Public domain, via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Studies_of_water,_by_Leonardo_da_Vinci_(detail).jpg)
+- Albrecht Dürer, *Melencolia I* (1514), engraving. Metropolitan Museum of Art. [CC0](https://creativecommons.org/publicdomain/zero/1.0/), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Melencolia_I_MET_DP815743.jpg)
+- Diagrams in `diagrams/` were drawn for this session. The swarm diagram follows OpenAI's reported description; the cascade is illustrative

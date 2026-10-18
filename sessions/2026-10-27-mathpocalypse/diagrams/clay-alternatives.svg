@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 440" font-family="Open Sans, Helvetica, Arial, sans-serif">
+  <title>The four alternatives in Clay's Navier–Stokes problem statement (Fefferman)</title>
+  <rect width="1100" height="440" fill="#F8F8F9"/>
+
+  <!-- column headers -->
+  <text x="450" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#131E29">Prove it always stays smooth</text>
+  <text x="450" y="60" text-anchor="middle" font-size="16" fill="#131E29">for every smooth starting flow</text>
+  <text x="830" y="34" text-anchor="middle" font-size="22" font-weight="700" fill="#131E29">Prove it can break down</text>
+  <text x="830" y="60" text-anchor="middle" font-size="16" fill="#131E29">for some smooth starting flow</text>
+
+  <!-- row headers -->
+  <text x="130" y="140" text-anchor="middle" font-size="22" font-weight="700" fill="#131E29">ℝ³</text>
+  <text x="130" y="166" text-anchor="middle" font-size="16" fill="#131E29">all of space</text>
+  <text x="130" y="280" text-anchor="middle" font-size="22" font-weight="700" fill="#131E29">𝕋³</text>
+  <text x="130" y="306" text-anchor="middle" font-size="16" fill="#131E29">periodic box</text>
+
+  <!-- smooth side: no force -->
+  <g fill="#FFFFFF" stroke="#131E29" stroke-width="2">
+    <rect x="270" y="82" width="360" height="124" rx="10"/>
+    <rect x="270" y="222" width="360" height="124" rx="10"/>
+  </g>
+  <g text-anchor="middle" fill="#131E29">
+    <text x="450" y="128" font-size="30" font-weight="700">(A)</text>
+    <text x="450" y="164" font-size="18">force  f = 0</text>
+    <text x="450" y="188" font-size="15">nobody stirs the fluid</text>
+    <text x="450" y="268" font-size="30" font-weight="700">(B)</text>
+    <text x="450" y="304" font-size="18">force  f = 0</text>
+    <text x="450" y="328" font-size="15">nobody stirs the fluid</text>
+  </g>
+
+  <!-- breakdown side: force allowed -->
+  <g fill="#EFE6F7" stroke="#440099" stroke-width="4">
+    <rect x="650" y="82" width="360" height="124" rx="10"/>
+    <rect x="650" y="222" width="360" height="124" rx="10"/>
+  </g>
+  <g text-anchor="middle" fill="#440099">
+    <text x="830" y="128" font-size="30" font-weight="700">(C)</text>
+    <text x="830" y="164" font-size="18" font-weight="700">a smooth force  f  is allowed</text>
+    <text x="830" y="188" font-size="15">and the prover gets to choose it</text>
+    <text x="830" y="268" font-size="30" font-weight="700">(D)</text>
+    <text x="830" y="304" font-size="18" font-weight="700">a smooth force  f  is allowed</text>
+    <text x="830" y="328" font-size="15">and the prover gets to choose it</text>
+  </g>
+  <rect x="1020" y="82" width="64" height="264" rx="10" fill="#440099"/>
+  <text x="1052" y="214" text-anchor="middle" font-size="18" font-weight="700" fill="#F8F8F9" transform="rotate(90 1052 214)">OpenAI's claim</text>
+
+  <!-- the gap -->
+  <rect x="270" y="366" width="740" height="60" rx="10" fill="#FFFFFF" stroke="#131E29" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="640" y="394" text-anchor="middle" font-size="18" font-weight="700" fill="#131E29">Still open: what happens with no force at all?</text>
+  <text x="640" y="416" text-anchor="middle" font-size="15" fill="#131E29">(A), (B), or unforced blow-up: what most people mean by "solving Navier–Stokes"</text>
+</svg>

@@ -35,3 +35,10 @@ section.small {
 section.small h2 {
   font-size: 1.5em;
 }
+footer {
+  font-size: 14px;
+  color: #555;
+}
+section.lead footer {
+  color: rgba(248, 248, 249, 0.85);
+}
