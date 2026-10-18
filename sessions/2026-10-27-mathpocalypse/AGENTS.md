@@ -1,5 +1,7 @@
 # AGENTS.md
 
+Discussion group session materials on the "Mathpocalypse" topic covering the recent flood of AI-agent-generated mathematics research results.
+
 ## Conventions
 
 - Keep `references.bib` entries in sync with citations added to `README.md` or the slides.
