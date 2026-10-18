@@ -123,10 +123,11 @@ institutional culture. It is imagination."
   which treats proofs as raw data and theory-building as the craft, and with the
   [Fields Medallists' statement](mathandai-statement-summary.md). It contrasts with
   [Solve Everything](solve-everything-summary.md), which treats "solving" as the goal.
-- **The deck already quotes Tao's earlier posts but not this talk.** It has the "strip-mining of
-  open problems" quote and a slide on "prompters" with no interest in the broader field. Math 2.0
-  is the constructive follow-up to those critiques. A slide built on the 2×2 table and the cancer
-  prompt would fill the gap.
+- **The deck now uses it.** The deck quotes Tao as a critic ("prompters" with no interest in the
+  broader field), and Math 2.0 is the constructive follow-up. It now has a Math 2.0 slide (2×2 table
+  and examples), the cancer prompt, and the "lighthouses" quote. That quote replaced an unsourced
+  "strip-mining of open problems" quote: secondary coverage reports a Tao thread making the same
+  point, but we couldn't find that wording.
 - **RSE hooks:**
   - reporting negative results and compute used (reproducibility);
   - living networks of results and formal libraries (research software and data infrastructure);
