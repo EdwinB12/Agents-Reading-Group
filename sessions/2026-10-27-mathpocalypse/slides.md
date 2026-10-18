@@ -109,6 +109,24 @@ _From competition problems to open problems_
 
 <!-- _class: small -->
 
+## Meanwhile on GitHub: open, crowdsourced maths with AI
+
+| Repo | Since | Humans + AI, in the open |
+|------|-------|--------------------------|
+| [Equational Theories](https://github.com/teorth/equational_theories) | 2024 | All **22M implications** between 4,694 magma laws, every one Lean-checked |
+| [Erdős problems](https://github.com/teorth/erdosproblems) | 2025 | Wiki logs **~700 AI contributions**, including failed ones |
+| [Formal Conjectures](https://github.com/google-deepmind/formal-conjectures) | 2025 | Lean *statements* of open problems; 280+ contributors |
+| [Optimization constants](https://github.com/teorth/optimizationproblems) | 2026 | Best known bounds on 100+ constants, updated by PR |
+
+- **Built like open-source software:** issues & PRs, Lean in CI as the referee, public history, credit per contribution
+- **Contrast:** `openai/math` is *public* but not *open*. It is a one-way release that nobody else can take part in
+
+<!-- Figures from the GitHub API and repo wikis, 18 Oct 2026; treat counts as approximate. ETP (Sep 2024 – Apr 2025, ~69 contributors, arXiv:2512.07087): most of the automation was classical automated provers, not LLMs. Erdős wiki: sorted into AI-only, AI + literature, AI + humans, and secondary roles (literature search, formalisation); it stopped updating on 30 Jun 2026. Formal Conjectures is where OpenAI's Navier–Stokes challenge statement came from (see the Comparator slide). Optimization constants (Tao blog, 22 Jan 2026): weakly verified bounds are marked *; Tao says he keeps pages up to date with Claude Code skills. -->
+
+---
+
+<!-- _class: small -->
+
 ## The mathematical lineage
 
 - **Córdoba & Martínez-Zoroa** (analytic, not computer-assisted): build a singularity from an infinite stack of smooth layers
