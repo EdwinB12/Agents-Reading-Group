@@ -22,12 +22,12 @@ _AI agents and the dawn of machine-generated mathematics_
 
 ## Overview
 
-- What is the "Mathpocalypse"? Two headline events: Navier–Stokes and 722 manuscripts
-- How we got here (2024–2026): from competition maths to open problems, and open maths on GitHub
-- How it was done: swarms, Lean & Comparator
-- What was *actually* proven: the forcing loophole, the translation gap, trust gaps and withdrawals
-- The human fallout: credit, priority, mathematicians' responses and the IAS recommendations
-- The future of AI-augmented maths research: Tao's "Math 2.0", the "six fingers" stage and the bigger picture
+- What is the "Mathpocalypse"?
+- How we got here (2024–2026)
+- How it was done: agent swarms and proof-checking software
+- What was *actually* proven
+- The human fallout
+- The future of AI-augmented maths research
 - Practical activity: *Read the certificate*
 
 ---
@@ -54,11 +54,11 @@ _Five weeks that changed mathematics_
 
 **8 Sep 2026 — Navier–Stokes** (OpenAI)
 - ~10,000 agents, 88 hours, an unreleased internal model
-- 166-page proof of **finite-time blow-up with smooth forcing** for 3D Navier–Stokes
-- Formalised in Lean 4; one of the Clay Millennium Prize alternatives
+- 166-page proof that a smoothly flowing fluid **can suddenly break down**, if you may push it with a carefully chosen force
+- Computer-checked in Lean; claims one of the four ways to "win" this $1M Millennium Prize problem
 
 **6 Oct 2026 — the bulk release** (`openai/math`)
-- ~4,000 open problems posed → **722 manuscripts in 372 result families**
+- ~4,000 open problems posed → **722 manuscripts in 372 result families** (groups of related results)
 - ~42% of top-line results formalised in Lean
 - 3 withdrawn the next day, 14 revised
 
@@ -66,16 +66,35 @@ _Five weeks that changed mathematics_
 
 ## Why "Mathpocalypse"?
 
-- **Volume:** more claimed results in a month than many subfields produce in a decade
-- **Speed:** a Millennium-adjacent problem in under four days of wall-clock time
+- **Pace:** output now outruns humans: hundreds of claimed results in one release, a Millennium-adjacent problem in under four days
+- **Significance:** not olympiad or textbook exercises any more: open research problems at the frontier
 - **Opacity:** only 10 reasoning summaries released; experts call the 166-page proof hard to read
-- **Disruption:** priority disputes, a Fields Medallists' declaration, a new IAS advisory group
+- **Disruption:** priority disputes, a declaration by Fields Medallists (winners of maths' top prize), a new advisory group at the Institute for Advanced Study (IAS), and a crisis of meaning for professional mathematicians
 
 > "Reaching these lighthouses prematurely by automated tools can … sterilize the surrounding field." — Terence Tao, "Math 2.0" (9 Oct 2026)
 
 <!-- Sarcastic name, serious question: is this a flourishing of a new kind of research, or something that hollows out the old kind? The quote is verbatim from Tao's Math 2.0 slides; "lighthouses" = open problems as guides to the landscape around them. It replaces an unsourced "strip-mining of open problems" quote: secondary coverage reports a Tao thread making the same point, but we couldn't find that wording (checked 18 Oct).
 
+Significance: the step change is in level, not only in volume. In 2024–25 the headline results were IMO medals, which are hard problems with known answers. In 2026 they are open problems with no known answer: Erdős problems and a Navier–Stokes variant (see the timeline in "How we got here").
+
 Discussion: a new kind of research? Genuinely new, or the industrialisation of an old loop (search + check)? What stays human: choosing questions, explanation, "the art side"? -->
+
+---
+
+<!-- _class: small -->
+
+## Jargon buster
+
+- **Open problem:** a question nobody knows the answer to (unlike an exam or olympiad problem)
+- **Proof:** an argument that something is *always* true, where every step can be checked
+- **Lean:** a programming language where a proof is code: if it compiles, the proof is correct. *Mathlib* is its shared standard library
+- **Formalise:** translate a paper proof into Lean, a bit like porting pseudocode to a strictly typed language
+- **`sorry`:** Lean's `TODO`, a gap left unproven
+- **Navier–Stokes:** the equations for how water and air flow. The open question: can a smooth flow suddenly "break" (*blow up*)?
+- **Millennium Prize:** seven $1M problems set by the Clay Institute in 2000. Navier–Stokes is one of them
+- **Erdős problems:** ~1,000 open puzzles collected from the mathematician Paul Erdős, now a popular test for AI
+
+<!-- A reference slide to come back to. Everything later builds on these eight terms. The RSE analogies (compiler, TODO, typed language) are deliberate: Lean really is a programming language, and Lean projects are built with `lake` like any other codebase. -->
 
 ---
 
@@ -92,26 +111,55 @@ _From competition problems to open problems_
 
 ---
 
+<!-- _class: small -->
+
 ## Timeline (1/2): competition maths
 
 | When | What | Why it matters |
 |------|------|----------------|
-| 2024 | **AlphaProof / AlphaGeometry**: IMO silver | RL + Lean on competition problems |
-| 2025 | **IMO golds** (OpenAI, DeepMind; Harmonic's **Aristotle** in Lean) | Natural-language & formal reasoning reach the top |
-| 2025 | **AlphaEvolve**; DeepMind **unstable singularities** in fluids | Search over code; computer-assisted PDE work |
+| 2024 | **AlphaProof**: silver at the International Maths Olympiad (IMO, for school students) | Trial-and-error learning + Lean-checked proofs |
+| 2025 | **IMO golds**: OpenAI, DeepMind, Harmonic | Top human level |
+| 2025 | **AlphaEvolve** (with Tao) | New records on ~20 problems |
+| 2025 | **Putnam** (top undergrad contest): 12/12 | Perfect score (self-reported) |
+
+<!-- Detail: Putnam = the William Lowell Putnam Mathematical Competition, the hardest undergraduate maths contest in the US/Canada; 12 proof problems in two 3-hour sessions, and the median human score is often 0–2 out of 120. AlphaGeometry (LM proposes constructions, symbolic engine proves) shared the 2024 IMO result. 2025 IMO golds also included DeepSeek; Harmonic's Aristotle was in Lean. AlphaEvolve with Tao and Gómez-Serrano: 67 problems, ~20 improved bounds (i.e. constructions beating the previous best known value; the exact answers are still unknown). Putnam 12/12 claims from AxiomProver and Numina-Lean. Also 2025: DeepMind "unstable singularities" in fluids (computer-assisted PDE work), a precursor to the Navier–Stokes results on the next slide. -->
 
 ---
+
+<!-- _class: small -->
 
 ## Timeline (2/2): open problems
 
 | When | What | Why it matters |
 |------|------|----------------|
-| 2025 | **"Erdősgate"**: GPT-5 "solved" Erdős problems by *retrieving* them | Novelty is hard to check |
-| Feb 2026 | **Aletheia** (DeepMind): 700 Erdős problems, 4 solved autonomously | Autonomy & novelty ratings |
-| Aug 2026 | **Buckmaster & Alpöge**: AI-assisted, Lean-verified forced Euler blow-up | Humans + several labs' models |
+| 2025 | **"Erdősgate"**: GPT-5 "solved" Erdős problems that were already solved in the literature | Novelty is hard to check |
+| Feb 2026 | **Aletheia** (DeepMind): 700 Erdős problems, 4 solved autonomously | Rated each result for independence & novelty |
+| Aug 2026 | **Buckmaster & Alpöge**: AI-assisted, Lean-checked blow-up for a simpler fluid equation | Humans + several labs' models |
 | Sep–Oct 2026 | **OpenAI**: Navier–Stokes, then 722 manuscripts | Scale |
 
 <!-- Callback: "Erdősgate" came up in the 01/09 session. -->
+
+---
+
+<!-- _class: small -->
+
+## Secret models only? Who can use what
+
+| Result | Model | Public? |
+|--------|-------|---------|
+| Navier–Stokes + `openai/math` (Sep–Oct) | OpenAI internal | **No** |
+| Riemann hypothesis: partial progress, 41.6% → 67.2% (Aug) | Unreleased Claude | **No** |
+| FrontierMath benchmark: a 2019 open problem (Mar) | GPT-5.4 Pro and others | **Yes** |
+| Gowers: number-theory estimates (May) | ChatGPT 5.5 Pro | **Yes** |
+| Busy Beaver (how long tiny programs run), by an amateur (Oct) | Claude Code | **Yes** |
+
+- **Headlines** use unreleased models and heavy compute; **smaller results** use ordinary subscriptions. Aaronson expects the gap to close "within the next couple of months"
+
+**Ask:** if the gap is only months, what does a lab gain by keeping its model in-house?
+
+<!-- Answers the question we keep getting: "were these all secret models?" Table rows in full: OpenAI's model is unnamed. Anthropic called the zeta model an "unreleased research version of Claude". FrontierMath also fell to Gemini 3.1 Pro and Opus 4.6. Gowers improved bounds on Nathanson's problems. Busy Beaver asks how long tiny programs can run before stopping. Riemann row, precisely: the proven proportion of non-trivial zeros of the Riemann zeta function that lie on the critical line rose from 41.6% to 67.2%. The hypothesis says it's 100%. Model names are hedged on purpose. Claude Mythos Preview is real but invitation-only, and reports link it to Anthropic's July cryptography results, *not* the zeta result; Anthropic hasn't named the zeta model. GPT-6 Astra is a public model (in Codex, 49/50 on TheoPhysEval). Lab-reported figures put OpenAI's internal model at ~45% on a curated set of open problems and Astra below 20% (Aaronson, comment #151). "Bel" turned up nothing when we searched (19 Oct); treat it as a rumour.
+
+Gowers: "I didn't even do anything clever with the prompts" (The Decoder, 9 May). Knuth's directed-graph problem is another public-model case, but accounts disagree on credit (Claude Opus 4.6 versus GPT-5.3-codex and GPT-5.4 Pro), so it's left off the table. Busy Beaver: Aaronson's 12 Oct update. Leads into IAS rec #1 ("stop testing on proprietary models") and the two-tier science question. -->
 
 ---
 
@@ -121,29 +169,33 @@ _From competition problems to open problems_
 
 | Repo | Since | Humans + AI, in the open |
 |------|-------|--------------------------|
-| [Equational Theories](https://github.com/teorth/equational_theories) | 2024 | All **22M implications** between 4,694 magma laws, every one Lean-checked |
+| [Equational Theories](https://github.com/teorth/equational_theories) | 2024 | All **22M** "does rule X imply rule Y?" questions for 4,694 simple algebra rules, every one Lean-checked |
 | [Erdős problems](https://github.com/teorth/erdosproblems) | 2025 | Wiki logs **~700 AI contributions**, including failed ones |
 | [Formal Conjectures](https://github.com/google-deepmind/formal-conjectures) | 2025 | Lean *statements* of open problems; 280+ contributors |
-| [Optimization constants](https://github.com/teorth/optimizationproblems) | 2026 | Best known bounds on 100+ constants, updated by PR |
+| [Optimization constants](https://github.com/teorth/optimizationproblems) | 2026 | Best known estimates for 100+ numbers nobody knows exactly, updated by PR |
 
 - **Built like open-source software:** issues & PRs, Lean in CI as the referee, public history, credit per contribution
 - **Contrast:** `openai/math` is *public* but not *open*. It is a one-way release that nobody else can take part in
 
-<!-- Figures from the GitHub API and repo wikis, 18 Oct 2026; treat counts as approximate. ETP (Sep 2024 – Apr 2025, ~69 contributors, arXiv:2512.07087): most of the automation was classical automated provers, not LLMs. Erdős wiki: sorted into AI-only, AI + literature, AI + humans, and secondary roles (literature search, formalisation); it stopped updating on 30 Jun 2026. Formal Conjectures is where OpenAI's Navier–Stokes challenge statement came from (see the Comparator slide). Optimization constants (Tao blog, 22 Jan 2026): weakly verified bounds are marked *; Tao says he keeps pages up to date with Claude Code skills. -->
+<!-- Figures from the GitHub API and repo wikis, 18 Oct 2026; treat counts as approximate. ETP precisely: all 22M implications between 4,694 equational laws of magmas (a set with one binary operation). ETP (Sep 2024 – Apr 2025, ~69 contributors, arXiv:2512.07087): most of the automation was classical automated provers, not LLMs. Erdős wiki: sorted into AI-only, AI + literature, AI + humans, and secondary roles (literature search, formalisation); it stopped updating on 30 Jun 2026. Formal Conjectures is where OpenAI's Navier–Stokes challenge statement came from (see the Comparator slide). Optimization constants (Tao blog, 22 Jan 2026): weakly verified bounds are marked *; Tao says he keeps pages up to date with Claude Code skills. -->
 
 ---
 
 <!-- _class: small -->
 
-## The mathematical lineage
+## The road to Navier–Stokes: the mathematical lineage
 
-- **Córdoba & Martínez-Zoroa** (analytic, not computer-assisted): build a singularity from an infinite stack of smooth layers
-- The hard part: keep the **external forcing smooth** as the layers pile up
-- Tao's summary of the method: start from a smooth low-frequency solution, add small high-frequency corrections that exploit an **instability** of the linearised equation, so that each stage grows just enough to break smoothness at the blow-up time
-- Buckmaster & Alpöge pushed this to forced Euler/IPM/Boussinesq with heavy AI assistance (Claude, Codex)
-- OpenAI's swarm reportedly ended up on a **different route** to Navier–Stokes (SciAm, citing Cao-Labora)
+**Main point:** the AI Navier–Stokes result builds on years of human work. The AI did not start from scratch.
 
-<!-- "Ten years ago, nobody believed there was a singularity for Navier–Stokes." — Diego Córdoba -->
+- **Navier–Stokes:** the equations for how fluids like water and air move. The big open question: can a flow that starts out smooth suddenly "break", i.e. develop a point where it stops being smooth (a *blow-up*)?
+- **Human groundwork:** Córdoba & Martínez-Zoroa found a recipe with pen and paper. Stack up ever-smaller swirls, each one growing just enough, until the flow breaks at a chosen moment
+- **The catch:** the recipe needs an outside push on the fluid (a *forcing*). That push must stay smooth itself, or you have just put the break in by hand
+- **AI-assisted step:** Buckmaster & Alpöge applied the recipe to related fluid equations with help from Claude and Codex, and checked the proof in Lean
+- **OpenAI's swarm** reportedly reached Navier–Stokes by a **different route** (SciAm, citing Cao-Labora)
+
+**Discuss:** who gets credit when an AI extends a human research programme?
+
+<!-- "Ten years ago, nobody believed there was a singularity for Navier–Stokes." — Diego Córdoba. Tao's technical summary of the method: start from a smooth low-frequency solution, add small high-frequency corrections that exploit an instability of the linearised equation, so each stage grows just enough to break smoothness at the blow-up time. "Smaller swirls" = higher-frequency corrections. Córdoba & Martínez-Zoroa is analytic, not computer-assisted. Buckmaster & Alpöge covered forced Euler, IPM (porous media flow) and Boussinesq (fluid with temperature/buoyancy). -->
 
 ---
 
@@ -162,10 +214,10 @@ _Two pipelines, one model_
 | | **Bulk release** (`openai/math`) | **Navier–Stokes swarm** |
 |---|---|---|
 | Shape | One fixed procedure, ×~4,000 problems | ~10,000 cooperating agents |
-| Compute | ~3 h of "ChatGPT Pro thinking" per result on average | 88 h wall-clock; "millions" of dollars |
-| Output | Filtered for significance → families → manuscripts | 166-page paper + Euler paper |
-| Checking | ~42% Lean-formalised | Fully formalised; Comparator challenge |
-| Warm-up | Saturated internal maths evals | ~100 agents × ~50 h on Euler |
+| Compute | ~3 h of "ChatGPT Pro thinking" per result on average | 88 h start to finish; "millions" of dollars |
+| Output | Filtered for significance → families → manuscripts | 166-page paper + companion paper (simpler Euler equation) |
+| Checking | ~42% Lean-checked | Fully Lean-checked; statement checked independently (Comparator, see later) |
+| Warm-up | First maxed out OpenAI's internal maths tests | ~100 agents × ~50 h on Euler |
 
 <!-- The bulk release is "best-of-N with a filter"; the swarm is a genuine multi-agent system. Different engineering problems. -->
 
@@ -186,12 +238,12 @@ _Two pipelines, one model_
 
 ## Why the swarm works: a cheap, trustworthy verifier
 
-- Agents write arguments in **Lean 4 + Mathlib**; the Lean kernel accepts or rejects each step
-- That turns open-ended research into **search with a reliable reward signal**:
+- Agents write arguments in **Lean 4 + Mathlib**; Lean's checker (its *kernel*) passes or fails each step, like a compiler
+- That turns open-ended research into **search with a reliable pass/fail signal**:
   - generation is cheap and noisy
   - verification is cheap and (nearly) exact
   - so scale up generation and let the checker filter
-- After the 88-hour run, **another model autoformalised** the final proof in ~17 hours
+- After the 88-hour run, **another model translated** the final proof fully into Lean in ~17 hours
 - Same idea as AlphaProof and Aristotle, at roughly 10,000× the parallelism
 - **Why maths fell first** (Tao): proofs are *objectively verifiable*, *fully digital* (no lab, no real-world data) and backed by a *large, high-quality literature*
 
@@ -214,6 +266,7 @@ status:
       axioms: ["propext", "Classical.choice"]   # standard foundations only
 ```
 
+- In software terms: it compiles, with no `TODO`s and no extra assumptions
 - ✅ The proof of **this statement** is complete and uses only standard axioms
 - ❓ Is **this statement** the problem you care about?
 
@@ -224,8 +277,8 @@ status:
 ## Comparator: whose statement is it?
 
 - [`leanprover/comparator`](https://github.com/leanprover/comparator) — a "trustworthy judge" for Lean proofs (now `lake comparator` in core Lean)
-- The **challenge** (theorem + `sorry`) comes from a trusted party; the **solution** from an untrusted one
-- Comparator runs a sandbox, checks the statements match **exactly**, checks only permitted axioms are used, and can re-check with a second kernel (nanoda)
+- The **challenge** (the problem statement, with the proof left as `sorry`) comes from a trusted party; the **solution** from an untrusted one
+- Comparator runs a sandbox, checks the statements match **exactly**, checks only permitted axioms are used, and can re-check with a second, independent checker (nanoda)
 - OpenAI's challenge statement was adapted from Google DeepMind's **Formal Conjectures** — written *before*, by *someone else*
 
 ```lean
@@ -235,6 +288,8 @@ theorem navier_stokes_breakdown_R3 (nu : ℝ) (hnu : nu > 0) :
     ¬ (∃ v p, NavierStokesExistenceAndSmoothnessRn nu u₀ f v p) := by
   sorry
 ```
+
+Reading key: `∃` = "there exists", `¬` = "not", `u₀` = starting flow, `f` = force, `nu` = viscosity (stickiness)
 
 ---
 
@@ -263,10 +318,10 @@ _Reading the small print_
 
 ## Scope: the forcing loophole
 
-- Clay's problem statement (Fefferman) offers **four** alternatives. OpenAI claims **(C)** on ℝ³ and **(D)** on the torus: *breakdown* given smooth initial data **and a smooth external force**
-- `∃ u₀ f` — **the prover chooses the force**. It is a "weird, unphysical force" constructed to stir the fluid into blowing up
+- Clay's problem statement (Fefferman) offers **four** alternatives. OpenAI claims **(C)** in all of space and **(D)** in a repeating box: *breakdown* from a smooth starting flow **and a smooth external force**
+- The Lean statement reads "there exist a starting flow `u₀` and a force `f`", so **the prover chooses the force**. It is a "weird, unphysical force" constructed to stir the fluid into blowing up
 - The cleaner question — blow-up with **no** forcing — remains open (Tao thinks the methods could get there)
-- OpenAI separately proves **unforced Euler** blow-up (no viscosity)
+- OpenAI separately proves blow-up with no force for the **Euler equations** (an idealised fluid with no friction)
 - Clay: "has apparently been settled", but the status stays **active**; verification is "deliberately unhurried"; the prize needs publication + 2 years of scrutiny. OpenAI says it won't claim the prize
 
 ---
@@ -279,7 +334,7 @@ _Reading the small print_
 
 - A Lean check certifies the **formal** statement and proof, not the **English** paper
 - They report that OpenAI's Lean proof **does not correspond** to its natural-language proof
-- They argue that faithful autoformalisation of ambiguous natural-language maths is, in general, harder than the Halting problem
+- They argue that reliably translating ambiguous English maths into Lean automatically is, in general, harder than the Halting problem
 - Practical upshot: two artefacts (166-page PDF + Lean project) that may say *different things*, both hard to read
 
 > "It's not anymore a matter of clearly verifiable mathematical facts." — Camillo De Lellis (IAS)
@@ -307,9 +362,9 @@ From the bulk release, within 24 hours:
 - A **sign error** broke one manuscript's argument
 - **Two other** manuscripts relied on constructions that depended on it → all **3 withdrawn**
 - **14 more revised** with proof repairs and corrected statements
-- Some results "touch on" the Riemann hypothesis, Hodge or Kakeya — far weaker than "solved"
+- Some results "touch on" famous open problems (the Riemann, Hodge or Kakeya conjectures) — far weaker than "solved"
 
-**Lesson for RSEs:** an unformalised AI result is a *dependency* with no tests. Errors propagate through the dependency graph, just as they do in software.
+**Lesson for RSEs:** an AI result that isn't Lean-checked is a *dependency* with no tests. Errors propagate through the dependency graph, just as they do in software.
 
 <!-- Discussion: who pays for verification? 719 unreviewed manuscripts land at once: a gift, or a denial-of-service on peer review? No journal submission announced by any lab (as of 18 Oct). Should there be? (cf. 01/09: finding is cheap, adjudicating is expensive) -->
 
@@ -332,14 +387,14 @@ _Credit, priority, and the ecosystem_
 
 ## Priority and credit (facts, not verdicts)
 
-- **15–22 Aug:** Buckmaster (NYU) & Alpöge (Anthropic, collaborating personally) get AI-assisted, Lean-verified forced Euler/IPM/Boussinesq results
+- **15–22 Aug:** Buckmaster (NYU) & Alpöge (Anthropic, collaborating personally) get AI-assisted, Lean-checked blow-up results for three related fluid equations
 - **1 Sep:** OpenAI starts its 88-hour Navier–Stokes run
 - **6 Sep:** OpenAI meets Buckmaster; accounts of the proposed arrangement are **disputed**
 - **7–8 Sep:** Buckmaster's statement, then OpenAI's announcement ~12 h later
 - OpenAI says user Codex sessions **could not** have influenced the system; it "recognises the priority" of their work
 - Open question: what does "credit" mean when the closest humans used the same lab's tools?
 
-<!-- Keep this neutral; the facts are contested and sources differ. Point to Fortune / NYT / Buckmaster's statement for the detail.
+<!-- The three equations: forced Euler, IPM (porous media flow) and Boussinesq (fluid with buoyancy). Keep this neutral; the facts are contested and sources differ. Point to Fortune / NYT / Buckmaster's statement for the detail.
 
 Discussion: how should credit work when the "closest humans" are outpaced by a swarm, possibly running on tools they also used? -->
 
@@ -383,7 +438,7 @@ Independent, unpaid, hosted at IAS Princeton; recommendations published 29 Sep 2
 1. **Stop** testing advanced open problems on proprietary, inaccessible models
 2. Deposit results in repositories **no AI lab controls**, with persistent IDs
 3. Don't use results as **model marketing**
-4. Per result, disclose: **model, prompts, summarised chain of thought, time, compute**
+4. Per result, disclose: **model, prompts, a summary of the model's reasoning, time, compute**
 5. **Formalise** as far as possible
 6. For bulk releases: say how many problems were **attempted and failed**, and how they were chosen
 7. Fund **human understanding** (schools, workshops, expository writing) and give equitable **model access**
@@ -416,7 +471,7 @@ Tao's Caltech lecture (9 Oct 2026): proofs used to be **scarce**, now they are *
 | **Strong understanding** | Math 1.0     | **Math 2.0**        |
 
 - The danger is **heavy AI + weak human understanding**, not AI itself
-- **Use AI to deepen understanding:** "open exposition problems" (explain opaque proofs), ablation studies on known theorems, living networks of results, formal libraries, open maths models
+- **Use AI to deepen understanding:** "open exposition problems" (explain opaque proofs), testing which parts of known proofs really matter, living networks of results, formal libraries, open maths models
 
 > "The primary bottleneck to achieving 'Math 2.0' is not technology, or even institutional culture. It is imagination."
 
@@ -484,7 +539,7 @@ _Read the certificate_
 Pick **one** track (15 min), then report back (10 min).
 
 - **A: Statement vs headline** (no install). Open `ComparatorChallenges/NavierStokes.lean` in `openai/NavierStokesAndEuler`. Write `navier_stokes_breakdown_R3` out in English. Where is the force? Who picks it? Compare with "AI solves Navier–Stokes"
-- **B: Audit a family** (no install). Pick a family in `openai/math`. Score it on the IAS checklist. How long would an expert need to trust it? ×719?
+- **B: Audit a family** (no install). Pick a family in `openai/math`. Score it on the IAS checklist. How long would an expert need to trust it? And for all 719 remaining manuscripts?
 - **C: Build it** (needs elan). `lake exe cache get && lake build`, then `#print axioms` on the main theorem. What does `sorry_count: 0` certify, and what doesn't it?
 
 **Report back:** *in one sentence, what has actually been verified, and by whom?*
