@@ -27,7 +27,7 @@ _AI agents and the dawn of machine-generated mathematics_
 - How it was done: swarms, Lean & Comparator
 - What was *actually* proven: the forcing loophole, the translation gap, trust gaps and withdrawals
 - The human fallout: credit, priority, mathematicians' responses and the IAS recommendations
-- A better future: Tao's "Math 2.0", the "six fingers" stage and the bigger picture
+- The future of AI-augmented maths research: Tao's "Math 2.0", the "six fingers" stage and the bigger picture
 - Practical activity: *Read the certificate*
 
 ---
