@@ -721,11 +721,51 @@ Discussion: which of the four changes matters most for *your* field? Is the veri
 
 <!-- _class: lead -->
 
-# Practical
+# Practical matters
 
-_Check a proof yourself_
+_Tools you can use today, and a proof to check yourself_
 
 ---
+<!-- _class: small -->
+
+## The AI maths toolbox: four designs
+
+_Models write fluent proofs that may be wrong, so each family of tools adds a way to catch the mistakes_
+
+| Approach | How mistakes get caught | Examples |
+|----------|-------------------------|----------|
+| **Train against Lean** | The proof assistant accepts or rejects every step. That verdict is also a free reward signal for reinforcement learning | AlphaProof, Aristotle, DeepSeek-Prover-V2, Goedel-Prover-V2, Seed-Prover |
+| **Learned verifier** | A second model checks the first model's natural-language proof | DeepSeekMath-V2 |
+| **Search + scorer** | An LLM proposes constructions (packings, bounds); code scores them | AlphaEvolve |
+| **Agent harness** | Split the work into survey, plan, prove and verify, with several provers in parallel | QED, Bolzano, Numina-Lean-Agent, Cogentic |
+
+- Systems mix and match: AlphaEvolve *found* a Kakeya construction, Gemini Deep Think *proved* it, AlphaProof *formalised* it
+
+<!-- Overview of docs/ai-mathematics-research-tools.md (prepared 18 Oct 2026); full details and sources there. The common thread is the one on "Why so fast?": checking is cheap, so failed attempts cost little. Lean-trained provers use that directly. The learned verifier is the fallback where maths is hard to formalise, and it's weaker: a model judging a model, not a kernel. AlphaEvolve only works where the answer is an object you can score. Agent harnesses are the newest trend and the closest to OpenAI's swarm (see "Anatomy of the swarm"). QED's design is a list of fixes for seven failure modes of single-shot proving, e.g. hallucinated citations and hand-waving on key steps. Kakeya example: finite-field Kakeya, with Tao and Gómez-Serrano (67 problems tried, best known result improved on ~20). -->
+
+---
+
+<!-- _class: small -->
+
+## The AI maths toolbox: what can you actually use?
+
+_Plenty is open or free today, and small open models are catching up with giant ones_
+
+| Availability | Systems |
+|--------------|---------|
+| **Open weights** | DeepSeekMath-V2 (Apache 2.0), DeepSeek-Prover-V2, Goedel-Prover-V2, Kimina-Prover |
+| **Open-source agents** | Numina-Lean-Agent (Claude Code + Lean tools), QED, Bolzano |
+| **Hosted workspace** | [Open Math OS](https://www.openmathmodel.org/): open models + Lean, SageMath, PARI/GP; community owns its data |
+| **Commercial / free service** | Aristotle (Harmonic), Gauss (Math, Inc., beta), AXLE (hosted Lean, free) |
+| **Closed / by application** | AlphaProof, AlphaEvolve (academic access planned), AxiomProver |
+
+- **Small is catching up:** Goedel-Prover-V2 **8B** matches DeepSeek-Prover-V2 **671B** on miniF2F (a benchmark of formalised contest problems)
+- **Caveat:** scores are developer-reported with different settings, and a Lean proof is only as good as its formal statement
+
+<!-- Complements "Secret models only? Who can use what": that one was about frontier general models, this one is about maths-specific systems. Open Math OS (SAIR Foundation's Open Math Model initiative) is a platform, not its own model: pick Kimi K3, DeepSeek V4.1 Flash, GLM 5.3 or Nemotron 3, set effort up to "Ultramath" (several agents on one problem), and get a cloud machine with 100+ tools. Projects are private by default and training on your work needs explicit consent, which ties into the "who owns the map?" question on the Szegedy slide. Numina-Lean-Agent's point is that a general coding agent plus Lean tools does as well as a trained prover (12/12 on Putnam 2025 with Opus 4.5), so it gets better whenever the base model does. Gauss formalised the strong Prime Number Theorem (~25k lines of Lean) in about three weeks. Bolzano (7 Oct 2026 preprint, ~200 of ~3,800 open problems) is too new to have been scrutinised. Seed-Prover 1.5 is left off: weights not confirmed public. Full details: docs/ai-mathematics-research-tools.md. -->
+
+---
+
 
 ## Try it yourself
 
