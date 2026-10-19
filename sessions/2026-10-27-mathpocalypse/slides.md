@@ -22,11 +22,12 @@ _AI agents and the dawn of machine-generated mathematics_
 
 ## Overview
 
-- What is the "Mathpocalypse"?
-- How we got here (2024–2026)
+- What is the "Mathpocalypse"? Two headline events: Navier–Stokes and 722 manuscripts
+- How we got here (2024–2026): from competition maths to open problems, and open maths on GitHub
 - How it was done: swarms, Lean & Comparator
-- What was *actually* proven
-- The human fallout
+- What was *actually* proven: the forcing loophole, the translation gap, trust gaps and withdrawals
+- The human fallout: credit, priority, mathematicians' responses and the IAS recommendations
+- A better future: Tao's "Math 2.0", the "six fingers" stage and the bigger picture
 - Practical activity: *Read the certificate*
 
 ---
@@ -436,6 +437,27 @@ AI maths research is at the same point now:
 Opacity is the clearest case. The 166-page proof is "not written for humans" (Gómez-Serrano, NPR), and Moshkovitz called the Unique Games proof "alien craziness". But humans published a readable version of the unit-distance disproof the same day (Alon, Gowers, Litt et al.), and Moshkovitz used an AI to understand the UGC proof. Thurston made the same point about the four-colour proof in 1994: the complaint was about understanding, not truth. Sources in docs/opacity-alien-proofs.md.
 
 Discussion: what is the "six fingers" of AI research in *your* field: the tell-tale flaw that gives it away today? Will it still be there in three years? Is there anything that *won't* get fixed by scale (e.g. verification without a Lean, choosing good questions)? -->
+
+---
+
+<!-- _class: small -->
+
+## The bigger picture
+
+**Making a result is getting cheap. Checking it and understanding it are not**
+
+- **Research:** maths is a testbed for "automated research". OpenAI's stated roadmap runs from an automated research intern (which it says it reached in September 2026) to an automated AI researcher by March 2028
+- **Trust:** when proofs are cheap, verification becomes the bottleneck. Investors are backing formal proof as a trust layer for AI in software, engineering and finance
+- **Mathematics:** the work shifts from solving to choosing good questions, explaining and understanding. This is Tao's "Math 2.0"
+- **Institutions:** credit, release norms and who pays for checking are being settled now. The Simons, Anthropic and OpenAI $15M fund is a small first step
+
+> Maths is where we learn how far to trust machine research, before we need to trust it everywhere
+
+<!-- The one-slide version of the session. Everything before it is a case study; this is what the case studies add up to. Keep the tone measured: OpenAI's "intern by September 2026" is its own claim, and the 2028 date is a roadmap, not a result.
+
+Sources: docs/industry-perspectives-summary.md (the roadmap, the investor theses, and the Simons fund, which is 15 Oct 2026); docs/tao-math-2-0.md (Math 2.0 and proofs going from scarce to abundant); docs/practical-next-steps.md if you want a practical close.
+
+Discussion: which of the four changes matters most for *your* field? Is the verification bottleneck a feature (a trust layer) or a warning (humans falling behind)? -->
 
 ---
 
