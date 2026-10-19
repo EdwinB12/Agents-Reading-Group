@@ -22,6 +22,8 @@ _AI agents and the dawn of machine-generated mathematics_
 
 ## Overview
 
+_AI can now produce new maths research faster than people can check it. What does that mean for the rest of us?_
+
 - What is the "Mathpocalypse"?
 - How we got here (2024–2026)
 - How it was done: agent swarms and proof-checking software
@@ -52,6 +54,8 @@ _Five weeks that changed mathematics_
 
 ## Two headline events
 
+_In five weeks, one AI lab claimed a famous $1M problem, then released hundreds of new results at once_
+
 **8 Sep 2026 — Navier–Stokes** (OpenAI)
 - ~10,000 agents, 88 hours, an unreleased internal model
 - 166-page proof that a smoothly flowing fluid **can suddenly break down**, if you may push it with a carefully chosen force
@@ -65,6 +69,8 @@ _Five weeks that changed mathematics_
 ---
 
 ## Why "Mathpocalypse"?
+
+_AI is now tackling real unsolved problems, and producing results faster than mathematicians can digest them_
 
 - **Pace:** output now outruns humans: hundreds of claimed results in one release, a Millennium-adjacent problem in under four days
 - **Significance:** not olympiad or textbook exercises any more: open research problems at the frontier
@@ -84,6 +90,8 @@ Discussion: a new kind of research? Genuinely new, or the industrialisation of a
 <!-- _class: small -->
 
 ## Jargon buster
+
+_Eight terms we'll use throughout. Most have a direct software analogy_
 
 - **Open problem:** a question nobody knows the answer to (unlike an exam or olympiad problem)
 - **Proof:** an argument that something is *always* true, where every step can be checked
@@ -115,6 +123,8 @@ _From competition problems to open problems_
 
 ## Timeline (1/2): competition maths
 
+_2024–25: AI caught up with the best human students, on problems whose answers were already known_
+
 | When | What | Why it matters |
 |------|------|----------------|
 | 2024 | **AlphaProof**: silver at the International Maths Olympiad (IMO, for school students) | Trial-and-error learning + Lean-checked proofs |
@@ -130,6 +140,8 @@ _From competition problems to open problems_
 
 ## Timeline (2/2): open problems
 
+_2025–26: AI moved on to problems nobody had solved, and checking whether a result is really new became the hard part_
+
 | When | What | Why it matters |
 |------|------|----------------|
 | 2025 | **"Erdősgate"**: GPT-5 "solved" Erdős problems that were already solved in the literature | Novelty is hard to check |
@@ -144,6 +156,8 @@ _From competition problems to open problems_
 <!-- _class: small -->
 
 ## Secret models only? Who can use what
+
+_The headline results used unreleased models, but models anyone can subscribe to are already producing smaller real results_
 
 | Result | Model | Public? |
 |--------|-------|---------|
@@ -167,6 +181,8 @@ Gowers: "I didn't even do anything clever with the prompts" (The Decoder, 9 May)
 
 ## Meanwhile on GitHub: open, crowdsourced maths with AI
 
+_AI-assisted maths can also be done in the open and collaboratively, run like an open-source project_
+
 | Repo | Since | Humans + AI, in the open |
 |------|-------|--------------------------|
 | [Equational Theories](https://github.com/teorth/equational_theories) | 2024 | All **22M** "does rule X imply rule Y?" questions for 4,694 simple algebra rules, every one Lean-checked |
@@ -185,7 +201,7 @@ Gowers: "I didn't even do anything clever with the prompts" (The Decoder, 9 May)
 
 ## The road to Navier–Stokes: the mathematical lineage
 
-**Main point:** the AI Navier–Stokes result builds on years of human work. The AI did not start from scratch.
+_The AI result builds on years of human work. It did not start from scratch_
 
 - **Navier–Stokes:** the equations for how fluids like water and air move. The big open question: can a flow that starts out smooth suddenly "break", i.e. develop a point where it stops being smooth (a *blow-up*)?
 - **Human groundwork:** Córdoba & Martínez-Zoroa found a recipe with pen and paper. Stack up ever-smaller swirls, each one growing just enough, until the flow breaks at a chosen moment
@@ -211,6 +227,8 @@ _Two pipelines, one model_
 
 ## Two pipelines
 
+_OpenAI used two approaches: one fixed recipe run on thousands of problems, and a huge team of agents aimed at a single problem_
+
 | | **Bulk release** (`openai/math`) | **Navier–Stokes swarm** |
 |---|---|---|
 | Shape | One fixed procedure, ×~4,000 problems | ~10,000 cooperating agents |
@@ -227,6 +245,8 @@ _Two pipelines, one model_
 
 ## Anatomy of the swarm (as reported)
 
+_Thousands of agents work in parallel, and only results that pass the proof checker get shared with the others_
+
 ![width:960px](diagrams/swarm.svg)
 
 - Tools: cached internet, code execution, Lean 4 checker. ~2.7–5 million messages; ~130 billion output tokens (figures vary by source)
@@ -237,6 +257,8 @@ _Two pipelines, one model_
 <!-- _class: small -->
 
 ## Why the swarm works: a cheap, trustworthy verifier
+
+_Checking a Lean proof is cheap and near-perfect, so you can afford lots of bad attempts and keep only the ones that pass_
 
 - Agents write arguments in **Lean 4 + Mathlib**; Lean's checker (its *kernel*) passes or fails each step, like a compiler
 - That turns open-ended research into **search with a reliable pass/fail signal**:
@@ -255,6 +277,8 @@ Discussion: beyond maths. Maths has Lean, a cheap trustworthy verifier. What is 
 
 ## What does "Lean-verified" certify?
 
+_Lean confirms the proof is correct. It can't tell you whether it proves the right thing_
+
 From `formalization.yaml` in `openai/NavierStokesAndEuler`:
 
 ```yaml
@@ -268,13 +292,15 @@ status:
 
 - In software terms: it compiles, with no `TODO`s and no extra assumptions
 - ✅ The proof of **this statement** is complete and uses only standard axioms
-- ❓ Is **this statement** the problem you care about?
+- ❓ Does this Lean statement _really say_ what we mean by the original problem?
 
 ---
 
 <!-- _class: small -->
 
-## Comparator: whose statement is it?
+## Comparator: Lean theorem prover
+
+_Comparator checks that the AI answered the question someone else set, not an easier one it wrote for itself_
 
 - [`leanprover/comparator`](https://github.com/leanprover/comparator) — a "trustworthy judge" for Lean proofs (now `lake comparator` in core Lean)
 - The **challenge** (the problem statement, with the proof left as `sorry`) comes from a trusted party; the **solution** from an untrusted one
@@ -308,6 +334,8 @@ _Reading the small print_
 
 ## Clay's four ways to win
 
+_You win by proving any one of four things. The "it can break down" options let you choose an outside force to push the fluid_
+
 ![width:1100px](diagrams/clay-alternatives.svg)
 
 <!-- From Fefferman's official problem statement for the Clay Institute. (A) and (B) ask for global smooth solutions with zero force; (C) and (D) ask for a counterexample and let the prover pick a smooth, decaying force. That asymmetry is the loophole on the next slide. Source: Fefferman (2000), Clay problem statement. -->
@@ -317,6 +345,8 @@ _Reading the small print_
 <!-- _class: small -->
 
 ## Scope: the forcing loophole
+
+_OpenAI's claim relies on a push it designed itself. Whether a fluid left alone can break down is still unknown_
 
 - Clay's problem statement (Fefferman) offers **four** alternatives. OpenAI claims **(C)** in all of space and **(D)** in a repeating box: *breakdown* from a smooth starting flow **and a smooth external force**
 - The Lean statement reads "there exist a starting flow `u₀` and a force `f`", so **the prover chooses the force**. It is a "weird, unphysical force" constructed to stir the fluid into blowing up
@@ -329,6 +359,8 @@ _Reading the small print_
 <!-- _class: small -->
 
 ## The translation gap
+
+_The Lean proof and the 166-page paper may not say the same thing, and only human experts can check that_
 
 **Bastounis, Circelli & Hansen (arXiv:2610.08144), "Navier–Stokes lost in translation"**
 
@@ -343,9 +375,9 @@ _Reading the small print_
 
 ## Where the trust gaps are
 
-![width:940px](diagrams/trust-gaps.svg)
+_Lean closes one link in the chain, from formal statement to formal proof. The others still need people_
 
-Lean closes **one** link, from formal statement to formal proof. The others still need people.
+![width:940px](diagrams/trust-gaps.svg)
 
 <!-- Recap of the last three slides in one picture. Green is cheap and near-certain; amber is expert time; red is where the arguments are. Good warm-up for the practical: Track A is the amber link, Track C is the green one. -->
 
@@ -354,6 +386,8 @@ Lean closes **one** link, from formal statement to formal proof. The others stil
 <!-- _class: small -->
 
 ## The cascading withdrawal
+
+_One sign error took down three manuscripts within a day: unchecked results can break everything built on them_
 
 ![bg right:32% fit](diagrams/cascade.svg)
 
@@ -387,6 +421,8 @@ _Credit, priority, and the ecosystem_
 
 ## Priority and credit (facts, not verdicts)
 
+_Human researchers using AI tools were working on closely related problems at the same time, and who deserves credit is disputed_
+
 - **15–22 Aug:** Buckmaster (NYU) & Alpöge (Anthropic, collaborating personally) get AI-assisted, Lean-checked blow-up results for three related fluid equations
 - **1 Sep:** OpenAI starts its 88-hour Navier–Stokes run
 - **6 Sep:** OpenAI meets Buckmaster; accounts of the proposed arrangement are **disputed**
@@ -404,6 +440,8 @@ Discussion: how should credit work when the "closest humans" are outpaced by a s
 
 ## How mathematicians responded
 
+_Reactions range from alarm to enthusiasm. A common theme: solving a problem isn't the same as understanding it_
+
 - **Fields Medallists' declaration** "A Severe Misalignment of AI in Mathematics": solving problems is only a proxy for understanding
 - **Tao:** problems being solved by prompters "who have no interest in the broader field"; dead ends that labs don't disclose often hold the insight
 - **Melanie Wood (Harvard):** there is no human understanding at release, so "the work begins" then
@@ -416,6 +454,8 @@ Discussion: how should credit work when the "closest humans" are outpaced by a s
 <!-- _class: small -->
 
 ## Rumour: results held in reserve?
+
+_Unconfirmed: some mathematicians suspect OpenAI has results it hasn't released yet_
 
 - **Reported:** during the Navier–Stokes dispute, comments from OpenAI staff led some mathematicians to believe the model "had produced additional results but that it was hesitating to publicize them" (_Scientific American_, 6 Oct)
 - **Then:** the 6 Oct release of 372 results, preceded by weeks of rumours that it was coming
@@ -432,6 +472,8 @@ Discussion: how should credit work when the "closest humans" are outpaced by a s
 <!-- _class: small -->
 
 ## IAS Advisory Group: responsible release
+
+_An independent group proposes release rules: open access, show your working, and report failures as well as successes_
 
 Independent, unpaid, hosted at IAS Princeton; recommendations published 29 Sep 2026
 
@@ -463,6 +505,8 @@ _A better future_
 
 ## A better future: "Math 2.0"
 
+_Tao's optimistic view: AI is good for maths, as long as we use it to understand more and not just to solve more_
+
 Tao's Caltech lecture (9 Oct 2026): proofs used to be **scarce**, now they are **abundant**. Solving problems was only ever a *proxy* for progress, so optimising it blindly is "now actively harmful"
 
 |                          | Light AI use | Heavy AI use        |
@@ -484,6 +528,8 @@ Discussion: is understanding the product? Tao's thought experiment: an AI design
 <!-- _class: small -->
 
 ## Summary: the "six fingers" stage
+
+_Today's flaws are like the six-fingered hands of early AI images: obvious, embarrassing and probably temporary_
 
 A few years ago, AI images were easy to spot: **six fingers**, melted text, impossible hands. Today those flaws feel like ancient history
 
@@ -507,7 +553,7 @@ Discussion: what is the "six fingers" of AI research in *your* field: the tell-t
 
 ## The bigger picture
 
-**Making a result is getting cheap. Checking it and understanding it are not**
+_Making a result is getting cheap. Checking it and understanding it are not_
 
 - **Research:** maths is a testbed for "automated research". OpenAI's stated roadmap runs from an automated research intern (which it says it reached in September 2026) to an automated AI researcher by March 2028
 - **Trust:** when proofs are cheap, verification becomes the bottleneck. Investors are backing formal proof as a trust layer for AI in software, engineering and finance
@@ -535,6 +581,8 @@ _Read the certificate_
 <!-- _class: small -->
 
 ## Read the certificate (25 min, in pairs)
+
+_Look at the real files and decide for yourself what has been proven, and what hasn't_
 
 Pick **one** track (15 min), then report back (10 min).
 
