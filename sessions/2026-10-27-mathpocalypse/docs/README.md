@@ -13,6 +13,7 @@ figures (see the research brief, §8).
 | Note | What it covers |
 | --- | --- |
 | [claude-mathpocalypse-research-brief.md](claude-mathpocalypse-research-brief.md) | Main brief: timeline, facts, positions and readings for each of the six session questions, plus notes on the deck |
+| [reading-list.md](reading-list.md) | Prioritised reading list in four tiers, with video and audio, trackers and suggested paths for different readers |
 | [practical-next-steps.md](practical-next-steps.md) | Take-home exercises and tools for RSEs, from trying Lean in a browser upward ("an agent generates, a cheap checker decides") |
 
 ## The technology
