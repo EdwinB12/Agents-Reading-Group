@@ -719,6 +719,14 @@ Discussion: which of the four changes matters most for *your* field? Is the veri
 
 ---
 
+<!-- _class: lead -->
+
+# Practical
+
+_Check a proof yourself_
+
+---
+
 ## Try it yourself
 
 _See what "the kernel accepted it" means_
