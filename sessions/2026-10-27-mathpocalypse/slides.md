@@ -719,6 +719,16 @@ Discussion: which of the four changes matters most for *your* field? Is the veri
 
 ---
 
+## Try it yourself
+
+_See what "the kernel accepted it" means_
+
+**[Natural Number Game](https://adam.math.hhu.de/)** (Lean 4 Game Server). This is the standard introduction. You prove facts about addition and multiplication one tactic at a time and see what "the kernel accepted it" means.
+
+<!-- Closing practical. Everything in the session leans on proofs being machine-checked; this is the quickest way to feel that first-hand. It runs in the browser with nothing to install. See docs/practical-next-steps.md for further take-home exercises. -->
+
+---
+
 <!-- _class: small -->
 
 ## Links & resources
