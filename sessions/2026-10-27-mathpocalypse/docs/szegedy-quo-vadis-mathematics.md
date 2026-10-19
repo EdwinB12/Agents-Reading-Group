@@ -12,10 +12,11 @@
 
 > **What was and wasn't checked.**
 >
-> - We fetched the essay itself, but the tool returned a summary of it, not the verbatim text. The
->   section structure and the "Do not bet against the airplane" line come from that summary.
->   The other direct quotes below come from the AI News Weekly article, which quotes the essay.
->   Check them against the Google Doc before putting any on a slide.
+> - On 19 October 2026 we checked the quotes used on the slides against the essay's full text:
+>   "full-scale industry ... infrastructure of all scientific and technological progress", "The age
+>   of lone climbers is closing ...", "messy and dirty", "static-thinking fallacy", "Do not bet
+>   against the airplane" and "choosing which terrain is worth exploring, steering fleets of
+>   airplanes, and explaining what they find". Check any other quote before using it.
 > - Szegedy's essay is a personal opinion piece, not a study. The predictions are his own.
 > - Christian Szegedy is not Balázs Szegedy (his brother, a mathematician) or Mario Szegedy
 >   (a computer scientist). Web searches mix these three up.

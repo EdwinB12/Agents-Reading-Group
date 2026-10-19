@@ -121,18 +121,19 @@ _From competition problems to open problems_
 
 <!-- _class: small -->
 
-## Timeline (1/2): competition maths
+## Timeline (1/2): contests and benchmarks
 
 _2024–25: AI caught up with the best human students, on problems whose answers were already known_
 
 | When | What | Why it matters |
 |------|------|----------------|
 | 2024 | **AlphaProof**: silver at the International Maths Olympiad (IMO, for school students) | Trial-and-error learning + Lean-checked proofs |
+| 2024 | **FrontierMath**: secret research-level problems become the labs' scoreboard; OpenAI's o3 claims ~25% | Beyond contests; ~10% when tested independently |
 | 2025 | **IMO golds**: OpenAI, DeepMind, Harmonic | Top human level |
 | 2025 | **AlphaEvolve** (with Tao) | New records on ~20 problems |
 | 2025 | **Putnam** (top undergrad contest): 12/12 | Perfect score (self-reported) |
 
-<!-- Detail: Putnam = the William Lowell Putnam Mathematical Competition, the hardest undergraduate maths contest in the US/Canada; 12 proof problems in two 3-hour sessions, and the median human score is often 0–2 out of 120. AlphaGeometry (LM proposes constructions, symbolic engine proves) shared the 2024 IMO result. 2025 IMO golds also included DeepSeek; Harmonic's Aristotle was in Lean. AlphaEvolve with Tao and Gómez-Serrano: 67 problems, ~20 improved bounds (i.e. constructions beating the previous best known value; the exact answers are still unknown). Putnam 12/12 claims from AxiomProver and Numina-Lean. Also 2025: DeepMind "unstable singularities" in fluids (computer-assisted PDE work), a precursor to the Navier–Stokes results on the next slide. -->
+<!-- Detail: Putnam = the William Lowell Putnam Mathematical Competition, the hardest undergraduate maths contest in the US/Canada; 12 proof problems in two 3-hour sessions, and the median human score is often 0–2 out of 120. AlphaGeometry (LM proposes constructions, symbolic engine proves) shared the 2024 IMO result. 2025 IMO golds also included DeepSeek; Harmonic's Aristotle was in Lean. AlphaEvolve with Tao and Gómez-Serrano: 67 problems, ~20 improved bounds (i.e. constructions beating the previous best known value; the exact answers are still unknown). Putnam 12/12 claims from AxiomProver and Numina-Lean. FrontierMath (Epoch AI, Nov 2024): a few hundred unpublished problems written by mathematicians, each with an answer a computer can check, kept secret so models can't have trained on them. Earlier models scored ~2%. A fair critical point: OpenAI had funded the benchmark and had access to most problems and solutions, which Epoch only disclosed at the o3 launch, and some problem authors hadn't been told. Epoch later said it should have been more transparent. Epoch's own test of the released o3 (Apr 2025) got ~10%, which it put down to a different model version, compute budget and problem set rather than misreporting. Labs then kept quoting the hardest "Tier 4" set, and in 2026 Epoch added "FrontierMath: Open Problems", which uses real unsolved problems (see the "Secret models only?" slide). Also 2025: DeepMind "unstable singularities" in fluids (computer-assisted PDE work), a precursor to the Navier–Stokes results on the next slide. -->
 
 ---
 
@@ -150,6 +151,32 @@ _2025–26: AI moved on to problems nobody had solved, and checking whether a re
 | Sep–Oct 2026 | **OpenAI**: Navier–Stokes, then 722 manuscripts | Scale |
 
 <!-- Callback: "Erdősgate" came up in the 01/09 session. -->
+
+---
+
+<!-- _class: small -->
+
+## Why so fast?
+
+_Maths turned out to be unusually well suited to machines, even though it feels like the peak of human thinking_
+
+> "What's surprising is how fast they have gotten good." — Steven Strogatz (Cornell), Oct 2026
+
+- **Cheap to check:** a computation or Lean proof is right or wrong with no human needed, so failed attempts cost little and give a training signal
+- **All text:** no lab or experiments, just a huge written record (arXiv, Mathlib)
+- **Clearly defined:** problems are precise and self-contained (Thickstun, Cornell)
+- **Longer thinking:** from seconds to hours (the Navier–Stokes run took 88)
+- **Ripe targets:** many built on human work already close to the goal (Aaronson)
+
+**Moravec's paradox:** hard for humans (proofs) can be easy for machines, and vice versa (folding laundry)
+
+<!-- Strogatz quotes from the Cornell Daily Sun, 9 Oct 2026 (Sofia Romero). Earlier in 2026 the community's view, he said, was that "it can't really do research that competes with those of us who are near the top of the profession". He doesn't explain the speed. In the same article Thickstun (Cornell CS) argues the progress was *continuous* over several years, not a sudden jump, and says maths is especially suited to AI because its problems are clearly defined and isolated. Even so: "10 years ago, I would not have predicted … the pace of where it is today." So the surprise is partly in our expectations.
+
+The first bullet is the same idea as "Why the swarm works: a cheap, trustworthy verifier" later on, and as the rule of thumb on the jagged-frontier slide. Point forward to both. The 88-hour figure is from the "Priority and credit" slide; ~3 h per result is from the bulk release. "Ripe" is Aaronson's comment #27 (see "Is any of it a big deal?").
+
+Moravec (1988, *Mind Children*): high-level reasoning needs little computation compared with perception and movement. The lab-free point is why maths and code went first, and why physics, biology and chemistry, which need experiments, may move more slowly (see "The bigger picture").
+
+Discussion: was it really surprising, or did we overrate how "human" maths is? Which field is next by these criteria: checkable, all text, precisely defined? -->
 
 ---
 
@@ -366,7 +393,7 @@ _The Lean proof and the 166-page paper may not say the same thing, and only huma
 
 - A Lean check certifies the **formal** statement and proof, not the **English** paper
 - They report that OpenAI's Lean proof **does not correspond** to its natural-language proof
-- They argue that reliably translating ambiguous English maths into Lean automatically is, in general, harder than the Halting problem
+- They argue that no automatic translator can always tell whether a statement is well-defined enough to translate (in general, harder than the Halting problem), so a compiling Lean proof can silently change the meaning
 - Practical upshot: two artefacts (166-page PDF + Lean project) that may say *different things*, both hard to read
 
 > "It's not anymore a matter of clearly verifiable mathematical facts." — Camillo De Lellis (IAS)
@@ -375,11 +402,50 @@ _The Lean proof and the 166-page paper may not say the same thing, and only huma
 
 ## Where the trust gaps are
 
-_Lean closes one link in the chain, from formal statement to formal proof. The others still need people_
+_Lean closes one link in the chain, from formal statement to formal proof. Currently, this still needs people (or is impossible)._
 
 ![width:940px](diagrams/trust-gaps.svg)
 
 <!-- Recap of the last three slides in one picture. Green is cheap and near-certain; amber is expert time; red is where the arguments are. Good warm-up for the practical: Track A is the amber link, Track C is the green one. -->
+
+---
+
+<!-- _class: small -->
+
+## Meanwhile: the bulk release
+
+_So far, one result checked very carefully. A month later, OpenAI released hundreds at once, most of them not checked by Lean_
+
+**6 Oct 2026:** OpenAI publishes [`openai/math`](https://github.com/openai/math) on GitHub
+
+- **~4,000 open problems** given to the same unreleased model, with one fixed procedure (~3 h of "ChatGPT Pro thinking" per result, on average)
+- Filtered for significance → **722 manuscripts in 372 result families**, all published on the same day
+- Only **~42%** of top-line results formalised in Lean; the rest are paper proofs with no machine check
+- Reasoning summaries for just **10** families; the failed attempts are not published
+- No peer review, and no journal submission announced
+
+<!-- Bridge from the Navier–Stokes deep dive back to the second headline event from the intro. Contrast: Navier–Stokes is one result, fully Lean-checked, with an independently written statement (Comparator). The bulk release is the opposite trade: huge volume, mostly unformalised. Figures from the openai/math README; it listed 722 at release and lists 719 now, matching the withdrawals two slides on. Survivorship: the ~4,000 denominator is published, but the failures aren't (AGMAI rec 5 asks for them). -->
+
+---
+
+<!-- _class: small -->
+
+## Is any of it a big deal?
+
+_If most of it holds up, yes: experts rank several results among the best in their fields for years_
+
+> "Yesterday was surely one of the **biggest days in mathematical history**." — Scott Aaronson, "The Mathocalypse" (7 Oct 2026)
+
+- **Long-standing open problems, not exercises.** Claims include the **Unique Games Conjecture** (the limits of approximating hard optimisation problems), **L = BPL** (randomness gives no extra power to memory-starved computers) and **multiplying integers faster than n log n**
+- Each one "could easily have been 'result of the year' in some area" (Aaronson)
+- **Ripe, not the summit:** many build on existing human research programmes and "looked in reach for humans". P ≠ NP is missing, "and surely not for lack of trying"
+- **Not yet confirmed:** no peer review, and only the maths community can judge significance (AGMAI)
+
+**Today the README says 719 manuscripts.** Where did three go?
+
+<!-- Aaronson is a quantum-complexity theorist; his shortlist is from his own fields (CS theory, quantum information), so it's a field expert's reading, not a survey of all 372 families. Quotes checked against the post on 19 Oct; "in reach for humans" is his reply in comment #27, agreeing with #24 that the Kakeya and harmonic-analysis results build on Hong Wang's programme and were probably months to ~5 years from human reach. Other items on his list: Hilbert's tenth problem over the rationals, deterministic polynomial factorisation over prime fields, parity not in QAC0, a 2D area law. Riemann and BSD are only partial progress. He also dismisses the "it failed on ~3,600 problems" objection: like asking Wiles about the theorems he didn't prove (#91). On errors: "most of these will stand but this isn't the last one that will have some bug … just like with human papers!" (#132). Moshkovitz (UGC expert, his wife) called the proof "alien craziness" on day one and mostly understood it with AI help by day two; see the "six fingers" slide.
+
+Discussion: what would make you call a result "significant"? Correct, new method, understood by a human, changes what people work on next? Rank them. -->
 
 ---
 
@@ -396,9 +462,9 @@ From the bulk release, within 24 hours:
 - A **sign error** broke one manuscript's argument
 - **Two other** manuscripts relied on constructions that depended on it → all **3 withdrawn**
 - **14 more revised** with proof repairs and corrected statements
-- Some results "touch on" famous open problems (the Riemann, Hodge or Kakeya conjectures) — far weaker than "solved"
+- Riemann and Hodge claims were only *partial progress*
 
-**Lesson for RSEs:** an AI result that isn't Lean-checked is a *dependency* with no tests. Errors propagate through the dependency graph, just as they do in software.
+An AI result that isn't Lean-checked is a *dependency* with no tests. Errors propagate through the dependency graph, just as they do in software.
 
 <!-- Discussion: who pays for verification? 719 unreviewed manuscripts land at once: a gift, or a denial-of-service on peer review? No journal submission announced by any lab (as of 18 Oct). Should there be? (cf. 01/09: finding is cheap, adjudicating is expensive) -->
 
@@ -427,7 +493,7 @@ _Human researchers using AI tools were working on closely related problems at th
 - **1 Sep:** OpenAI starts its 88-hour Navier–Stokes run
 - **6 Sep:** OpenAI meets Buckmaster; accounts of the proposed arrangement are **disputed**
 - **7–8 Sep:** Buckmaster's statement, then OpenAI's announcement ~12 h later
-- OpenAI says user Codex sessions **could not** have influenced the system; it "recognises the priority" of their work
+- OpenAI says user Codex sessions **could not** have influenced the system; it "recognises the priority" of their work. (_Can they be trusted with frontier research?_)
 - Open question: what does "credit" mean when the closest humans used the same lab's tools?
 
 <!-- The three equations: forced Euler, IPM (porous media flow) and Boussinesq (fluid with buoyancy). Keep this neutral; the facts are contested and sources differ. Point to Fortune / NYT / Buckmaster's statement for the detail.
@@ -442,12 +508,16 @@ Discussion: how should credit work when the "closest humans" are outpaced by a s
 
 _Reactions range from alarm to enthusiasm. A common theme: solving a problem isn't the same as understanding it_
 
+- **Leiden Declaration** (June, endorsed by the International Mathematical Union): not anti-AI; asks for disclosure of AI use and named human authors who take responsibility
 - **Fields Medallists' declaration** "A Severe Misalignment of AI in Mathematics": solving problems is only a proxy for understanding
 - **Tao:** problems being solved by prompters "who have no interest in the broader field"; dead ends that labs don't disclose often hold the insight
 - **Melanie Wood (Harvard):** there is no human understanding at release, so "the work begins" then
-- **Strogatz (Cornell):** "What's surprising is how fast they have gotten good"
-- **Association for Human Mathematics:** "not a demonstration of scholarship, but a demonstration of power"
+- **Association for Human Mathematics** (Oct): the release is "not a demonstration of scholarship, but a demonstration of power"; urges mathematicians to "discontinue their work with OpenAI"
 - **Dan Litt (Toronto):** "great for mathematics", but human expertise still needs support
+
+<!-- Leiden came first (2 Jun 2026), before the Navier–Stokes claim and the bulk release: the community set out its values (proof, attribution, transparency, evaluation, autonomy), then the labs tested them. It grew out of a Lorentz Center workshop (Sep 2025); 4,355 signatories as of 17 Oct, including Scholze, Tao, Buzzard and Strogatz. Nature's June editorial suggested other disciplines adopt it, which is the hook for a non-maths audience. Notes: docs/leiden-declaration-summary.md.
+
+AHM statement (ahmath.org/statements, Oct 2026): it calls the release of 700+ files at once a show of power, and says OpenAI, by ignoring its own advisory group's central advice (don't test advanced open problems on proprietary models), showed "total disregard for the norms of scientific research". Press coverage calls it a boycott; the statement's own words are "discontinue their work with OpenAI". Fair counterpoint: Aaronson calls the call "totally untenable": no public-interest argument, problems are open to anyone, and it can't be enforced once the capability is commercially available. He still wants the community to "hold the AI companies' feet to the fire". -->
 
 ---
 
@@ -503,6 +573,54 @@ _A better future_
 
 <!-- _class: small -->
 
+## What do mathematicians actually do?
+
+_Proving theorems is one step in a long pipeline, and research is only one part of the job_
+
+**The research pipeline:** choose a question → explore examples → search the literature → conjecture → invent the right concepts → plan a proof → grind through the details → check → write it up → the community absorbs it
+
+**The rest of the job:**
+
+- **Teaching:** probably their biggest impact on society
+- **Gatekeeping:** refereeing and editing decide what counts as established
+- **Curating:** surveys and textbooks keep the literature usable
+- **Translating:** turning messy problems from science and industry into maths (much like RSE work)
+- **Mentoring:** passing on *taste* to the next generation
+- **Accountability:** someone has to stand behind a result
+
+<!-- Sets up the next slide: before asking "will AI replace mathematicians?", list what mathematicians actually do. Definitions are often the deepest contribution (groups, categories, forcing). A proof nobody understands has limited value until the community absorbs it (Thurston 1994, see the "six fingers" notes).
+
+Discussion: which of these would you miss most if it disappeared? Which would you happily hand over? -->
+
+---
+
+<!-- _class: small -->
+
+## Where AI is strong today: a jagged frontier
+
+_AI is taking over the drudgery first. What's left is the part most mathematicians say they came for_
+
+| AI strong today | Mixed or emerging | Still mostly human |
+|---|---|---|
+| **Literature search** ("Erdősgate") | **Long new proofs:** real results, real errors | **Choosing** questions that matter |
+| **Checkable answers:** Lean, computation, examples | **Formalising** research maths | **Inventing** new concepts |
+| **Volume:** many constructions fast | **Conjectures:** interesting ones are rare | **Judging significance**, explaining *why* |
+| **Routine work:** standard steps, code, LaTeX | **Refereeing:** spots errors, no final verdict | **Accountability,** teaching, mentoring |
+
+**Rule of thumb:** best where answers are **cheap to check**. The frontier is **jagged** (it doesn't follow how hard a task *looks*) and **moving**
+
+<!-- The map follows Gowers, "What sort of maths are LLMs good at?" (12 Aug 2026): LLMs win on breadth of knowledge and volume ("try lots of things till you get lucky"). Humans dig deeper with a "nose" for where to aim. He rejects the headline that "it's only counterexamples": "LLMs are not just good at finding counterexamples: they can find proofs of difficult statements as well." Sarnak's "AlphaZero test" and Zahavy's "LLMs can't jump" place the limit at building new abstractions. Full map and caveats in docs/jagged-frontier-gowers.md.
+
+Warning from the BCG study (Dell'Acqua et al. 2023): consultants using AI on a task just *outside* the frontier were 19 points less likely to get it right. In maths, the equivalent is trusting a faithful-looking but wrong Lean statement (the translation gap).
+
+Survivor bias (Tao): failures go unreported, so the middle column may look better than it is. The right-hand column may partly be things nobody has reported trying.
+
+Discussion: where is the jagged edge in *your* research software work? Which column would you put "writing the tests" in? -->
+
+---
+
+<!-- _class: small -->
+
 ## A better future: "Math 2.0"
 
 _Tao's optimistic view: AI is good for maths, as long as we use it to understand more and not just to solve more_
@@ -522,6 +640,35 @@ Tao's Caltech lecture (9 Oct 2026): proofs used to be **scarce**, now they are *
 <!-- The optimistic payoff after the fallout section, from the same person quoted as a critic earlier. IAS rec #7 (fund human understanding) leads straight into this. Examples: Equational Theories Project (22M statements), SAIR/LMFDB Inverse Galois challenge, Caltech Mathathon, IEANTN. Full notes in docs/tao-math-2-0.md.
 
 Discussion: is understanding the product? Tao's thought experiment: an AI designs a cancer cocktail nobody understands. It has a Lean certificate and passes a phase 3 trial. Would you take it? Medicine says yes: penicillin and aspirin were used for decades before anyone knew how they worked. In *your* field, is understanding the output or a means to it? -->
+
+---
+
+<!-- _class: small -->
+
+## Szegedy: maths as "a full-scale industry"
+
+_From lone climbers to mapping the whole continent_
+
+Christian Szegedy (formerly Google and xAI, long-time autoformalisation advocate), _"Quo Vadis, Mathematics?"_ (3 Oct 2026)
+
+> "Mathematics is about to graduate. It will grow into a full-scale industry and become the true infrastructure of all scientific and technological progress"
+
+His metaphor: maths is an unmapped jungle, and AI is the Wright brothers' twelve-second flight
+
+- **Planes get cheap:** anyone can charter one and land on any rock (famous open problem)
+- **Satellites map the terrain:** whole regions surveyed at once, not one peak at a time
+- **Industry moves in:** results extracted at scale. It will be "messy and dirty"
+- **New skills count:** "choosing which terrain is worth exploring, steering fleets of airplanes, and explaining what they find"
+
+> "The age of lone climbers is closing, and the age of mapping the whole continent is opening"
+
+<!-- The most upbeat take in the deck, and from inside the field: Szegedy trained in a Hungarian maths-specialist school and IMO-style competitions. He calls objections based on today's limits a "static-thinking fallacy" and says: "Do not bet against the airplane." He admits the grief ("The old vibe and thrill will be gone forever"), but says "it will not last", and that maths will be "far more glorious, useful and mundane at the same time".
+
+Quotes checked against the essay (Google Doc, 19 Oct 2026). It's an opinion piece, and he builds autoformalisation systems, so it's also advocacy. Don't confuse him with Balázs Szegedy (his brother, a mathematician) or Mario Szegedy.
+
+Fair critiques to raise: an industry needs an economy (who pays, who owns the map?); the essay barely discusses verification, which the earlier sections show is the real bottleneck; and the "lone hero" was always part myth (Bourbaki, Polymath, the classification of finite simple groups). Full notes in docs/szegedy-quo-vadis-mathematics.md.
+
+Discussion: which stage of the aviation story are we in? If climbing rocks "to hone climbing tools" loses its point, how do students develop the taste that he says will matter most? -->
 
 ---
 
@@ -555,42 +702,20 @@ Discussion: what is the "six fingers" of AI research in *your* field: the tell-t
 
 _Making a result is getting cheap. Checking it and understanding it are not_
 
-- **Research:** maths is a testbed for "automated research". OpenAI's stated roadmap runs from an automated research intern (which it says it reached in September 2026) to an automated AI researcher by March 2028
+- **Research:** maths is a testbed for "automated research". OpenAI's stated roadmap runs from an automated research intern (which it says it reached in September 2026) to an automated AI researcher by March 2028 (_"Recursive self-improvement"_)
 - **Trust:** when proofs are cheap, verification becomes the bottleneck. Investors are backing formal proof as a trust layer for AI in software, engineering and finance
 - **Mathematics:** the work shifts from solving to choosing good questions, explaining and understanding. This is Tao's "Math 2.0"
 - **Institutions:** credit, release norms and who pays for checking are being settled now. The Simons, Anthropic and OpenAI $15M fund is a small first step
 
-> Maths is where we learn how far to trust machine research, before we need to trust it everywhere
+> Maths is the first research field we automate. It won't be the last
 
-<!-- The one-slide version of the session. Everything before it is a case study; this is what the case studies add up to. Keep the tone measured: OpenAI's "intern by September 2026" is its own claim, and the 2028 date is a roadmap, not a result.
+<!-- The one-slide version of the session. Everything before it is a case study; this is what the case studies add up to. Maths goes first because its answers are cheap to check (Lean, computation). Fields without a verifier follow, and what we learn about credit, checking and understanding here is the rehearsal for them. Keep the tone measured: OpenAI's "intern by September 2026" is its own claim, and the 2028 date is a roadmap, not a result.
+
+The $15M fund (announced 15 Oct 2026): the Simons Foundation, Anthropic and OpenAI are putting up $15M in funding, compute and tool access. Simons runs it, mainly through an open call for proposals, paying for workshops and projects that help mathematicians check AI-assisted results and agree shared standards. Anthropic says it committed $5M (including compute and Claude access) and OpenAI says $5M; the release doesn't say who covers the other $5M, so hedge the split. Critics call it a fig leaf: compare a single Navier–Stokes run reported to cost "millions". Hence "small first step".
 
 Sources: docs/industry-perspectives-summary.md (the roadmap, the investor theses, and the Simons fund, which is 15 Oct 2026); docs/tao-math-2-0.md (Math 2.0 and proofs going from scarce to abundant); docs/practical-next-steps.md if you want a practical close.
 
 Discussion: which of the four changes matters most for *your* field? Is the verification bottleneck a feature (a trust layer) or a warning (humans falling behind)? -->
-
----
-
-<!-- _class: lead -->
-
-# Practical activity
-
-_Read the certificate_
-
----
-
-<!-- _class: small -->
-
-## Read the certificate (25 min, in pairs)
-
-_Look at the real files and decide for yourself what has been proven, and what hasn't_
-
-Pick **one** track (15 min), then report back (10 min).
-
-- **A: Statement vs headline** (no install). Open `ComparatorChallenges/NavierStokes.lean` in `openai/NavierStokesAndEuler`. Write `navier_stokes_breakdown_R3` out in English. Where is the force? Who picks it? Compare with "AI solves Navier–Stokes"
-- **B: Audit a family** (no install). Pick a family in `openai/math`. Score it on the IAS checklist. How long would an expert need to trust it? And for all 719 remaining manuscripts?
-- **C: Build it** (needs elan). `lake exe cache get && lake build`, then `#print axioms` on the main theorem. What does `sorry_count: 0` certify, and what doesn't it?
-
-**Report back:** *in one sentence, what has actually been verified, and by whom?*
 
 ---
 
@@ -602,6 +727,7 @@ Pick **one** track (15 min), then report back (10 min).
 - Code: [openai/NavierStokesAndEuler](https://github.com/openai/NavierStokesAndEuler) · [openai/math](https://github.com/openai/math) · [leanprover/comparator](https://github.com/leanprover/comparator) · [Formal Conjectures](https://github.com/google-deepmind/formal-conjectures)
 - [Quanta explainer](https://www.quantamagazine.org/ai-has-solved-one-of-maths-1-million-millennium-prize-problems-20260908/) · [Tao's blog](https://terrytao.wordpress.com/2026/09/07/finite-time-blowup-with-smooth-forcing-term-for-the-incompressible-porous-medium-boussinesq-and-incompressible-euler-equations) · [Clay statement](https://www.claymath.org/news/navier-stokes-announcement)
 - Tao, "Math 2.0": [video](https://aimath.org/videos/terry-tao-pl/) · [slides](https://teorth.github.io/tao-web/slides/math-2-0-caltech-2026.pdf) · [blog & comments](https://terrytao.wordpress.com/2026/10/10/math-2-0/)
+- Szegedy, [Quo Vadis, Mathematics?](https://docs.google.com/document/d/e/2PACX-1vTSh-pyNP3Gi99WMmsinnLmE9V5CDI0HEm6WGbIPMNt3V5SGlClHF8-BetotKHOImrvQDSXmFdiOw8D/pub)
 - [Navier–Stokes lost in translation (arXiv:2610.08144)](https://arxiv.org/abs/2610.08144) · [Aletheia (arXiv:2602.10177)](https://arxiv.org/abs/2602.10177)
 - In this repo: [Harmonic Aristotle idea](../../ideas/mathematics-harmonic-aristotle.md) · [Agents Reviewing Old Papers](../2026-09-01-agents-reviewing-old-papers/README.md) · [Research certificates](../2026-11-10-research-certificates.md)
 - Full citations in `references.bib`
