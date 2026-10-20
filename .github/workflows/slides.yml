@@ -1,0 +1,87 @@
+name: Deploy slides
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "sessions/**"
+      - "ideas/**"
+      - ".github/workflows/slides.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build Marp slides
+        run: |
+          set -euo pipefail
+          mkdir -p _site
+          # Copy session assets (images, diagrams) and ideas so relative links resolve
+          cp -r sessions ideas _site/
+          items=""
+          for md in $(ls -d sessions/*/slides.md | sort -r); do
+            dir=$(dirname "$md")
+            slug=$(basename "$dir")
+            args=("$md" -o "_site/$dir/index.html")
+            # --theme-set must come after the input path
+            if [ -f "$dir/slides.css" ]; then
+              args+=(--theme-set "$dir/slides.css")
+            fi
+            npx --yes @marp-team/marp-cli@4 "${args[@]}"
+            title=$(grep -m1 '^# ' "$md" | sed 's/^# //' || true)
+            title=${title:-$slug}
+            title=$(printf '%s' "$title" | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g')
+            date=${slug:0:10}
+            items+="<li><a href=\"$dir/\">$title</a> <span>($date)</span></li>"$'\n'
+          done
+          cat > _site/index.html <<HTML
+          <!doctype html>
+          <html lang="en">
+          <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>Agents Reading Group — Slides</title>
+            <style>
+              body { font-family: system-ui, sans-serif; max-width: 40rem; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; }
+              span { color: #555; }
+            </style>
+          </head>
+          <body>
+            <h1>Agents Reading Group — Slides</h1>
+            <ul>
+          $items
+            </ul>
+          </body>
+          </html>
+          HTML
+          touch _site/.nojekyll
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
