@@ -1,1 +1,6 @@
 .claude/
+
+# Built Marp slides
+sessions/*/slides.html
+sessions/*/slides.pdf
+sessions/*/slides.pptx
