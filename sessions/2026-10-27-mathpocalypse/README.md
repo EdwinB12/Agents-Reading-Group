@@ -31,16 +31,21 @@ cheap; adjudicating them is not.*
 | `slides.css` | `uos` Marp theme (University of Sheffield branding) |
 | `references.bib` | BibTeX for everything cited in the deck |
 | `images/` | Logo and slide assets |
+| [`docs/`](docs/README.md) | Research notes gathered while preparing the session (indexed in `docs/README.md`) |
 
 ## Building the slides
 
-Slides are [Marp](https://marp.app/) Markdown. Preview with the VS Code Marp extension, or
-export with the Marp CLI:
+Slides are [Marp](https://marp.app/) Markdown using the `uos` theme in `slides.css`. From this
+directory (no install needed):
 
 ```bash
-marp slides.md --theme slides.css -o slides.html   # HTML
-marp slides.md --theme slides.css --pdf            # PDF
+npx @marp-team/marp-cli@latest -s . --theme-set slides.css                       # live preview: http://localhost:8080/slides.md
+npx @marp-team/marp-cli@latest slides.md --theme-set slides.css -o slides.html   # HTML
+npx @marp-team/marp-cli@latest slides.md --theme-set slides.css --pdf            # PDF
 ```
+
+Without `--theme-set`, Marp falls back to its default theme. See
+[CONTRIBUTING.md](../../CONTRIBUTING.md#previewing-marp-slides-locally) for more options, including VS Code.
 
 ## Background reading
 
@@ -77,11 +82,11 @@ Optional:
 
 | Time | Activity | Who |
 |------|----------|-----|
-| 3:00–3:10 | Intro & framing — what is the "Mathpocalypse"? Show-of-hands: *is this good news?* | Joe |
+| 3:00–3:10 | Intro & framing — what is the "Mathpocalypse"? | Joe |
 | 3:10–3:35 | How it was done — lineage (2024–26), the two pipelines, the swarm, Lean 4 & Comparator | Joe |
 | 3:35–3:45 | What was actually proven — the forcing loophole, the translation gap, the cascading withdrawal | Joe |
 | 3:45–4:10 | Practical activity: *Read the certificate* (see below) | All, in pairs |
-| 4:10–4:30 | Discussion — what it means for research (see prompts below); repeat the show-of-hands | All |
+| 4:10–4:30 | Discussion — what it means for research (see prompts below) | All |
 
 Total: 90 minutes.
 
@@ -139,7 +144,9 @@ Aim to cover at least four.
    understands it, has mathematics advanced?
 2. **Who pays for verification?** — 719 unreviewed manuscripts land on the community at once. Is this
    a gift or a denial-of-service on peer review? What would a sustainable model look like? (cf. the
-   01/09 session: finding is cheap, adjudicating is expensive.)
+   01/09 session: finding is cheap, adjudicating is expensive.) Note that the labs have released
+   results via GitHub repos and blog posts, but (as of 18 Oct 2026) none has announced submitting any
+   to an academic journal. Should they, or is formal verification plus open review a better route?
 3. **Credit and priority** — Buckmaster and Alpöge were weeks from a related result using AI tools,
    including OpenAI's. How should credit work when a lab's model may have seen users' sessions, or
    when the "closest humans" are outpaced by a swarm?
@@ -152,7 +159,12 @@ Aim to cover at least four.
 6. **A new kind of research?** — Is this a genuinely new mode of research, or the industrialisation
    of an old one (search + check)? What remains distinctively human — choosing the questions, the
    "art side", explanation?
-7. **What would we want?** — If you were on the IAS advisory group, what single rule would you add
+7. **The "six fingers" stage?** — A few years ago AI images gave themselves away with six-fingered
+   hands; now those flaws feel like ancient history. Are the forcing loopholes, translation gaps and
+   withdrawn manuscripts the "six fingers" of AI maths, early flaws that will be fixed if
+   capabilities keep improving at their current (roughly exponential) pace? What's the tell-tale
+   flaw in *your* field today, and is anything *not* going to be fixed by scale?
+8. **What would we want?** — If you were on the IAS advisory group, what single rule would you add
    for releasing AI-generated research results in *your* field?
 
 ## Related

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 450" font-family="Open Sans, Helvetica, Arial, sans-serif">
+  <title>Which links between the Navier–Stokes artefacts are machine-checked, human-judged or unchecked</title>
+  <style>.halo { paint-order: stroke; stroke: #F8F8F9; stroke-width: 8px; stroke-linejoin: round; }</style>
+  <rect width="1100" height="450" fill="#F8F8F9"/>
+
+  <!-- column headers -->
+  <line x1="550" y1="10" x2="550" y2="440" stroke="#440099" stroke-width="1.5" stroke-dasharray="3 6"/>
+  <text x="250" y="28" text-anchor="middle" font-size="20" font-weight="700" fill="#440099">Natural language</text>
+  <text x="850" y="28" text-anchor="middle" font-size="20" font-weight="700" fill="#440099">Lean 4</text>
+
+  <!-- legend -->
+  <g font-size="15" fill="#131E29">
+    <line x1="640" y1="70" x2="690" y2="70" stroke="#1B7F3B" stroke-width="5"/>
+    <text x="700" y="75">machine-checked</text>
+    <line x1="640" y1="98" x2="690" y2="98" stroke="#B26A00" stroke-width="4" stroke-dasharray="12 5"/>
+    <text x="700" y="103">human judgement</text>
+    <line x1="640" y1="126" x2="690" y2="126" stroke="#B3261E" stroke-width="4" stroke-dasharray="4 5"/>
+    <text x="700" y="131">unchecked or disputed</text>
+  </g>
+
+  <!-- edges (drawn first, under nodes) -->
+  <line x1="250" y1="112" x2="250" y2="196" stroke="#B3261E" stroke-width="4" stroke-dasharray="4 5"/>
+  <text class="halo" x="264" y="152" font-size="15" fill="#B3261E">omits the force and</text>
+  <text class="halo" x="264" y="171" font-size="15" fill="#B3261E">the other alternatives</text>
+
+  <line x1="440" y1="231" x2="660" y2="231" stroke="#B26A00" stroke-width="4" stroke-dasharray="12 5"/>
+  <text class="halo" x="550" y="214" text-anchor="middle" font-size="15" fill="#B26A00">does ∃ u₀ f match (C)?</text>
+  <text class="halo" x="550" y="256" text-anchor="middle" font-size="15" fill="#B26A00">experts read both</text>
+
+  <line x1="850" y1="266" x2="850" y2="346" stroke="#1B7F3B" stroke-width="6"/>
+  <text class="halo" x="866" y="300" font-size="15" font-weight="700" fill="#1B7F3B">Comparator: statement ✓</text>
+  <text class="halo" x="866" y="320" font-size="15" font-weight="700" fill="#1B7F3B">Lean kernel: proof ✓</text>
+
+  <line x1="250" y1="266" x2="250" y2="346" stroke="#B26A00" stroke-width="4" stroke-dasharray="12 5"/>
+  <text class="halo" x="264" y="300" font-size="15" fill="#B26A00">peer review:</text>
+  <text class="halo" x="264" y="320" font-size="15" fill="#B26A00">not yet (Clay: 2+ years)</text>
+
+  <line x1="440" y1="381" x2="660" y2="381" stroke="#B3261E" stroke-width="4" stroke-dasharray="4 5"/>
+  <text class="halo" x="550" y="364" text-anchor="middle" font-size="15" fill="#B3261E">same argument?</text>
+  <text class="halo" x="550" y="406" text-anchor="middle" font-size="15" fill="#B3261E">arXiv:2610.08144 says no</text>
+
+  <!-- nodes -->
+  <g stroke-width="2.5">
+    <rect x="60" y="52" width="380" height="60" rx="10" fill="#FFFFFF" stroke="#131E29"/>
+    <rect x="60" y="196" width="380" height="70" rx="10" fill="#FFFFFF" stroke="#131E29"/>
+    <rect x="60" y="346" width="380" height="70" rx="10" fill="#FFFFFF" stroke="#131E29"/>
+    <rect x="660" y="196" width="380" height="70" rx="10" fill="#EFE6F7" stroke="#440099"/>
+    <rect x="660" y="346" width="380" height="70" rx="10" fill="#EFE6F7" stroke="#440099"/>
+  </g>
+  <g text-anchor="middle" fill="#131E29">
+    <text x="250" y="89" font-size="19" font-weight="700">"AI solves Navier–Stokes"</text>
+    <text x="250" y="226" font-size="19" font-weight="700">Clay problem statement</text>
+    <text x="250" y="250" font-size="15">Fefferman; four alternatives</text>
+    <text x="250" y="376" font-size="19" font-weight="700">166-page paper</text>
+    <text x="250" y="400" font-size="15">the human-readable proof</text>
+    <text x="850" y="226" font-size="19" font-weight="700">Challenge statement</text>
+    <text x="850" y="250" font-size="15">trusted party, via Formal Conjectures</text>
+    <text x="850" y="376" font-size="19" font-weight="700">Lean proof</text>
+    <text x="850" y="400" font-size="15">sorry_count: 0 · standard axioms</text>
+  </g>
+</svg>

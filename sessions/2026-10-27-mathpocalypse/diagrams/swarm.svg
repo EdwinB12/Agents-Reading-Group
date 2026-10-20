@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1110 440" font-family="Open Sans, Helvetica, Arial, sans-serif">
+  <title>Anatomy of the Navier–Stokes agent swarm (as reported)</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#131E29"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1B7F3B"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#B3261E"/>
+    </marker>
+    <g id="agents">
+      <circle cx="0" cy="0" r="5"/><circle cx="16" cy="0" r="5"/><circle cx="32" cy="0" r="5"/>
+      <circle cx="48" cy="0" r="5"/><circle cx="64" cy="0" r="5"/><circle cx="80" cy="0" r="5"/>
+    </g>
+  </defs>
+  <rect width="1110" height="440" fill="#F8F8F9"/>
+
+  <!-- coordinator -->
+  <rect x="360" y="8" width="380" height="64" rx="10" fill="#440099"/>
+  <text x="550" y="36" text-anchor="middle" font-size="21" font-weight="700" fill="#F8F8F9">Coordinator</text>
+  <text x="550" y="60" text-anchor="middle" font-size="15" fill="#F8F8F9">Codex consolidates insights across groups</text>
+  <g stroke="#131E29" stroke-width="2" fill="none">
+    <path d="M550,72 L170,122"/>
+    <path d="M550,72 L450,122"/>
+    <path d="M550,72 L930,122"/>
+  </g>
+
+  <!-- agent groups -->
+  <g fill="#FFFFFF" stroke="#440099" stroke-width="2.5">
+    <rect x="40" y="122" width="260" height="86" rx="10"/>
+    <rect x="320" y="122" width="260" height="86" rx="10"/>
+    <rect x="800" y="122" width="260" height="86" rx="10"/>
+  </g>
+  <g font-size="18" font-weight="700" fill="#131E29" text-anchor="middle">
+    <text x="170" y="150">Agent group</text>
+    <text x="450" y="150">Agent group</text>
+    <text x="930" y="150">Agent group</text>
+  </g>
+  <g font-size="14" fill="#131E29" text-anchor="middle">
+    <text x="170" y="170">a sub-problem</text>
+    <text x="450" y="170">a variant</text>
+    <text x="930" y="170">approach N</text>
+  </g>
+  <g fill="#440099" opacity="0.55">
+    <use href="#agents" x="130" y="190"/>
+    <use href="#agents" x="410" y="190"/>
+    <use href="#agents" x="890" y="190"/>
+  </g>
+  <text x="690" y="172" text-anchor="middle" font-size="34" fill="#440099">· · ·</text>
+  <text x="690" y="200" text-anchor="middle" font-size="14" fill="#131E29">~10,000 agents</text>
+
+  <!-- bus -->
+  <g stroke="#131E29" stroke-width="2" fill="none">
+    <path d="M170,208 V246"/><path d="M450,208 V246"/><path d="M930,208 V246"/>
+    <path d="M170,246 H930"/>
+    <path d="M270,246 V318" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+  </g>
+  <text x="284" y="290" font-size="15" fill="#131E29">post / read / message</text>
+  <path d="M830,246 V272" stroke="#131E29" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <text x="844" y="266" font-size="15" fill="#131E29">submit</text>
+
+  <!-- Lean gate -->
+  <rect x="700" y="274" width="260" height="40" rx="8" fill="#131E29"/>
+  <text x="830" y="300" text-anchor="middle" font-size="17" font-weight="700" fill="#F8F8F9">Lean 4 kernel: ✓ / ✗</text>
+  <path d="M700,294 H610" stroke="#B3261E" stroke-width="2.5" fill="none" marker-end="url(#arrow-red)"/>
+  <text x="604" y="286" text-anchor="end" font-size="15" fill="#B3261E">✗ rejected</text>
+  <text x="604" y="304" text-anchor="end" font-size="15" fill="#B3261E">back to work</text>
+  <path d="M830,314 V350" stroke="#1B7F3B" stroke-width="3" fill="none" marker-end="url(#arrow-green)"/>
+  <text x="844" y="338" font-size="15" font-weight="700" fill="#1B7F3B">✓ accepted</text>
+
+  <!-- shared workspace -->
+  <rect x="40" y="322" width="460" height="96" rx="10" fill="#FFFFFF" stroke="#131E29" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="270" y="356" text-anchor="middle" font-size="19" font-weight="700" fill="#131E29">Bulletin board · direct messages</text>
+  <text x="270" y="382" text-anchor="middle" font-size="15" fill="#131E29">unfiltered: ideas, partial attempts, questions</text>
+  <text x="270" y="404" text-anchor="middle" font-size="15" fill="#131E29">~2.7–5 million messages</text>
+
+  <rect x="620" y="352" width="440" height="66" rx="10" fill="#E6F2EA" stroke="#1B7F3B" stroke-width="3"/>
+  <text x="840" y="380" text-anchor="middle" font-size="19" font-weight="700" fill="#131E29">Library of verified results</text>
+  <text x="840" y="404" text-anchor="middle" font-size="15" fill="#131E29">only what the kernel accepts</text>
+
+  <!-- library feeds back -->
+  <path d="M1060,385 H1085 V165 H1062" stroke="#1B7F3B" stroke-width="2.5" fill="none" marker-end="url(#arrow-green)"/>
+  <text x="1098" y="275" font-size="14" fill="#1B7F3B" transform="rotate(90 1098 275)" text-anchor="middle">build on</text>
+</svg>
