@@ -54,6 +54,8 @@ When an idea is ready to become a session, create a file under `sessions/` (foll
 
 Some sessions include a `slides.md` file written for [Marp](https://marp.app/). No local install is required — `npx` fetches the CLI on demand. Commands below run from the repo root.
 
+Decks at `sessions/*/slides.md` are built and published to GitHub Pages automatically when changes merge to `main` (see `.github/workflows/slides.yml`), at `https://<owner>.github.io/Agents-Reading-Group/sessions/<session-dir>/`.
+
 Sessions that ship a `slides.css` use a custom theme (e.g. `theme: uos` in the front matter). Pass it with `--theme-set` in every command, otherwise Marp silently falls back to its default theme. Put `--theme-set` **after** the input path: it accepts multiple files, so anything following it is read as another theme.
 
 ### Live preview (hot reload)
