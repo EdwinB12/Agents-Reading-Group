@@ -19,7 +19,7 @@ The group meets every 2 week on Tuesday Afternoon at 3-4:30pm. Contact Edwin if 
 | 07/07/2026 | Introduction to World Models | Edwin |
 | 05/08/2026 | Building Practical AI Agents Using Claw - Retrospective | Farhad & Shaun |
 | 18/08/2026 | The HuggingFace OpenAI incident | Everyone |
-| 01/09/2026 | [Agents Reviewing Old Papers](https://github.com/EdwinB12/Agents-Reading-Group/blob/main/ideas/agents-reviewing-old-research.md) | Joe |
+| 01/09/2026 | [Agents Reviewing Old Papers](https://github.com/RSE-Sheffield/Agents-Reading-Group/blob/main/ideas/agents-reviewing-old-research.md) | Joe |
 | 13/10/2026 | [Reimagining research papers as interactive and reliable AI agents](https://www.nature.com/articles/s41586-026-11044-y) | Edwin |
 | 27/10/2026 | [Mathpocalypse](./sessions/2026-10-27-mathpocalypse/README.md) — AI agents and the flood of machine-generated mathematics | Joe |
 |            |    | |

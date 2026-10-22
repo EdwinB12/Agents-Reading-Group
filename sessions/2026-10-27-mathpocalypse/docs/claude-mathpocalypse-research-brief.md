@@ -1,6 +1,6 @@
 # Mathpocalypse: research brief and discussion structure
 
-Agents Reading Group, 27 October 2026. Background research for the session in [PR #14](https://github.com/EdwinB12/Agents-Reading-Group/pull/14). Compiled 18 October 2026; the story is moving daily, so recheck figures the day before.
+Agents Reading Group, 27 October 2026. Background research for the session in [PR #14](https://github.com/RSE-Sheffield/Agents-Reading-Group/pull/14). Compiled 18 October 2026; the story is moving daily, so recheck figures the day before.
 
 The brief is organised around the six session questions. Each block gives the facts you need on a slide, the positions worth putting in front of the group, and the best things to read or watch. A suggested pre-reading list and a set of notes on the existing deck come at the end.
 
